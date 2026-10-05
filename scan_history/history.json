@@ -13,6 +13,13 @@
       "total_findings": 1,
       "new_findings": 1,
       "repos_scanned": 8
+    },
+    {
+      "timestamp": "2026-10-05 04:18:35 UTC",
+      "scan_type": "auto",
+      "total_findings": 0,
+      "new_findings": 0,
+      "repos_scanned": 8
     }
   ],
   "known_fingerprints": [
