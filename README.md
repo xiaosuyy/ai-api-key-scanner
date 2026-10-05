@@ -83,11 +83,16 @@
 ### 智能检测
 
 - 支持多种 AI 密钥格式：
-  - OpenAI：`sk-...`、`sk-proj-...`
+  - OpenAI：`sk-...`、`sk-proj-...`、`sk-svcacct-...`、`sk-admin-...`
   - Anthropic：`sk-ant-...`
-  - Google：`AIza...`
+  - Google：`AIza...`、`GOCSPX-...`
   - Hugging Face：`hf_...`
   - Groq：`gsk_...` / Perplexity：`pplx-...` / Replicate：`r8_...`
+  - OpenRouter：`sk-or-v1-...` / xAI (Grok)：`xai-...` / Cerebras：`csk-...`
+  - NVIDIA NIM：`nvapi-...` / Voyage：`pa-...` / Pinecone：`pcsk_...`
+  - LangSmith：`lsv2_...` / ElevenLabs：`sk_...`
+  - 上下文识别：DeepSeek、Moonshot (Kimi)、阿里云百炼 (Qwen)、智谱 GLM
+  - AI 场景常见凭证：GitHub PAT (`ghp_...` / `github_pat_...`)、AWS Access Key (`AKIA...`)
   - 通用密钥赋值（`api_key = "..."`）
 - 自动过滤示例代码、占位符和低熵字符串
 - 置信度评分（high / medium / low）
