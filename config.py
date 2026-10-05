@@ -223,6 +223,7 @@ PLACEHOLDER_TOKENS = [
     "your",
     "example",
     "sample",
+    "test",
     "dummy",
     "placeholder",
     "changeme",
@@ -291,6 +292,8 @@ HISTORY_DIR = "scan_history"
 HISTORY_FILE = "history.json"
 MAX_HISTORY_ENTRIES = 100
 ISSUE_MAX_FINDINGS = 25
+# 只有这些置信度的「新增发现」才会触发 Issue，低置信度仅写入报告。
+ISSUE_CONFIDENCES = {"high", "medium"}
 
 SEVERITY_ORDER = {"high": 0, "medium": 1, "low": 2}
 

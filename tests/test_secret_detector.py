@@ -83,6 +83,13 @@ class TestSecretDetector(unittest.TestCase):
         names = [f.pattern_name for f in findings]
         self.assertNotIn("ElevenLabs API Key", names)
 
+    def test_filters_test_placeholder_value(self):
+        # 形如 AKIA000TEST000KEY000A 的测试值应被过滤
+        text = 'aws_access_key_id = "AKIA000TEST000KEY000A"'
+        findings = self.detector.scan_text(text)
+        names = [f.pattern_name for f in findings]
+        self.assertNotIn("AWS Access Key ID", names)
+
     def test_ignores_placeholder(self):
         text = 'OPENAI_API_KEY = "sk-proj-your-key-here-replace-this-value-00000000"'
         findings = self.detector.scan_text(text)

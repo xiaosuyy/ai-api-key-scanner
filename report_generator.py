@@ -89,7 +89,7 @@ def generate_issue_body(findings: List[Finding], summary: dict) -> str:
     lines.append("## 🔐 发现疑似泄露的 AI API 密钥")
     lines.append("")
     lines.append("本次扫描共发现 **{}** 条疑似泄露（仓库 {} 个，文件 {} 个）。".format(
-        summary["total_findings"], summary["repos_scanned"], summary["files_scanned"]
+        len(findings), summary["repos_scanned"], summary["files_scanned"]
     ))
     lines.append("")
     lines.append("| 置信度 | 仓库 | 文件 | 行 | 密钥（脱敏） |")

@@ -140,14 +140,21 @@ def main(argv=None) -> int:
         )
         scan_history.save_history(history, args.history_dir)
 
+    # 只有高/中置信度的新增发现才值得创建 Issue；低置信度仅保留在报告中。
+    issue_findings = [
+        f for f in new_findings if f.confidence in config.ISSUE_CONFIDENCES
+    ]
+
     paths = write_reports(
-        args.output, scan_type, all_findings, summary, issue_findings=new_findings
+        args.output, scan_type, all_findings, summary, issue_findings=issue_findings
     )
 
     print(generate_console_summary(summary))
     print("Markdown 报告：{}".format(paths["markdown"]))
     print("JSON 报告　　：{}".format(paths["json"]))
-    print("本次新增发现：{}".format(len(new_findings)))
+    print("本次新增发现：{}（其中需告警 {} 条）".format(
+        len(new_findings), len(issue_findings)
+    ))
 
     # 在 GitHub Actions 中输出结果，供后续步骤创建 Issue / 上传 Artifact。
     github_output = os.getenv("GITHUB_OUTPUT")
@@ -155,6 +162,7 @@ def main(argv=None) -> int:
         with open(github_output, "a", encoding="utf-8") as fh:
             fh.write("total_findings={}\n".format(summary["total_findings"]))
             fh.write("new_findings={}\n".format(len(new_findings)))
+            fh.write("issue_count={}\n".format(len(issue_findings)))
             fh.write("report_path={}\n".format(paths["markdown"]))
             fh.write("issue_path={}\n".format(paths["issue"]))
 

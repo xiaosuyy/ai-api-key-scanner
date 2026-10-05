@@ -69,12 +69,12 @@ jobs:
           retention-days: 90
 
       - name: 发现密钥时创建 Issue
-        if: always() && steps.scan.outputs.new_findings != '0' && steps.scan.outputs.new_findings != ''
+        if: always() && steps.scan.outputs.issue_count != '0' && steps.scan.outputs.issue_count != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh label create security --color B60205 --description "安全相关问题" 2>/dev/null || true
           gh issue create \
-            --title "🔐 [定时扫描] 发现 ${{ steps.scan.outputs.new_findings }} 条疑似泄露的 AI API 密钥" \
+            --title "🔐 [定时扫描] 发现 ${{ steps.scan.outputs.issue_count }} 条疑似泄露的 AI API 密钥" \
             --body-file "${{ steps.scan.outputs.issue_path }}" \
             --label security || true
