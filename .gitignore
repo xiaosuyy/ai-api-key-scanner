@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Secrets -- never commit these
+.env
+.env.local
+config.secret.json
+secrets.json
+*.key
+*.pem
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Scan output is intentionally committed (see scan_reports/), but keep the
+# transient console captures out of the repo.
+*.log

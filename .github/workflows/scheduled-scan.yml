@@ -1,0 +1,80 @@
+name: AI API Key Scanner - Scheduled Scan
+
+on:
+  schedule:
+    # 每天 UTC 02:00（北京时间 10:00）
+    - cron: "0 2 * * *"
+    # 如需更高频率，可改用下面任一表达式：
+    # - cron: "0 */12 * * *"   # 每 12 小时
+    # - cron: "0 2 * * 1"      # 每周一
+  workflow_dispatch:
+    inputs:
+      max_repos:
+        description: "最多扫描的仓库数"
+        required: true
+        default: "50"
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scan:
+    name: 定时增强扫描
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 执行扫描
+        id: scan
+        env:
+          GH_SCAN_TOKEN: ${{ secrets.GH_SCAN_TOKEN }}
+        run: python scan_github.py --auto --max-repos ${{ github.event.inputs.max_repos || '50' }}
+
+      - name: 输出统计摘要
+        if: always()
+        run: |
+          echo "### 🔍 扫描结果" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 发现总数：${{ steps.scan.outputs.total_findings }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 本次新增：${{ steps.scan.outputs.new_findings }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 报告路径：${{ steps.scan.outputs.report_path }}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 提交报告
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scan_reports scan_history || true
+          git commit -m "chore: 定时扫描报告 $(date -u +%Y-%m-%d)" || echo "没有需要提交的变更"
+          git push || echo "无需推送"
+
+      - name: 上传 Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-reports
+          path: scan_reports/
+          retention-days: 90
+
+      - name: 发现密钥时创建 Issue
+        if: always() && steps.scan.outputs.new_findings != '0' && steps.scan.outputs.new_findings != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create security --color B60205 --description "安全相关问题" 2>/dev/null || true
+          gh issue create \
+            --title "🔐 [定时扫描] 发现 ${{ steps.scan.outputs.new_findings }} 条疑似泄露的 AI API 密钥" \
+            --body-file "${{ steps.scan.outputs.issue_path }}" \
+            --label security || true
