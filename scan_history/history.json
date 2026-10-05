@@ -1,0 +1,12 @@
+{
+  "scans": [
+    {
+      "timestamp": "2026-10-05 04:00:20 UTC",
+      "scan_type": "auto",
+      "total_findings": 0,
+      "new_findings": 0,
+      "repos_scanned": 10
+    }
+  ],
+  "known_fingerprints": []
+}

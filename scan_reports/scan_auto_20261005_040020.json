@@ -1,0 +1,13 @@
+{
+  "summary": {
+    "generated_at": "2026-10-05 04:00:20 UTC",
+    "repos_scanned": 10,
+    "files_scanned": 827,
+    "total_findings": 0,
+    "by_confidence": {},
+    "by_pattern": {},
+    "by_repo": {},
+    "scan_type": "auto"
+  },
+  "findings": []
+}
