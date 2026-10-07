@@ -41,6 +41,13 @@
       "total_findings": 8,
       "new_findings": 8,
       "repos_scanned": 46
+    },
+    {
+      "timestamp": "2026-10-07 08:29:20 UTC",
+      "scan_type": "auto",
+      "total_findings": 1,
+      "new_findings": 0,
+      "repos_scanned": 48
     }
   ],
   "known_fingerprints": [
