@@ -1,109 +1,45 @@
 {
   "summary": {
-    "generated_at": "2026-10-10 08:31:14 UTC",
-    "repos_scanned": 50,
-    "files_scanned": 8582,
-    "total_findings": 7,
+    "generated_at": "2026-10-11 08:11:56 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3961,
+    "total_findings": 2,
     "by_confidence": {
-      "medium": 6,
-      "high": 1
+      "medium": 2
     },
     "by_pattern": {
-      "Generic API key assignment": 6,
-      "Anthropic API Key": 1
+      "Generic API key assignment": 2
     },
     "by_repo": {
-      "adityajha2005/decisionkit": 1,
-      "truffle-ai/dexto": 1,
-      "quodeq/quodeq": 2,
-      "getmodern-ai/graft": 3
+      "caura-ai/caura": 1,
+      "HelpCode-ai/anythingmcp": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "ambien...ored",
+      "value_masked": "hijklm...1234",
       "confidence": "medium",
-      "repo": "adityajha2005/decisionkit",
-      "file_path": "test/server.test.ts",
-      "file_url": "https://github.com/adityajha2005/decisionkit/blob/main/test/server.test.ts",
-      "line_number": 73,
-      "line_content": "const client = await connect({ DECISIONKIT_PROVIDER: \"openai\", OPENAI_API_KEY: \"ambient-should-be-ignored\" });",
+      "repo": "caura-ai/caura",
+      "file_path": "clients/python/tests/test_interviewer_scrub.py",
+      "file_url": "https://github.com/caura-ai/caura/blob/main/clients/python/tests/test_interviewer_scrub.py",
+      "line_number": 21,
+      "line_content": "\"api_key = 'hijklmnopqrstuvwx1234'\",",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "29645c5e11e12c54"
+      "fingerprint": "7707cf9a46e7c12b"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "e82461...3ecc",
+      "value_masked": "sentin...2345",
       "confidence": "medium",
-      "repo": "truffle-ai/dexto",
-      "file_path": "docs/docusaurus.config.ts",
-      "file_url": "https://github.com/truffle-ai/dexto/blob/main/docs/docusaurus.config.ts",
-      "line_number": 87,
-      "line_content": "apiKey: 'e8246111c9f80ec60063d2b395b03ecc',",
+      "repo": "HelpCode-ai/anythingmcp",
+      "file_path": "packages/backend/src/adapters/de/weclapp.live.spec.ts",
+      "file_url": "https://github.com/HelpCode-ai/anythingmcp/blob/main/packages/backend/src/adapters/de/weclapp.live.spec.ts",
+      "line_number": 101,
+      "line_content": "authConfig: { headerName: 'AuthenticationToken', apiKey: 'sentinel-token-12345' },",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "d00cf13a8781ed25"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-liv...aabb",
-      "confidence": "medium",
-      "repo": "quodeq/quodeq",
-      "file_path": "benchmarks/.corpus/synthetic/js-security/config.js",
-      "file_url": "https://github.com/quodeq/quodeq/blob/develop/benchmarks/.corpus/synthetic/js-security/config.js",
-      "line_number": 2,
-      "line_content": "apiKey: \"sk-live-11223344556677889900aabb\",",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "9e1eeddd2df647a7"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-liv...ba98",
-      "confidence": "medium",
-      "repo": "quodeq/quodeq",
-      "file_path": "benchmarks/.corpus/synthetic/py-security/config.py",
-      "file_url": "https://github.com/quodeq/quodeq/blob/develop/benchmarks/.corpus/synthetic/py-security/config.py",
-      "line_number": 1,
-      "line_content": "API_KEY = \"sk-live-9f8e7d6c5b4a3210fedcba98\"",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "0651721341d96687"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk_liv..._key",
-      "confidence": "medium",
-      "repo": "getmodern-ai/graft",
-      "file_path": "apps/server/src/app.test.ts",
-      "file_url": "https://github.com/getmodern-ai/graft/blob/main/apps/server/src/app.test.ts",
-      "line_number": 43,
-      "line_content": "const API_KEY = \"sk_live_the_real_vendor_key\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "08451a7c0a724eeb"
-    },
-    {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...6789",
-      "confidence": "high",
-      "repo": "getmodern-ai/graft",
-      "file_path": "apps/server/src/database.integration.test.ts",
-      "file_url": "https://github.com/getmodern-ai/graft/blob/main/apps/server/src/database.integration.test.ts",
-      "line_number": 117,
-      "line_content": "const MODEL_API_KEY = \"sk-ant-a-persons-own-model-key-0123456789\";",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "88f51d41f52ded2e"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk_liv...6789",
-      "confidence": "medium",
-      "repo": "getmodern-ai/graft",
-      "file_path": "apps/server/src/database.integration.test.ts",
-      "file_url": "https://github.com/getmodern-ai/graft/blob/main/apps/server/src/database.integration.test.ts",
-      "line_number": 116,
-      "line_content": "const API_KEY = \"sk_live_the_real_vendor_key_0123456789\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "1bdcc0ffc5736e7e"
+      "fingerprint": "083e85c805c68ac1"
     }
   ]
 }

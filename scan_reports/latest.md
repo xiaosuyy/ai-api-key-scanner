@@ -3,102 +3,41 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-10 08:31:14 UTC |
-| 扫描仓库数 | 50 |
-| 扫描文件数 | 8582 |
-| 发现数量 | 7 |
+| 生成时间 | 2026-10-11 08:11:56 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 3961 |
+| 发现数量 | 2 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| HIGH | 1 |
-| MEDIUM | 6 |
+| MEDIUM | 2 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`adityajha2005/decisionkit`
-- **文件**：`test/server.test.ts`（第 73 行）
-- **密钥（已脱敏）**：`ambien...ored`
-- **链接**：https://github.com/adityajha2005/decisionkit/blob/main/test/server.test.ts
+- **仓库**：`caura-ai/caura`
+- **文件**：`clients/python/tests/test_interviewer_scrub.py`（第 21 行）
+- **密钥（已脱敏）**：`hijklm...1234`
+- **链接**：https://github.com/caura-ai/caura/blob/main/clients/python/tests/test_interviewer_scrub.py
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-const client = await connect({ DECISIONKIT_PROVIDER: "openai", OPENAI_API_KEY: "ambient-should-be-ignored" });
+"api_key = 'hijklmnopqrstuvwx1234'",
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`truffle-ai/dexto`
-- **文件**：`docs/docusaurus.config.ts`（第 87 行）
-- **密钥（已脱敏）**：`e82461...3ecc`
-- **链接**：https://github.com/truffle-ai/dexto/blob/main/docs/docusaurus.config.ts
+- **仓库**：`HelpCode-ai/anythingmcp`
+- **文件**：`packages/backend/src/adapters/de/weclapp.live.spec.ts`（第 101 行）
+- **密钥（已脱敏）**：`sentin...2345`
+- **链接**：https://github.com/HelpCode-ai/anythingmcp/blob/main/packages/backend/src/adapters/de/weclapp.live.spec.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-apiKey: 'e8246111c9f80ec60063d2b395b03ecc',
-```
-
-### 3. [MEDIUM] Generic API key assignment
-
-- **仓库**：`quodeq/quodeq`
-- **文件**：`benchmarks/.corpus/synthetic/js-security/config.js`（第 2 行）
-- **密钥（已脱敏）**：`sk-liv...aabb`
-- **链接**：https://github.com/quodeq/quodeq/blob/develop/benchmarks/.corpus/synthetic/js-security/config.js
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-apiKey: "sk-live-11223344556677889900aabb",
-```
-
-### 4. [MEDIUM] Generic API key assignment
-
-- **仓库**：`quodeq/quodeq`
-- **文件**：`benchmarks/.corpus/synthetic/py-security/config.py`（第 1 行）
-- **密钥（已脱敏）**：`sk-liv...ba98`
-- **链接**：https://github.com/quodeq/quodeq/blob/develop/benchmarks/.corpus/synthetic/py-security/config.py
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-API_KEY = "sk-live-9f8e7d6c5b4a3210fedcba98"
-```
-
-### 5. [MEDIUM] Generic API key assignment
-
-- **仓库**：`getmodern-ai/graft`
-- **文件**：`apps/server/src/app.test.ts`（第 43 行）
-- **密钥（已脱敏）**：`sk_liv..._key`
-- **链接**：https://github.com/getmodern-ai/graft/blob/main/apps/server/src/app.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-const API_KEY = "sk_live_the_real_vendor_key";
-```
-
-### 6. [HIGH] Anthropic API Key
-
-- **仓库**：`getmodern-ai/graft`
-- **文件**：`apps/server/src/database.integration.test.ts`（第 117 行）
-- **密钥（已脱敏）**：`sk-ant...6789`
-- **链接**：https://github.com/getmodern-ai/graft/blob/main/apps/server/src/database.integration.test.ts
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-const MODEL_API_KEY = "sk-ant-a-persons-own-model-key-0123456789";
-```
-
-### 7. [MEDIUM] Generic API key assignment
-
-- **仓库**：`getmodern-ai/graft`
-- **文件**：`apps/server/src/database.integration.test.ts`（第 116 行）
-- **密钥（已脱敏）**：`sk_liv...6789`
-- **链接**：https://github.com/getmodern-ai/graft/blob/main/apps/server/src/database.integration.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-const API_KEY = "sk_live_the_real_vendor_key_0123456789";
+authConfig: { headerName: 'AuthenticationToken', apiKey: 'sentinel-token-12345' },
 ```
 
 ## 处置建议
