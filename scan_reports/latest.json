@@ -1,33 +1,108 @@
 {
   "summary": {
-    "generated_at": "2026-10-11 08:11:56 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 3961,
-    "total_findings": 2,
+    "generated_at": "2026-10-11 08:44:23 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 9193,
+    "total_findings": 9,
     "by_confidence": {
-      "medium": 2
+      "medium": 9
     },
     "by_pattern": {
-      "Generic API key assignment": 2
+      "Generic API key assignment": 9
     },
     "by_repo": {
-      "caura-ai/caura": 1,
-      "HelpCode-ai/anythingmcp": 1
+      "sleep2agi/agent-network": 2,
+      "umutkeltek/switchback": 2,
+      "yyjeqhc/webcodex": 3,
+      "HelpCode-ai/anythingmcp": 1,
+      "SpiralCloudOmega/DevTeam6": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "hijklm...1234",
+      "value_masked": "disabl...rent",
       "confidence": "medium",
-      "repo": "caura-ai/caura",
-      "file_path": "clients/python/tests/test_interviewer_scrub.py",
-      "file_url": "https://github.com/caura-ai/caura/blob/main/clients/python/tests/test_interviewer_scrub.py",
-      "line_number": 21,
-      "line_content": "\"api_key = 'hijklmnopqrstuvwx1234'\",",
+      "repo": "sleep2agi/agent-network",
+      "file_path": "agent-network/bin/cli.ts",
+      "file_url": "https://github.com/sleep2agi/agent-network/blob/main/agent-network/bin/cli.ts",
+      "line_number": 7394,
+      "line_content": "COMMHUB_AUTH_TOKEN: \"disabled-for-grok-cli-parent\",",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "7707cf9a46e7c12b"
+      "fingerprint": "27bcb490c880b324"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "disabl...rent",
+      "confidence": "medium",
+      "repo": "sleep2agi/agent-network",
+      "file_path": "agent-network/bin/cli.ts",
+      "file_url": "https://github.com/sleep2agi/agent-network/blob/main/agent-network/bin/cli.ts",
+      "line_number": 7454,
+      "line_content": "env.COMMHUB_AUTH_TOKEN = \"disabled-for-grok-cli-parent\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "abecbd973d9c57ee"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...leak",
+      "confidence": "medium",
+      "repo": "umutkeltek/switchback",
+      "file_path": "cli/tests/sb_claude_profiles.zsh",
+      "file_url": "https://github.com/umutkeltek/switchback/blob/main/cli/tests/sb_claude_profiles.zsh",
+      "line_number": 118,
+      "line_content": "fixture_access_token=\"fixture-access-token-must-not-leak\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "6b21dff84050917e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "scout-...leak",
+      "confidence": "medium",
+      "repo": "umutkeltek/switchback",
+      "file_path": "cli/tests/sb_pulse.zsh",
+      "file_url": "https://github.com/umutkeltek/switchback/blob/main/cli/tests/sb_pulse.zsh",
+      "line_number": 39,
+      "line_content": "export SWITCHBACK_SCOUT_API_KEY=\"scout-secret-value-must-not-leak\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7251a255e1a78387"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "write-...-key",
+      "confidence": "medium",
+      "repo": "yyjeqhc/webcodex",
+      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "line_number": 147,
+      "line_content": "api_key: \"write-only-server-key\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "697277b1e8f49889"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "write-...cret",
+      "confidence": "medium",
+      "repo": "yyjeqhc/webcodex",
+      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "line_number": 548,
+      "line_content": "expect(captured[0]).toMatchObject({ id: \"personal\", expected_revision: 1, name: \"Personal renamed\", host_mode: \"standalone\", api_key: \"write-only-fixture-secret\" });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "27513637299dc10c"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "mcp-ui...ture",
+      "confidence": "medium",
+      "repo": "yyjeqhc/webcodex",
+      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "line_number": 569,
+      "line_content": "expect(captured[0]).toMatchObject({ id: null, expected_revision: 0, command: \"npx\", args: [\"-y\", \"@playwright/mcp\"], env: { API_KEY: \"mcp-ui-private-fixture\" } });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "51b7b31d59cf3273"
     },
     {
       "pattern_name": "Generic API key assignment",
@@ -40,6 +115,18 @@
       "line_content": "authConfig: { headerName: 'AuthenticationToken', apiKey: 'sentinel-token-12345' },",
       "description": "赋值给 API key 变量的疑似密钥。",
       "fingerprint": "083e85c805c68ac1"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "cyborg...a994",
+      "confidence": "medium",
+      "repo": "SpiralCloudOmega/DevTeam6",
+      "file_path": "ASSET_INVENTORY.md",
+      "file_url": "https://github.com/SpiralCloudOmega/DevTeam6/blob/main/ASSET_INVENTORY.md",
+      "line_number": 60,
+      "line_content": "CYBORGDB_API_KEY=\"cyborg_bfaea874c10d48bab8b69e4bc29da994\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "64f5972b35d66f5b"
     }
   ]
 }
