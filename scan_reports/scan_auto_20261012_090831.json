@@ -1,0 +1,172 @@
+{
+  "summary": {
+    "generated_at": "2026-10-12 09:08:31 UTC",
+    "repos_scanned": 46,
+    "files_scanned": 10246,
+    "total_findings": 12,
+    "by_confidence": {
+      "medium": 12
+    },
+    "by_pattern": {
+      "Generic API key assignment": 9,
+      "AWS Access Key ID": 1,
+      "Google OAuth Client Secret": 2
+    },
+    "by_repo": {
+      "sleep2agi/agent-network": 2,
+      "berkayturanci/ai-jury": 1,
+      "RohanMuppa/brightspace-mcp-server": 4,
+      "s3ntin3l8/runway-ai-usage-tracker": 2,
+      "lidge-jun/opencodex": 1,
+      "aipoch/open-science": 1,
+      "balkhaev/devhub": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "disabl...rent",
+      "confidence": "medium",
+      "repo": "sleep2agi/agent-network",
+      "file_path": "agent-network/bin/cli.ts",
+      "file_url": "https://github.com/sleep2agi/agent-network/blob/main/agent-network/bin/cli.ts",
+      "line_number": 7505,
+      "line_content": "COMMHUB_AUTH_TOKEN: \"disabled-for-grok-cli-parent\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "513a8c399daec85e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "disabl...rent",
+      "confidence": "medium",
+      "repo": "sleep2agi/agent-network",
+      "file_path": "agent-network/bin/cli.ts",
+      "file_url": "https://github.com/sleep2agi/agent-network/blob/main/agent-network/bin/cli.ts",
+      "line_number": 7565,
+      "line_content": "env.COMMHUB_AUTH_TOKEN = \"disabled-for-grok-cli-parent\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1ba02baecfb50d75"
+    },
+    {
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAQR...2345",
+      "confidence": "medium",
+      "repo": "berkayturanci/ai-jury",
+      "file_path": "tests/test_redaction.py",
+      "file_url": "https://github.com/berkayturanci/ai-jury/blob/main/tests/test_redaction.py",
+      "line_number": 109,
+      "line_content": "text = \"AKIAABCDEFGHIJKLMNOP AKIAQRSTUVWXYZ012345\"",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "ef4a850c521f51ff"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fresh-...4321",
+      "confidence": "medium",
+      "repo": "RohanMuppa/brightspace-mcp-server",
+      "file_path": "tests/api/client.test.ts",
+      "file_url": "https://github.com/RohanMuppa/brightspace-mcp-server/blob/main/tests/api/client.test.ts",
+      "line_number": 431,
+      "line_content": "freshToken.accessToken = \"fresh-token-87654321\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "cd83805bc6894883"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fresh-...4321",
+      "confidence": "medium",
+      "repo": "RohanMuppa/brightspace-mcp-server",
+      "file_path": "tests/api/client.test.ts",
+      "file_url": "https://github.com/RohanMuppa/brightspace-mcp-server/blob/main/tests/api/client.test.ts",
+      "line_number": 955,
+      "line_content": "freshToken.accessToken = \"fresh-token-87654321\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "5439ab85b761f2f7"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...oken",
+      "confidence": "medium",
+      "repo": "RohanMuppa/brightspace-mcp-server",
+      "file_path": "tests/auth/browser-live.test.ts",
+      "file_url": "https://github.com/RohanMuppa/brightspace-mcp-server/blob/main/tests/auth/browser-live.test.ts",
+      "line_number": 154,
+      "line_content": "return new Response(JSON.stringify({ access_token: \"fixture-access-token\" }), { headers: { \"content-type\": \"application/json\" } });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "0e778b311ea45ad5"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...oken",
+      "confidence": "medium",
+      "repo": "RohanMuppa/brightspace-mcp-server",
+      "file_path": "tests/auth/browser-live.test.ts",
+      "file_url": "https://github.com/RohanMuppa/brightspace-mcp-server/blob/main/tests/auth/browser-live.test.ts",
+      "line_number": 158,
+      "line_content": "expect(first).toMatchObject({ accessToken: \"fixture-access-token\", csrfToken: \"fixture-xsrf\", tenantOrigin: BASE });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "f7ec2fb06c4fc427"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sideca...cret",
+      "confidence": "medium",
+      "repo": "s3ntin3l8/runway-ai-usage-tracker",
+      "file_path": "app/core/config.py",
+      "file_url": "https://github.com/s3ntin3l8/runway-ai-usage-tracker/blob/main/app/core/config.py",
+      "line_number": 55,
+      "line_content": "DEFAULT_INGEST_API_KEY = \"sidecar-default-secret\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3d5eea2a02dd3d01"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...Fsxl",
+      "confidence": "medium",
+      "repo": "s3ntin3l8/runway-ai-usage-tracker",
+      "file_path": "app/services/token_refresher.py",
+      "file_url": "https://github.com/s3ntin3l8/runway-ai-usage-tracker/blob/main/app/services/token_refresher.py",
+      "line_number": 42,
+      "line_content": "_GEMINI_CLI_CLIENT_SECRET = \"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\"",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "70151f0413572388"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "lidge-jun/opencodex",
+      "file_path": "devlog/_fin/140_remaining-provider-ports/21_phase2_antigravity-oauth-cca.md",
+      "file_url": "https://github.com/lidge-jun/opencodex/blob/main/devlog/_fin/140_remaining-provider-ports/21_phase2_antigravity-oauth-cca.md",
+      "line_number": 32,
+      "line_content": "ClientSecret     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",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "5f09c77f6d7e9439"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "aipoch/open-science",
+      "file_path": "e2e/pdf-translation-pair.spec.ts",
+      "file_url": "https://github.com/aipoch/open-science/blob/main/e2e/pdf-translation-pair.spec.ts",
+      "line_number": 132,
+      "line_content": "api_key: 'synthetic-private-key'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "772dc7c7338c95d6"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "rotate...nect",
+      "confidence": "medium",
+      "repo": "balkhaev/devhub",
+      "file_path": "test/ai-accounts.test.ts",
+      "file_url": "https://github.com/balkhaev/devhub/blob/main/test/ai-accounts.test.ts",
+      "line_number": 519,
+      "line_content": "access_token: \"rotated-after-disconnect\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "a6e0dcdb9af5f2e1"
+    }
+  ]
+}
