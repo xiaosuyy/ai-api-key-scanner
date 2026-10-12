@@ -3,125 +3,65 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-11 08:44:23 UTC |
-| 扫描仓库数 | 50 |
-| 扫描文件数 | 9193 |
-| 发现数量 | 9 |
+| 生成时间 | 2026-10-12 08:29:54 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 4334 |
+| 发现数量 | 4 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 9 |
+| MEDIUM | 4 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`sleep2agi/agent-network`
-- **文件**：`agent-network/bin/cli.ts`（第 7394 行）
-- **密钥（已脱敏）**：`disabl...rent`
-- **链接**：https://github.com/sleep2agi/agent-network/blob/main/agent-network/bin/cli.ts
+- **仓库**：`quodeq/quodeq`
+- **文件**：`benchmarks/.corpus/synthetic/js-security/config.js`（第 2 行）
+- **密钥（已脱敏）**：`sk-liv...aabb`
+- **链接**：https://github.com/quodeq/quodeq/blob/develop/benchmarks/.corpus/synthetic/js-security/config.js
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-COMMHUB_AUTH_TOKEN: "disabled-for-grok-cli-parent",
+apiKey: "sk-live-11223344556677889900aabb",
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`sleep2agi/agent-network`
-- **文件**：`agent-network/bin/cli.ts`（第 7454 行）
-- **密钥（已脱敏）**：`disabl...rent`
-- **链接**：https://github.com/sleep2agi/agent-network/blob/main/agent-network/bin/cli.ts
+- **仓库**：`quodeq/quodeq`
+- **文件**：`benchmarks/.corpus/synthetic/py-security/config.py`（第 1 行）
+- **密钥（已脱敏）**：`sk-liv...ba98`
+- **链接**：https://github.com/quodeq/quodeq/blob/develop/benchmarks/.corpus/synthetic/py-security/config.py
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-env.COMMHUB_AUTH_TOKEN = "disabled-for-grok-cli-parent";
+API_KEY = "sk-live-9f8e7d6c5b4a3210fedcba98"
 ```
 
 ### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`umutkeltek/switchback`
-- **文件**：`cli/tests/sb_claude_profiles.zsh`（第 118 行）
-- **密钥（已脱敏）**：`fixtur...leak`
-- **链接**：https://github.com/umutkeltek/switchback/blob/main/cli/tests/sb_claude_profiles.zsh
+- **仓库**：`QuantSingularity/RiskOptimizer`
+- **文件**：`code/backend/src/core/config.py`（第 159 行）
+- **密钥（已脱敏）**：`dev-se...tion`
+- **链接**：https://github.com/QuantSingularity/RiskOptimizer/blob/main/code/backend/src/core/config.py
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-fixture_access_token="fixture-access-token-must-not-leak"
+secret_key = "dev-secret-key-change-in-production"
 ```
 
 ### 4. [MEDIUM] Generic API key assignment
 
-- **仓库**：`umutkeltek/switchback`
-- **文件**：`cli/tests/sb_pulse.zsh`（第 39 行）
-- **密钥（已脱敏）**：`scout-...leak`
-- **链接**：https://github.com/umutkeltek/switchback/blob/main/cli/tests/sb_pulse.zsh
+- **仓库**：`QuantSingularity/RiskOptimizer`
+- **文件**：`code/backend/src/core/config.py`（第 170 行）
+- **密钥（已脱敏）**：`dev-jw...tion`
+- **链接**：https://github.com/QuantSingularity/RiskOptimizer/blob/main/code/backend/src/core/config.py
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-export SWITCHBACK_SCOUT_API_KEY="scout-secret-value-must-not-leak"
-```
-
-### 5. [MEDIUM] Generic API key assignment
-
-- **仓库**：`yyjeqhc/webcodex`
-- **文件**：`apps/desktop/src/features/ConnectionsTools.test.tsx`（第 147 行）
-- **密钥（已脱敏）**：`write-...-key`
-- **链接**：https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-api_key: "write-only-server-key",
-```
-
-### 6. [MEDIUM] Generic API key assignment
-
-- **仓库**：`yyjeqhc/webcodex`
-- **文件**：`apps/desktop/src/features/ConnectionsTools.test.tsx`（第 548 行）
-- **密钥（已脱敏）**：`write-...cret`
-- **链接**：https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-expect(captured[0]).toMatchObject({ id: "personal", expected_revision: 1, name: "Personal renamed", host_mode: "standalone", api_key: "write-only-fixture-secret" });
-```
-
-### 7. [MEDIUM] Generic API key assignment
-
-- **仓库**：`yyjeqhc/webcodex`
-- **文件**：`apps/desktop/src/features/ConnectionsTools.test.tsx`（第 569 行）
-- **密钥（已脱敏）**：`mcp-ui...ture`
-- **链接**：https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-expect(captured[0]).toMatchObject({ id: null, expected_revision: 0, command: "npx", args: ["-y", "@playwright/mcp"], env: { API_KEY: "mcp-ui-private-fixture" } });
-```
-
-### 8. [MEDIUM] Generic API key assignment
-
-- **仓库**：`HelpCode-ai/anythingmcp`
-- **文件**：`packages/backend/src/adapters/de/weclapp.live.spec.ts`（第 101 行）
-- **密钥（已脱敏）**：`sentin...2345`
-- **链接**：https://github.com/HelpCode-ai/anythingmcp/blob/main/packages/backend/src/adapters/de/weclapp.live.spec.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-authConfig: { headerName: 'AuthenticationToken', apiKey: 'sentinel-token-12345' },
-```
-
-### 9. [MEDIUM] Generic API key assignment
-
-- **仓库**：`SpiralCloudOmega/DevTeam6`
-- **文件**：`ASSET_INVENTORY.md`（第 60 行）
-- **密钥（已脱敏）**：`cyborg...a994`
-- **链接**：https://github.com/SpiralCloudOmega/DevTeam6/blob/main/ASSET_INVENTORY.md
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-CYBORGDB_API_KEY="cyborg_bfaea874c10d48bab8b69e4bc29da994"
+jwt_secret_key = "dev-jwt-secret-key-change-in-production"
 ```
 
 ## 处置建议
