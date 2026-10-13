@@ -1,0 +1,32 @@
+{
+  "summary": {
+    "generated_at": "2026-10-13 08:48:28 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 2883,
+    "total_findings": 1,
+    "by_confidence": {
+      "medium": 1
+    },
+    "by_pattern": {
+      "Generic API key assignment": 1
+    },
+    "by_repo": {
+      "Opti-Advisr/Opti-Advisr": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "oYQslE...Gk0Y",
+      "confidence": "medium",
+      "repo": "Opti-Advisr/Opti-Advisr",
+      "file_path": "frontend/src/lib/api.js",
+      "file_url": "https://github.com/Opti-Advisr/Opti-Advisr/blob/main/frontend/src/lib/api.js",
+      "line_number": 11,
+      "line_content": "const DEFAULT_API_KEY = \"oYQslEeolb4oly9qw1sKo4tTT6owJZl5695SGk0Y\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "8cedc70d94170933"
+    }
+  ]
+}
