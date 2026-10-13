@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "generated_at": "2026-10-13 09:22:01 UTC",
+    "repos_scanned": 48,
+    "files_scanned": 8408,
+    "total_findings": 9,
+    "by_confidence": {
+      "medium": 9
+    },
+    "by_pattern": {
+      "Generic API key assignment": 9
+    },
+    "by_repo": {
+      "caura-ai/caura": 1,
+      "mohamedhabila/Kavi": 2,
+      "nuoxingchai-spec/aidd-blue-toxnet": 1,
+      "nonahisa/novel-ai-assistant": 4,
+      "bek-sam/invai-backend": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "hijklm...1234",
+      "confidence": "medium",
+      "repo": "caura-ai/caura",
+      "file_path": "clients/python/tests/test_interviewer_scrub.py",
+      "file_url": "https://github.com/caura-ai/caura/blob/main/clients/python/tests/test_interviewer_scrub.py",
+      "line_number": 21,
+      "line_content": "\"api_key = 'hijklmnopqrstuvwx1234'\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7707cf9a46e7c12b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "scenar...-key",
+      "confidence": "medium",
+      "repo": "mohamedhabila/Kavi",
+      "file_path": "__tests__/acceptance/e2eAgentForegroundScenarioSelectedMode.test.ts",
+      "file_url": "https://github.com/mohamedhabila/Kavi/blob/main/__tests__/acceptance/e2eAgentForegroundScenarioSelectedMode.test.ts",
+      "line_number": 43,
+      "line_content": "apiKey: 'scenario-provider-key',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "5355f91b6afa0a99"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "PRIVAT...-KEY",
+      "confidence": "medium",
+      "repo": "mohamedhabila/Kavi",
+      "file_path": "__tests__/acceptance/e2ePairedConditions.test.ts",
+      "file_url": "https://github.com/mohamedhabila/Kavi/blob/main/__tests__/acceptance/e2ePairedConditions.test.ts",
+      "line_number": 182,
+      "line_content": "provider: { ...invariant.provider, apiKey: 'PRIVATE-SMUGGLED-KEY' },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "6ab1ba52cc112838"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...cret",
+      "confidence": "medium",
+      "repo": "nuoxingchai-spec/aidd-blue-toxnet",
+      "file_path": "test/test_explanation_report.py",
+      "file_url": "https://github.com/nuoxingchai-spec/aidd-blue-toxnet/blob/main/test/test_explanation_report.py",
+      "line_number": 100,
+      "line_content": "config=ModelConfig(api_url=f'http://127.0.0.1:{server.server_port}',api_format='openai',api_key='fixture-key-not-secret',model_name='test-only',model_version='unit-v1')",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "91f78fd37d00b3d6"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "novela...iKey",
+      "confidence": "medium",
+      "repo": "nonahisa/novel-ai-assistant",
+      "file_path": "src/ai/claudeProvider.ts",
+      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/claudeProvider.ts",
+      "line_number": 32,
+      "line_content": "const SECRET_KEY = \"novelai.claude.apiKey\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "0dceeb1f6e9047e3"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "novela...iKey",
+      "confidence": "medium",
+      "repo": "nonahisa/novel-ai-assistant",
+      "file_path": "src/ai/geminiProvider.ts",
+      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/geminiProvider.ts",
+      "line_number": 23,
+      "line_content": "const SECRET_KEY = \"novelai.gemini.apiKey\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "23ebae1c16873ba4"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "novela...iKey",
+      "confidence": "medium",
+      "repo": "nonahisa/novel-ai-assistant",
+      "file_path": "src/ai/openaiProvider.ts",
+      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/openaiProvider.ts",
+      "line_number": 27,
+      "line_content": "const SECRET_KEY = \"novelai.openai.apiKey\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "43ad0b4b5451f475"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "novela...iKey",
+      "confidence": "medium",
+      "repo": "nonahisa/novel-ai-assistant",
+      "file_path": "src/ai/sakuraProvider.ts",
+      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/sakuraProvider.ts",
+      "line_number": 46,
+      "line_content": "const SECRET_KEY = \"novelai.sakura.apiKey\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c876255c219dc6b4"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-fro...ored",
+      "confidence": "medium",
+      "repo": "bek-sam/invai-backend",
+      "file_path": "src/ai/openai-provider.test.ts",
+      "file_url": "https://github.com/bek-sam/invai-backend/blob/main/src/ai/openai-provider.test.ts",
+      "line_number": 498,
+      "line_content": "process.env.OPENAI_API_KEY = \"sk-from-dotenv-should-be-ignored\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "09e5cfa987ca0729"
+    }
+  ]
+}
