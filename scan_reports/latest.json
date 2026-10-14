@@ -1,132 +1,82 @@
 {
   "summary": {
-    "generated_at": "2026-10-13 09:22:01 UTC",
-    "repos_scanned": 48,
-    "files_scanned": 8408,
-    "total_findings": 9,
+    "generated_at": "2026-10-14 07:05:55 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3765,
+    "total_findings": 5,
     "by_confidence": {
-      "medium": 9
+      "medium": 5
     },
     "by_pattern": {
-      "Generic API key assignment": 9
+      "Generic API key assignment": 3,
+      "AWS Access Key ID": 2
     },
     "by_repo": {
-      "caura-ai/caura": 1,
-      "mohamedhabila/Kavi": 2,
-      "nuoxingchai-spec/aidd-blue-toxnet": 1,
-      "nonahisa/novel-ai-assistant": 4,
-      "bek-sam/invai-backend": 1
+      "ai-zen/agents": 1,
+      "atomantic/PortOS": 4
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "hijklm...1234",
+      "value_masked": "sk-inv...2345",
       "confidence": "medium",
-      "repo": "caura-ai/caura",
-      "file_path": "clients/python/tests/test_interviewer_scrub.py",
-      "file_url": "https://github.com/caura-ai/caura/blob/main/clients/python/tests/test_interviewer_scrub.py",
-      "line_number": 21,
-      "line_content": "\"api_key = 'hijklmnopqrstuvwx1234'\",",
+      "repo": "ai-zen/agents",
+      "file_path": "packages/core/src/integration.test.ts",
+      "file_url": "https://github.com/ai-zen/agents/blob/main/packages/core/src/integration.test.ts",
+      "line_number": 456,
+      "line_content": "apiKey: \"sk-invalid-key-12345\",",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "7707cf9a46e7c12b"
+      "fingerprint": "17945d955706d91e"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "scenar...-key",
+      "value_masked": "sk-ant...e123",
       "confidence": "medium",
-      "repo": "mohamedhabila/Kavi",
-      "file_path": "__tests__/acceptance/e2eAgentForegroundScenarioSelectedMode.test.ts",
-      "file_url": "https://github.com/mohamedhabila/Kavi/blob/main/__tests__/acceptance/e2eAgentForegroundScenarioSelectedMode.test.ts",
-      "line_number": 43,
-      "line_content": "apiKey: 'scenario-provider-key',",
+      "repo": "atomantic/PortOS",
+      "file_path": "autofixer/sandbox.test.js",
+      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
+      "line_number": 78,
+      "line_content": "ANTHROPIC_API_KEY: 'sk-ant-childkeyvalue123',",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "5355f91b6afa0a99"
+      "fingerprint": "1975295ec9c217c1"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "PRIVAT...-KEY",
+      "value_masked": "oauth-...-123",
       "confidence": "medium",
-      "repo": "mohamedhabila/Kavi",
-      "file_path": "__tests__/acceptance/e2ePairedConditions.test.ts",
-      "file_url": "https://github.com/mohamedhabila/Kavi/blob/main/__tests__/acceptance/e2ePairedConditions.test.ts",
-      "line_number": 182,
-      "line_content": "provider: { ...invariant.provider, apiKey: 'PRIVATE-SMUGGLED-KEY' },",
+      "repo": "atomantic/PortOS",
+      "file_path": "autofixer/sandbox.test.js",
+      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
+      "line_number": 79,
+      "line_content": "CLAUDE_CODE_OAUTH_TOKEN: 'oauth-secret-value-123',",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "6ab1ba52cc112838"
+      "fingerprint": "7ba0ee076d6fe994"
     },
     {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "fixtur...cret",
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAOL...0000",
       "confidence": "medium",
-      "repo": "nuoxingchai-spec/aidd-blue-toxnet",
-      "file_path": "test/test_explanation_report.py",
-      "file_url": "https://github.com/nuoxingchai-spec/aidd-blue-toxnet/blob/main/test/test_explanation_report.py",
-      "line_number": 100,
-      "line_content": "config=ModelConfig(api_url=f'http://127.0.0.1:{server.server_port}',api_format='openai',api_key='fixture-key-not-secret',model_name='test-only',model_version='unit-v1')",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "91f78fd37d00b3d6"
+      "repo": "atomantic/PortOS",
+      "file_path": "autofixer/sandbox.test.js",
+      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
+      "line_number": 258,
+      "line_content": "-const old = \"AKIAOLDKEY0000000000\"",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "b90b071d41edad40"
     },
     {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "novela...iKey",
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIACO...0000",
       "confidence": "medium",
-      "repo": "nonahisa/novel-ai-assistant",
-      "file_path": "src/ai/claudeProvider.ts",
-      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/claudeProvider.ts",
-      "line_number": 32,
-      "line_content": "const SECRET_KEY = \"novelai.claude.apiKey\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "0dceeb1f6e9047e3"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "novela...iKey",
-      "confidence": "medium",
-      "repo": "nonahisa/novel-ai-assistant",
-      "file_path": "src/ai/geminiProvider.ts",
-      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/geminiProvider.ts",
-      "line_number": 23,
-      "line_content": "const SECRET_KEY = \"novelai.gemini.apiKey\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "23ebae1c16873ba4"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "novela...iKey",
-      "confidence": "medium",
-      "repo": "nonahisa/novel-ai-assistant",
-      "file_path": "src/ai/openaiProvider.ts",
-      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/openaiProvider.ts",
-      "line_number": 27,
-      "line_content": "const SECRET_KEY = \"novelai.openai.apiKey\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "43ad0b4b5451f475"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "novela...iKey",
-      "confidence": "medium",
-      "repo": "nonahisa/novel-ai-assistant",
-      "file_path": "src/ai/sakuraProvider.ts",
-      "file_url": "https://github.com/nonahisa/novel-ai-assistant/blob/main/src/ai/sakuraProvider.ts",
-      "line_number": 46,
-      "line_content": "const SECRET_KEY = \"novelai.sakura.apiKey\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "c876255c219dc6b4"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-fro...ored",
-      "confidence": "medium",
-      "repo": "bek-sam/invai-backend",
-      "file_path": "src/ai/openai-provider.test.ts",
-      "file_url": "https://github.com/bek-sam/invai-backend/blob/main/src/ai/openai-provider.test.ts",
-      "line_number": 498,
-      "line_content": "process.env.OPENAI_API_KEY = \"sk-from-dotenv-should-be-ignored\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "09e5cfa987ca0729"
+      "repo": "atomantic/PortOS",
+      "file_path": "autofixer/sandbox.test.js",
+      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
+      "line_number": 259,
+      "line_content": "context AKIACONTEXT000000000",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "349b45b6bc365a17"
     }
   ]
 }
