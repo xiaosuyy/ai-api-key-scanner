@@ -3,77 +3,42 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-14 07:05:55 UTC |
+| 生成时间 | 2026-10-15 06:56:20 UTC |
 | 扫描仓库数 | 20 |
-| 扫描文件数 | 3765 |
-| 发现数量 | 5 |
+| 扫描文件数 | 2288 |
+| 发现数量 | 2 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 5 |
+| HIGH | 1 |
+| LOW | 1 |
 
 ## 发现明细
 
-### 1. [MEDIUM] Generic API key assignment
+### 1. [HIGH] Anthropic API Key
 
-- **仓库**：`ai-zen/agents`
-- **文件**：`packages/core/src/integration.test.ts`（第 456 行）
-- **密钥（已脱敏）**：`sk-inv...2345`
-- **链接**：https://github.com/ai-zen/agents/blob/main/packages/core/src/integration.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-apiKey: "sk-invalid-key-12345",
-```
-
-### 2. [MEDIUM] Generic API key assignment
-
-- **仓库**：`atomantic/PortOS`
-- **文件**：`autofixer/sandbox.test.js`（第 78 行）
-- **密钥（已脱敏）**：`sk-ant...e123`
-- **链接**：https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js
-- **说明**：赋值给 API key 变量的疑似密钥。
+- **仓库**：`joker7866/kishore-social-studio`
+- **文件**：`tests/unit/security-storage.test.ts`（第 19 行）
+- **密钥（已脱敏）**：`sk-ant...3210`
+- **链接**：https://github.com/joker7866/kishore-social-studio/blob/main/tests/unit/security-storage.test.ts
+- **说明**：Anthropic Claude API 密钥。
 
 ```text
-ANTHROPIC_API_KEY: 'sk-ant-childkeyvalue123',
+const ANTHROPIC_KEY = 'sk-ant-api03-ZyXwVuTsRqPoNmLkJiHgFeDcBa9876543210'
 ```
 
-### 3. [MEDIUM] Generic API key assignment
+### 2. [LOW] AWS Access Key ID
 
-- **仓库**：`atomantic/PortOS`
-- **文件**：`autofixer/sandbox.test.js`（第 79 行）
-- **密钥（已脱敏）**：`oauth-...-123`
-- **链接**：https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-CLAUDE_CODE_OAUTH_TOKEN: 'oauth-secret-value-123',
-```
-
-### 4. [MEDIUM] AWS Access Key ID
-
-- **仓库**：`atomantic/PortOS`
-- **文件**：`autofixer/sandbox.test.js`（第 258 行）
-- **密钥（已脱敏）**：`AKIAOL...0000`
-- **链接**：https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js
+- **仓库**：`manhquydev/flow-skill`
+- **文件**：`plans/260618-usage-log-feature/cards/C-001.md`（第 51 行）
+- **密钥（已脱敏）**：`AKIA12...ALUE`
+- **链接**：https://github.com/manhquydev/flow-skill/blob/master/plans/260618-usage-log-feature/cards/C-001.md
 - **说明**：AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。
 
 ```text
--const old = "AKIAOLDKEY0000000000"
-```
-
-### 5. [MEDIUM] AWS Access Key ID
-
-- **仓库**：`atomantic/PortOS`
-- **文件**：`autofixer/sandbox.test.js`（第 259 行）
-- **密钥（已脱敏）**：`AKIACO...0000`
-- **链接**：https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js
-- **说明**：AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。
-
-```text
-context AKIACONTEXT000000000
+**3. Masking — `harness --summary "api_key=AKIA12345SECRETVALUE"`:** written `args` field = `***redacted***`; leak check `'AKIA12345' in args` → False.
 ```
 
 ## 处置建议

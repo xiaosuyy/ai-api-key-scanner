@@ -1,82 +1,47 @@
 {
   "summary": {
-    "generated_at": "2026-10-14 07:05:55 UTC",
+    "generated_at": "2026-10-15 06:56:20 UTC",
     "repos_scanned": 20,
-    "files_scanned": 3765,
-    "total_findings": 5,
+    "files_scanned": 2288,
+    "total_findings": 2,
     "by_confidence": {
-      "medium": 5
+      "high": 1,
+      "low": 1
     },
     "by_pattern": {
-      "Generic API key assignment": 3,
-      "AWS Access Key ID": 2
+      "Anthropic API Key": 1,
+      "AWS Access Key ID": 1
     },
     "by_repo": {
-      "ai-zen/agents": 1,
-      "atomantic/PortOS": 4
+      "joker7866/kishore-social-studio": 1,
+      "manhquydev/flow-skill": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-inv...2345",
-      "confidence": "medium",
-      "repo": "ai-zen/agents",
-      "file_path": "packages/core/src/integration.test.ts",
-      "file_url": "https://github.com/ai-zen/agents/blob/main/packages/core/src/integration.test.ts",
-      "line_number": 456,
-      "line_content": "apiKey: \"sk-invalid-key-12345\",",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "17945d955706d91e"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-ant...e123",
-      "confidence": "medium",
-      "repo": "atomantic/PortOS",
-      "file_path": "autofixer/sandbox.test.js",
-      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
-      "line_number": 78,
-      "line_content": "ANTHROPIC_API_KEY: 'sk-ant-childkeyvalue123',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "1975295ec9c217c1"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "oauth-...-123",
-      "confidence": "medium",
-      "repo": "atomantic/PortOS",
-      "file_path": "autofixer/sandbox.test.js",
-      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
-      "line_number": 79,
-      "line_content": "CLAUDE_CODE_OAUTH_TOKEN: 'oauth-secret-value-123',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "7ba0ee076d6fe994"
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...3210",
+      "confidence": "high",
+      "repo": "joker7866/kishore-social-studio",
+      "file_path": "tests/unit/security-storage.test.ts",
+      "file_url": "https://github.com/joker7866/kishore-social-studio/blob/main/tests/unit/security-storage.test.ts",
+      "line_number": 19,
+      "line_content": "const ANTHROPIC_KEY = 'sk-ant-api03-ZyXwVuTsRqPoNmLkJiHgFeDcBa9876543210'",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "f11336f29a088424"
     },
     {
       "pattern_name": "AWS Access Key ID",
-      "value_masked": "AKIAOL...0000",
-      "confidence": "medium",
-      "repo": "atomantic/PortOS",
-      "file_path": "autofixer/sandbox.test.js",
-      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
-      "line_number": 258,
-      "line_content": "-const old = \"AKIAOLDKEY0000000000\"",
+      "value_masked": "AKIA12...ALUE",
+      "confidence": "low",
+      "repo": "manhquydev/flow-skill",
+      "file_path": "plans/260618-usage-log-feature/cards/C-001.md",
+      "file_url": "https://github.com/manhquydev/flow-skill/blob/master/plans/260618-usage-log-feature/cards/C-001.md",
+      "line_number": 51,
+      "line_content": "**3. Masking — `harness --summary \"api_key=AKIA12345SECRETVALUE\"`:** written `args` field = `***redacted***`; leak check `'AKIA12345' in args` → False.",
       "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
-      "fingerprint": "b90b071d41edad40"
-    },
-    {
-      "pattern_name": "AWS Access Key ID",
-      "value_masked": "AKIACO...0000",
-      "confidence": "medium",
-      "repo": "atomantic/PortOS",
-      "file_path": "autofixer/sandbox.test.js",
-      "file_url": "https://github.com/atomantic/PortOS/blob/main/autofixer/sandbox.test.js",
-      "line_number": 259,
-      "line_content": "context AKIACONTEXT000000000",
-      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
-      "fingerprint": "349b45b6bc365a17"
+      "fingerprint": "9b2224b13434f94d"
     }
   ]
 }
