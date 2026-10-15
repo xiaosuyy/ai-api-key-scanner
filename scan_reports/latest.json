@@ -1,47 +1,98 @@
 {
   "summary": {
-    "generated_at": "2026-10-15 06:56:20 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 2288,
-    "total_findings": 2,
+    "generated_at": "2026-10-15 07:19:14 UTC",
+    "repos_scanned": 48,
+    "files_scanned": 7342,
+    "total_findings": 6,
     "by_confidence": {
-      "high": 1,
-      "low": 1
+      "medium": 4,
+      "high": 2
     },
     "by_pattern": {
-      "Anthropic API Key": 1,
-      "AWS Access Key ID": 1
+      "Generic API key assignment": 4,
+      "Google Gemini / GCP API Key": 2
     },
     "by_repo": {
-      "joker7866/kishore-social-studio": 1,
-      "manhquydev/flow-skill": 1
+      "SmokeyS30/orbit-buddy": 1,
+      "i098/sanctum": 1,
+      "HelpCode-ai/anythingmcp": 1,
+      "lucasdilley07-png/Morphe": 2,
+      "dmascord/tusker-gateway": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...3210",
-      "confidence": "high",
-      "repo": "joker7866/kishore-social-studio",
-      "file_path": "tests/unit/security-storage.test.ts",
-      "file_url": "https://github.com/joker7866/kishore-social-studio/blob/main/tests/unit/security-storage.test.ts",
-      "line_number": 19,
-      "line_content": "const ANTHROPIC_KEY = 'sk-ant-api03-ZyXwVuTsRqPoNmLkJiHgFeDcBa9876543210'",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "f11336f29a088424"
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "standa...back",
+      "confidence": "medium",
+      "repo": "SmokeyS30/orbit-buddy",
+      "file_path": "test/tools.test.js",
+      "file_url": "https://github.com/SmokeyS30/orbit-buddy/blob/main/test/tools.test.js",
+      "line_number": 242,
+      "line_content": "OPENAI_API_KEY: 'standard-key-kept-for-rollback',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "f4200e0953567fb1"
     },
     {
-      "pattern_name": "AWS Access Key ID",
-      "value_masked": "AKIA12...ALUE",
-      "confidence": "low",
-      "repo": "manhquydev/flow-skill",
-      "file_path": "plans/260618-usage-log-feature/cards/C-001.md",
-      "file_url": "https://github.com/manhquydev/flow-skill/blob/master/plans/260618-usage-log-feature/cards/C-001.md",
-      "line_number": 51,
-      "line_content": "**3. Masking — `harness --summary \"api_key=AKIA12345SECRETVALUE\"`:** written `args` field = `***redacted***`; leak check `'AKIA12345' in args` → False.",
-      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
-      "fingerprint": "9b2224b13434f94d"
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "i098/sanctum",
+      "file_path": "server/tests/spoken-work.test.ts",
+      "file_url": "https://github.com/i098/sanctum/blob/main/server/tests/spoken-work.test.ts",
+      "line_number": 21,
+      "line_content": "CEREBRAS_API_KEY: 'synthetic-cerebras-key',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ba5957bab79609fb"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sentin...2345",
+      "confidence": "medium",
+      "repo": "HelpCode-ai/anythingmcp",
+      "file_path": "packages/backend/src/adapters/de/weclapp.live.spec.ts",
+      "file_url": "https://github.com/HelpCode-ai/anythingmcp/blob/main/packages/backend/src/adapters/de/weclapp.live.spec.ts",
+      "line_number": 101,
+      "line_content": "authConfig: { headerName: 'AuthenticationToken', apiKey: 'sentinel-token-12345' },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "083e85c805c68ac1"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...IkhQ",
+      "confidence": "high",
+      "repo": "lucasdilley07-png/Morphe",
+      "file_path": "docs/coach.html",
+      "file_url": "https://github.com/lucasdilley07-png/Morphe/blob/main/docs/coach.html",
+      "line_number": 133,
+      "line_content": "var FIREBASE_WEB_API_KEY = \"AIzaSyAcP1XXWajPFhC13b8UfiRh1XhZdrlIkhQ\";",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "086c6eada83ce01b"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...IkhQ",
+      "confidence": "high",
+      "repo": "lucasdilley07-png/Morphe",
+      "file_path": "docs/index.html",
+      "file_url": "https://github.com/lucasdilley07-png/Morphe/blob/main/docs/index.html",
+      "line_number": 561,
+      "line_content": "var KEY = \"AIzaSyAcP1XXWajPFhC13b8UfiRh1XhZdrlIkhQ\", PROJECT = \"morphe-3c5c2\";",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "316b4373c2efedfa"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-exp...ride",
+      "confidence": "medium",
+      "repo": "dmascord/tusker-gateway",
+      "file_path": "tests/test_passthrough_providers.py",
+      "file_url": "https://github.com/dmascord/tusker-gateway/blob/main/tests/test_passthrough_providers.py",
+      "line_number": 251,
+      "line_content": "stream=False, api_key=\"sk-explicit-override\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c32d0eb6343c74b6"
     }
   ]
 }
