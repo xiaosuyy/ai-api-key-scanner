@@ -3,90 +3,198 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-15 07:19:14 UTC |
-| 扫描仓库数 | 48 |
-| 扫描文件数 | 7342 |
-| 发现数量 | 6 |
+| 生成时间 | 2026-10-16 06:44:18 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 3520 |
+| 发现数量 | 15 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| HIGH | 2 |
-| MEDIUM | 4 |
+| HIGH | 1 |
+| MEDIUM | 14 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`SmokeyS30/orbit-buddy`
-- **文件**：`test/tools.test.js`（第 242 行）
-- **密钥（已脱敏）**：`standa...back`
-- **链接**：https://github.com/SmokeyS30/orbit-buddy/blob/main/test/tools.test.js
+- **仓库**：`circle-platforms/circle`
+- **文件**：`apps/desktop/test/runtime.test.ts`（第 2167 行）
+- **密钥（已脱敏）**：`local-...cret`
+- **链接**：https://github.com/circle-platforms/circle/blob/main/apps/desktop/test/runtime.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-OPENAI_API_KEY: 'standard-key-kept-for-rollback',
+apiKey: 'local-fixture-secret',
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`i098/sanctum`
-- **文件**：`server/tests/spoken-work.test.ts`（第 21 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/i098/sanctum/blob/main/server/tests/spoken-work.test.ts
+- **仓库**：`circle-platforms/circle`
+- **文件**：`apps/desktop/test/runtime.test.ts`（第 4622 行）
+- **密钥（已脱敏）**：`synthe...only`
+- **链接**：https://github.com/circle-platforms/circle/blob/main/apps/desktop/test/runtime.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-CEREBRAS_API_KEY: 'synthetic-cerebras-key',
+apiKey: 'synthetic-local-only',
 ```
 
 ### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`HelpCode-ai/anythingmcp`
-- **文件**：`packages/backend/src/adapters/de/weclapp.live.spec.ts`（第 101 行）
-- **密钥（已脱敏）**：`sentin...2345`
-- **链接**：https://github.com/HelpCode-ai/anythingmcp/blob/main/packages/backend/src/adapters/de/weclapp.live.spec.ts
+- **仓库**：`circle-platforms/circle`
+- **文件**：`scripts/verify-tui-sessions.ts`（第 69 行）
+- **密钥（已脱敏）**：`synthe...only`
+- **链接**：https://github.com/circle-platforms/circle/blob/main/scripts/verify-tui-sessions.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-authConfig: { headerName: 'AuthenticationToken', apiKey: 'sentinel-token-12345' },
+saveCredentials({ api_key: 'synthetic-local-only' }, home);
 ```
 
-### 4. [HIGH] Google Gemini / GCP API Key
+### 4. [MEDIUM] Generic API key assignment
 
-- **仓库**：`lucasdilley07-png/Morphe`
-- **文件**：`docs/coach.html`（第 133 行）
-- **密钥（已脱敏）**：`AIzaSy...IkhQ`
-- **链接**：https://github.com/lucasdilley07-png/Morphe/blob/main/docs/coach.html
-- **说明**：Google API 密钥（Gemini、Vertex、Maps 等）。
+- **仓库**：`sssstwee/switch-plus-plus`
+- **文件**：`src/appConstants.ts`（第 107 行）
+- **密钥（已脱敏）**：`agent-...eway`
+- **链接**：https://github.com/sssstwee/switch-plus-plus/blob/main/src/appConstants.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-var FIREBASE_WEB_API_KEY = "AIzaSyAcP1XXWajPFhC13b8UfiRh1XhZdrlIkhQ";
+export const CLAUDE_CLI_LOCAL_GATEWAY_AUTH_TOKEN = "agent-switch-local-gateway";
 ```
 
-### 5. [HIGH] Google Gemini / GCP API Key
+### 5. [MEDIUM] Generic API key assignment
 
-- **仓库**：`lucasdilley07-png/Morphe`
-- **文件**：`docs/index.html`（第 561 行）
-- **密钥（已脱敏）**：`AIzaSy...IkhQ`
-- **链接**：https://github.com/lucasdilley07-png/Morphe/blob/main/docs/index.html
-- **说明**：Google API 密钥（Gemini、Vertex、Maps 等）。
+- **仓库**：`sssstwee/switch-plus-plus`
+- **文件**：`src/appConstants.ts`（第 108 行）
+- **密钥（已脱敏）**：`agent-...eway`
+- **链接**：https://github.com/sssstwee/switch-plus-plus/blob/main/src/appConstants.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-var KEY = "AIzaSyAcP1XXWajPFhC13b8UfiRh1XhZdrlIkhQ", PROJECT = "morphe-3c5c2";
+export const CODEX_LOCAL_GATEWAY_AUTH_TOKEN = "agent-switch-local-gateway";
 ```
 
 ### 6. [MEDIUM] Generic API key assignment
 
-- **仓库**：`dmascord/tusker-gateway`
-- **文件**：`tests/test_passthrough_providers.py`（第 251 行）
-- **密钥（已脱敏）**：`sk-exp...ride`
-- **链接**：https://github.com/dmascord/tusker-gateway/blob/main/tests/test_passthrough_providers.py
+- **仓库**：`sssstwee/switch-plus-plus`
+- **文件**：`src/profileDisplayUtils.ts`（第 20 行）
+- **密钥（已脱敏）**：`ANTHRO...OKEN`
+- **链接**：https://github.com/sssstwee/switch-plus-plus/blob/main/src/profileDisplayUtils.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-stream=False, api_key="sk-explicit-override",
+ANTHROPIC_AUTH_TOKEN: "ANTHROPIC_AUTH_TOKEN",
+```
+
+### 7. [MEDIUM] Generic API key assignment
+
+- **仓库**：`sssstwee/switch-plus-plus`
+- **文件**：`src/subscriptionProxyConfig.test.ts`（第 36 行）
+- **密钥（已脱敏）**：`agent-...eway`
+- **链接**：https://github.com/sssstwee/switch-plus-plus/blob/main/src/subscriptionProxyConfig.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+gateway_api_key: "agent-switch-local-gateway",
+```
+
+### 8. [MEDIUM] Generic API key assignment
+
+- **仓库**：`loopengine-co/loopengine`
+- **文件**：`tests/deepseek-model-call.test.ts`（第 37 行）
+- **密钥（已脱敏）**：`sk-ope...seek`
+- **链接**：https://github.com/loopengine-co/loopengine/blob/main/tests/deepseek-model-call.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-deepseek'
+```
+
+### 9. [MEDIUM] Generic API key assignment
+
+- **仓库**：`loopengine-co/loopengine`
+- **文件**：`tests/gemini-model-call.test.ts`（第 40 行）
+- **密钥（已脱敏）**：`sk-ope...mini`
+- **链接**：https://github.com/loopengine-co/loopengine/blob/main/tests/gemini-model-call.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-gemini'
+```
+
+### 10. [MEDIUM] Generic API key assignment
+
+- **仓库**：`loopengine-co/loopengine`
+- **文件**：`tests/glm-model-call.test.ts`（第 37 行）
+- **密钥（已脱敏）**：`sk-ope...-glm`
+- **链接**：https://github.com/loopengine-co/loopengine/blob/main/tests/glm-model-call.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-glm'
+```
+
+### 11. [MEDIUM] Generic API key assignment
+
+- **仓库**：`loopengine-co/loopengine`
+- **文件**：`tests/kimi-model-call.test.ts`（第 37 行）
+- **密钥（已脱敏）**：`sk-ope...kimi`
+- **链接**：https://github.com/loopengine-co/loopengine/blob/main/tests/kimi-model-call.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-kimi'
+```
+
+### 12. [MEDIUM] Generic API key assignment
+
+- **仓库**：`loopengine-co/loopengine`
+- **文件**：`tests/model-key-rebuild.test.ts`（第 14 行）
+- **密钥（已脱敏）**：`sk-sec...6789`
+- **链接**：https://github.com/loopengine-co/loopengine/blob/main/tests/model-key-rebuild.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+process.env.OPENAI_API_KEY = 'sk-second-0123456789'
+```
+
+### 13. [MEDIUM] Generic API key assignment
+
+- **仓库**：`loopengine-co/loopengine`
+- **文件**：`tests/model-key-rebuild.test.ts`（第 21 行）
+- **密钥（已脱敏）**：`sk-con...6789`
+- **链接**：https://github.com/loopengine-co/loopengine/blob/main/tests/model-key-rebuild.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+const create = await synthesizeCreateModelCall({ provider: 'openai', model: 'gpt-test', apiKey: 'sk-config-0123456789' })
+```
+
+### 14. [HIGH] Google Gemini / GCP API Key
+
+- **仓库**：`lavkeshdwivedi/geo-pulse`
+- **文件**：`mobile/android/app/google-services.json`（第 18 行）
+- **密钥（已脱敏）**：`AIzaSy...jVvM`
+- **链接**：https://github.com/lavkeshdwivedi/geo-pulse/blob/main/mobile/android/app/google-services.json
+- **说明**：Google API 密钥（Gemini、Vertex、Maps 等）。
+
+```text
+"current_key": "AIzaSyCIs2f4OULthJrLl2LFlbYUPCOm4GAjVvM"
+```
+
+### 15. [MEDIUM] Google OAuth Client Secret
+
+- **仓库**：`starfall-org/multigateway`
+- **文件**：`app/src/main/java/org/starfall/multigateway/data/adapter/antigravity/AntigravityAdapter.kt`（第 21 行）
+- **密钥（已脱敏）**：`GOCSPX...qDAf`
+- **链接**：https://github.com/starfall-org/multigateway/blob/main/app/src/main/java/org/starfall/multigateway/data/adapter/antigravity/AntigravityAdapter.kt
+- **说明**：Google OAuth 客户端密钥。
+
+```text
+51121, "/oauth-callback", "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",
 ```
 
 ## 处置建议

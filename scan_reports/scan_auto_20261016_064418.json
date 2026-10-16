@@ -1,0 +1,207 @@
+{
+  "summary": {
+    "generated_at": "2026-10-16 06:44:18 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3520,
+    "total_findings": 15,
+    "by_confidence": {
+      "medium": 14,
+      "high": 1
+    },
+    "by_pattern": {
+      "Generic API key assignment": 13,
+      "Google Gemini / GCP API Key": 1,
+      "Google OAuth Client Secret": 1
+    },
+    "by_repo": {
+      "circle-platforms/circle": 3,
+      "sssstwee/switch-plus-plus": 4,
+      "loopengine-co/loopengine": 6,
+      "lavkeshdwivedi/geo-pulse": 1,
+      "starfall-org/multigateway": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "local-...cret",
+      "confidence": "medium",
+      "repo": "circle-platforms/circle",
+      "file_path": "apps/desktop/test/runtime.test.ts",
+      "file_url": "https://github.com/circle-platforms/circle/blob/main/apps/desktop/test/runtime.test.ts",
+      "line_number": 2167,
+      "line_content": "apiKey: 'local-fixture-secret',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "a2d8b37c9480e33e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...only",
+      "confidence": "medium",
+      "repo": "circle-platforms/circle",
+      "file_path": "apps/desktop/test/runtime.test.ts",
+      "file_url": "https://github.com/circle-platforms/circle/blob/main/apps/desktop/test/runtime.test.ts",
+      "line_number": 4622,
+      "line_content": "apiKey: 'synthetic-local-only',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1b0c00f52aedf316"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...only",
+      "confidence": "medium",
+      "repo": "circle-platforms/circle",
+      "file_path": "scripts/verify-tui-sessions.ts",
+      "file_url": "https://github.com/circle-platforms/circle/blob/main/scripts/verify-tui-sessions.ts",
+      "line_number": 69,
+      "line_content": "saveCredentials({ api_key: 'synthetic-local-only' }, home);",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "d40a75850c612d48"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "agent-...eway",
+      "confidence": "medium",
+      "repo": "sssstwee/switch-plus-plus",
+      "file_path": "src/appConstants.ts",
+      "file_url": "https://github.com/sssstwee/switch-plus-plus/blob/main/src/appConstants.ts",
+      "line_number": 107,
+      "line_content": "export const CLAUDE_CLI_LOCAL_GATEWAY_AUTH_TOKEN = \"agent-switch-local-gateway\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "2a9b7f49897f2d0d"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "agent-...eway",
+      "confidence": "medium",
+      "repo": "sssstwee/switch-plus-plus",
+      "file_path": "src/appConstants.ts",
+      "file_url": "https://github.com/sssstwee/switch-plus-plus/blob/main/src/appConstants.ts",
+      "line_number": 108,
+      "line_content": "export const CODEX_LOCAL_GATEWAY_AUTH_TOKEN = \"agent-switch-local-gateway\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "17d335ceb1a690c7"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ANTHRO...OKEN",
+      "confidence": "medium",
+      "repo": "sssstwee/switch-plus-plus",
+      "file_path": "src/profileDisplayUtils.ts",
+      "file_url": "https://github.com/sssstwee/switch-plus-plus/blob/main/src/profileDisplayUtils.ts",
+      "line_number": 20,
+      "line_content": "ANTHROPIC_AUTH_TOKEN: \"ANTHROPIC_AUTH_TOKEN\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "31f56b61a02ee06d"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "agent-...eway",
+      "confidence": "medium",
+      "repo": "sssstwee/switch-plus-plus",
+      "file_path": "src/subscriptionProxyConfig.test.ts",
+      "file_url": "https://github.com/sssstwee/switch-plus-plus/blob/main/src/subscriptionProxyConfig.test.ts",
+      "line_number": 36,
+      "line_content": "gateway_api_key: \"agent-switch-local-gateway\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7efdd9987c9af376"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ope...seek",
+      "confidence": "medium",
+      "repo": "loopengine-co/loopengine",
+      "file_path": "tests/deepseek-model-call.test.ts",
+      "file_url": "https://github.com/loopengine-co/loopengine/blob/main/tests/deepseek-model-call.test.ts",
+      "line_number": 37,
+      "line_content": "process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-deepseek'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "e110aa6d219e5705"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ope...mini",
+      "confidence": "medium",
+      "repo": "loopengine-co/loopengine",
+      "file_path": "tests/gemini-model-call.test.ts",
+      "file_url": "https://github.com/loopengine-co/loopengine/blob/main/tests/gemini-model-call.test.ts",
+      "line_number": 40,
+      "line_content": "process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-gemini'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "81ca7114e4d86a98"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ope...-glm",
+      "confidence": "medium",
+      "repo": "loopengine-co/loopengine",
+      "file_path": "tests/glm-model-call.test.ts",
+      "file_url": "https://github.com/loopengine-co/loopengine/blob/main/tests/glm-model-call.test.ts",
+      "line_number": 37,
+      "line_content": "process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-glm'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "73566e1714fc0097"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ope...kimi",
+      "confidence": "medium",
+      "repo": "loopengine-co/loopengine",
+      "file_path": "tests/kimi-model-call.test.ts",
+      "file_url": "https://github.com/loopengine-co/loopengine/blob/main/tests/kimi-model-call.test.ts",
+      "line_number": 37,
+      "line_content": "process.env.OPENAI_API_KEY = 'sk-openai-should-not-leak-into-kimi'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "0e7b028643e67739"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-sec...6789",
+      "confidence": "medium",
+      "repo": "loopengine-co/loopengine",
+      "file_path": "tests/model-key-rebuild.test.ts",
+      "file_url": "https://github.com/loopengine-co/loopengine/blob/main/tests/model-key-rebuild.test.ts",
+      "line_number": 14,
+      "line_content": "process.env.OPENAI_API_KEY = 'sk-second-0123456789'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "bf3d9f9c1a084133"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-con...6789",
+      "confidence": "medium",
+      "repo": "loopengine-co/loopengine",
+      "file_path": "tests/model-key-rebuild.test.ts",
+      "file_url": "https://github.com/loopengine-co/loopengine/blob/main/tests/model-key-rebuild.test.ts",
+      "line_number": 21,
+      "line_content": "const create = await synthesizeCreateModelCall({ provider: 'openai', model: 'gpt-test', apiKey: 'sk-config-0123456789' })",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "d614c7d9fbda97a3"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...jVvM",
+      "confidence": "high",
+      "repo": "lavkeshdwivedi/geo-pulse",
+      "file_path": "mobile/android/app/google-services.json",
+      "file_url": "https://github.com/lavkeshdwivedi/geo-pulse/blob/main/mobile/android/app/google-services.json",
+      "line_number": 18,
+      "line_content": "\"current_key\": \"AIzaSyCIs2f4OULthJrLl2LFlbYUPCOm4GAjVvM\"",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "a227c1e8cdc10598"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "starfall-org/multigateway",
+      "file_path": "app/src/main/java/org/starfall/multigateway/data/adapter/antigravity/AntigravityAdapter.kt",
+      "file_url": "https://github.com/starfall-org/multigateway/blob/main/app/src/main/java/org/starfall/multigateway/data/adapter/antigravity/AntigravityAdapter.kt",
+      "line_number": 21,
+      "line_content": "51121, \"/oauth-callback\", \"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\",",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "c4a0d43dd7ab7e9c"
+    }
+  ]
+}
