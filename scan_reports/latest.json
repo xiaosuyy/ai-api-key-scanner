@@ -1,32 +1,215 @@
 {
   "summary": {
-    "generated_at": "2026-10-17 06:36:14 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 4296,
-    "total_findings": 1,
+    "generated_at": "2026-10-17 06:59:46 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 7590,
+    "total_findings": 16,
     "by_confidence": {
-      "high": 1
+      "medium": 16
     },
     "by_pattern": {
-      "Anthropic API Key": 1
+      "Generic API key assignment": 16
     },
     "by_repo": {
-      "BerriAI/litellm": 1
+      "SailingLoong/LoongPort": 1,
+      "diegosouzapw/OmniRoute": 1,
+      "whdrnr2583-cmd/koreanpulse": 4,
+      "Raaif-Yousuf/Wingman": 10
     },
     "scan_type": "auto"
   },
   "findings": [
     {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...ider",
-      "confidence": "high",
-      "repo": "BerriAI/litellm",
-      "file_path": ".github/workflows/e2e_record_replay.yml",
-      "file_url": "https://github.com/BerriAI/litellm/blob/main/.github/workflows/e2e_record_replay.yml",
-      "line_number": 146,
-      "line_content": "ANTHROPIC_API_KEY: sk-ant-replay-must-never-reach-a-provider",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "b987f828f9eb6450"
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "long-l...oken",
+      "confidence": "medium",
+      "repo": "SailingLoong/LoongPort",
+      "file_path": "src-tauri/src/commands/relay/login.rs",
+      "file_url": "https://github.com/SailingLoong/LoongPort/blob/main/src-tauri/src/commands/relay/login.rs",
+      "line_number": 2659,
+      "line_content": "access_token: \"long-lived-access-token\".into(),",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "b408f69dc07e71c2"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "key-wr...nfig",
+      "confidence": "medium",
+      "repo": "diegosouzapw/OmniRoute",
+      "file_path": "@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "file_url": "https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.52/@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "line_number": 47,
+      "line_content": "options: { baseURL, providerId: \"warmid\", apiKey: \"key-written-in-the-config\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "8d7498519cc97dc8"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "SUPER_...2345",
+      "confidence": "medium",
+      "repo": "whdrnr2583-cmd/koreanpulse",
+      "file_path": "tests/test_corp_code.py",
+      "file_url": "https://github.com/whdrnr2583-cmd/koreanpulse/blob/main/tests/test_corp_code.py",
+      "line_number": 174,
+      "line_content": "secret_key = \"SUPER_SECRET_DART_KEY_12345\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "5761a948110cc042"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "SUPER_...2345",
+      "confidence": "medium",
+      "repo": "whdrnr2583-cmd/koreanpulse",
+      "file_path": "tests/test_corp_code.py",
+      "file_url": "https://github.com/whdrnr2583-cmd/koreanpulse/blob/main/tests/test_corp_code.py",
+      "line_number": 191,
+      "line_content": "secret_key = \"SUPER_SECRET_DART_KEY_12345\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "abcbda54af50c299"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "SUPER_...9999",
+      "confidence": "medium",
+      "repo": "whdrnr2583-cmd/koreanpulse",
+      "file_path": "tests/test_dart.py",
+      "file_url": "https://github.com/whdrnr2583-cmd/koreanpulse/blob/main/tests/test_dart.py",
+      "line_number": 889,
+      "line_content": "secret_key = \"SUPER_SECRET_DART_KEY_99999\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ef07ee1bfea4bfe2"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "SUPER_...9999",
+      "confidence": "medium",
+      "repo": "whdrnr2583-cmd/koreanpulse",
+      "file_path": "tests/test_dart.py",
+      "file_url": "https://github.com/whdrnr2583-cmd/koreanpulse/blob/main/tests/test_dart.py",
+      "line_number": 907,
+      "line_content": "secret_key = \"SUPER_SECRET_DART_KEY_99999\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7123e243388d4089"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "AIza-r...mini",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 3898,
+      "line_content": "config.providers.gemini.api_key = \"AIza-real-secret-gemini\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c852095b6ad9bc50"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-rea...enai",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 4562,
+      "line_content": "config.providers.openai.api_key = \"sk-real-secret-openai\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "93b8ea1df197743e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ant...opic",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 4563,
+      "line_content": "config.providers.anthropic.api_key = \"sk-ant-real-secret-anthropic\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1c3e5b5de3b05c68"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-rea...alue",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 4590,
+      "line_content": "config.providers.openai.api_key = \"sk-real-secret-value\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c94f7b5c012f273a"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-goe...disk",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 4998,
+      "line_content": "config.providers.openai.api_key = \"sk-goes-straight-to-disk\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "06901ac65a2eddd2"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-sho...disk",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 5212,
+      "line_content": "config.providers.openai.api_key = \"sk-should-never-reach-disk\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1cf201ffb9bdad77"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-sho...disk",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 5230,
+      "line_content": "on_disk.providers.openai.api_key = \"sk-should-not-reach-disk\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "a1096de49635f91a"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-rea...enai",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config.rs",
+      "line_number": 5532,
+      "line_content": "config.providers.openai.api_key = \"sk-real-secret-openai\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3180efb92c219e8d"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-typ...ings",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/config_writer.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/config_writer.rs",
+      "line_number": 1439,
+      "line_content": "after.providers.openai.api_key = \"sk-typed-in-settings\".into();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "4a7536debef4f4c0"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-liv...1234",
+      "confidence": "medium",
+      "repo": "Raaif-Yousuf/Wingman",
+      "file_path": "src/ui/settings.rs",
+      "file_url": "https://github.com/Raaif-Yousuf/Wingman/blob/master/src/ui/settings.rs",
+      "line_number": 8953,
+      "line_content": "config.providers.openai.api_key = \"sk-live-secret-should-not-appear-1234\".to_string();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "30872b49b9672c1d"
     }
   ]
 }
