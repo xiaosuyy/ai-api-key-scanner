@@ -167,6 +167,13 @@
       "total_findings": 8,
       "new_findings": 3,
       "repos_scanned": 47
+    },
+    {
+      "timestamp": "2026-10-17 06:36:14 UTC",
+      "scan_type": "auto",
+      "total_findings": 1,
+      "new_findings": 1,
+      "repos_scanned": 20
     }
   ],
   "known_fingerprints": [
@@ -302,6 +309,7 @@
     "b79c35e18df42419",
     "b8123151d7541937",
     "b90b071d41edad40",
+    "b987f828f9eb6450",
     "ba007a8e51dd026a",
     "ba5957bab79609fb",
     "bba1b0ebdf5c4436",

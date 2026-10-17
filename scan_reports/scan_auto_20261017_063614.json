@@ -1,0 +1,32 @@
+{
+  "summary": {
+    "generated_at": "2026-10-17 06:36:14 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 4296,
+    "total_findings": 1,
+    "by_confidence": {
+      "high": 1
+    },
+    "by_pattern": {
+      "Anthropic API Key": 1
+    },
+    "by_repo": {
+      "BerriAI/litellm": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...ider",
+      "confidence": "high",
+      "repo": "BerriAI/litellm",
+      "file_path": ".github/workflows/e2e_record_replay.yml",
+      "file_url": "https://github.com/BerriAI/litellm/blob/main/.github/workflows/e2e_record_replay.yml",
+      "line_number": 146,
+      "line_content": "ANTHROPIC_API_KEY: sk-ant-replay-must-never-reach-a-provider",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "b987f828f9eb6450"
+    }
+  ]
+}
