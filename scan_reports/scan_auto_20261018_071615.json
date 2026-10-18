@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "generated_at": "2026-10-18 07:16:15 UTC",
+    "repos_scanned": 48,
+    "files_scanned": 5561,
+    "total_findings": 2,
+    "by_confidence": {
+      "medium": 2
+    },
+    "by_pattern": {
+      "Generic API key assignment": 2
+    },
+    "by_repo": {
+      "jimoto-no-llm/rustdsh": 1,
+      "YeshayaYaoz/hair_salon_whatsapp_bot": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "rdsh-l...-key",
+      "confidence": "medium",
+      "repo": "jimoto-no-llm/rustdsh",
+      "file_path": "docker/searxng/settings.yml",
+      "file_url": "https://github.com/jimoto-no-llm/rustdsh/blob/main/docker/searxng/settings.yml",
+      "line_number": 19,
+      "line_content": "secret_key: \"rdsh-local-searxng-change-this-secret-key\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "d247e21fdded0a3e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "previe...-key",
+      "confidence": "medium",
+      "repo": "YeshayaYaoz/hair_salon_whatsapp_bot",
+      "file_path": "backend/scripts/preview-emails.ts",
+      "file_url": "https://github.com/YeshayaYaoz/hair_salon_whatsapp_bot/blob/claude/upload-v5aw7a/backend/scripts/preview-emails.ts",
+      "line_number": 44,
+      "line_content": "process.env.RESEND_API_KEY = \"preview-only-not-a-real-key\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "f6dd2cb96820a3ba"
+    }
+  ]
+}

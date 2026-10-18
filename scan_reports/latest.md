@@ -3,53 +3,41 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-18 06:55:29 UTC |
-| 扫描仓库数 | 20 |
-| 扫描文件数 | 2409 |
-| 发现数量 | 3 |
+| 生成时间 | 2026-10-18 07:16:15 UTC |
+| 扫描仓库数 | 48 |
+| 扫描文件数 | 5561 |
+| 发现数量 | 2 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 3 |
+| MEDIUM | 2 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DeliciousBuding/metapi-go`
-- **文件**：`config/defaults.go`（第 7 行）
-- **密钥（已脱敏）**：`change...oken`
-- **链接**：https://github.com/DeliciousBuding/metapi-go/blob/master/config/defaults.go
+- **仓库**：`jimoto-no-llm/rustdsh`
+- **文件**：`docker/searxng/settings.yml`（第 19 行）
+- **密钥（已脱敏）**：`rdsh-l...-key`
+- **链接**：https://github.com/jimoto-no-llm/rustdsh/blob/main/docker/searxng/settings.yml
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-DefaultAuthToken             = "change-me-admin-token"
+secret_key: "rdsh-local-searxng-change-this-secret-key"
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DeliciousBuding/metapi-go`
-- **文件**：`handler/admin/accounts_test.go`（第 1312 行）
-- **密钥（已脱敏）**：`new-se...-xyz`
-- **链接**：https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/accounts_test.go
+- **仓库**：`YeshayaYaoz/hair_salon_whatsapp_bot`
+- **文件**：`backend/scripts/preview-emails.ts`（第 44 行）
+- **密钥（已脱敏）**：`previe...-key`
+- **链接**：https://github.com/YeshayaYaoz/hair_salon_whatsapp_bot/blob/claude/upload-v5aw7a/backend/scripts/preview-emails.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-t.Errorf("expected accessToken='new-session-token-xyz', got %q", accessToken)
-```
-
-### 3. [MEDIUM] Generic API key assignment
-
-- **仓库**：`DeliciousBuding/metapi-go`
-- **文件**：`handler/admin/auth_settings_test.go`（第 27 行）
-- **密钥（已脱敏）**：`admin-...oken`
-- **链接**：https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/auth_settings_test.go
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-config.SetRuntime(&config.RuntimeSettings{AuthToken: "admin-auth-settings-token"})
+process.env.RESEND_API_KEY = "preview-only-not-a-real-key";
 ```
 
 ## 处置建议
