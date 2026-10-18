@@ -1,0 +1,56 @@
+{
+  "summary": {
+    "generated_at": "2026-10-18 06:55:29 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 2409,
+    "total_findings": 3,
+    "by_confidence": {
+      "medium": 3
+    },
+    "by_pattern": {
+      "Generic API key assignment": 3
+    },
+    "by_repo": {
+      "DeliciousBuding/metapi-go": 3
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "change...oken",
+      "confidence": "medium",
+      "repo": "DeliciousBuding/metapi-go",
+      "file_path": "config/defaults.go",
+      "file_url": "https://github.com/DeliciousBuding/metapi-go/blob/master/config/defaults.go",
+      "line_number": 7,
+      "line_content": "DefaultAuthToken             = \"change-me-admin-token\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "757a28587bea86c6"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "new-se...-xyz",
+      "confidence": "medium",
+      "repo": "DeliciousBuding/metapi-go",
+      "file_path": "handler/admin/accounts_test.go",
+      "file_url": "https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/accounts_test.go",
+      "line_number": 1312,
+      "line_content": "t.Errorf(\"expected accessToken='new-session-token-xyz', got %q\", accessToken)",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "2f605d3a29ad6560"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "admin-...oken",
+      "confidence": "medium",
+      "repo": "DeliciousBuding/metapi-go",
+      "file_path": "handler/admin/auth_settings_test.go",
+      "file_url": "https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/auth_settings_test.go",
+      "line_number": 27,
+      "line_content": "config.SetRuntime(&config.RuntimeSettings{AuthToken: \"admin-auth-settings-token\"})",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "04d8289bdeec2b24"
+    }
+  ]
+}
