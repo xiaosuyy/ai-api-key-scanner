@@ -1,0 +1,143 @@
+{
+  "summary": {
+    "generated_at": "2026-10-19 07:49:14 UTC",
+    "repos_scanned": 49,
+    "files_scanned": 10797,
+    "total_findings": 10,
+    "by_confidence": {
+      "medium": 10
+    },
+    "by_pattern": {
+      "Generic API key assignment": 10
+    },
+    "by_repo": {
+      "openai/codex-security": 4,
+      "diegosouzapw/OmniRoute": 1,
+      "tbphp/gpt-load": 1,
+      "YosefHayim/ebay-mcp": 4
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...uter",
+      "confidence": "medium",
+      "repo": "openai/codex-security",
+      "file_path": "github-action/tests/main.test.ts",
+      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/main.test.ts",
+      "line_number": 270,
+      "line_content": "Object.assign(process.env, {OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7cc7dd5818d87a7b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...uter",
+      "confidence": "medium",
+      "repo": "openai/codex-security",
+      "file_path": "github-action/tests/runtime.test.ts",
+      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts",
+      "line_number": 282,
+      "line_content": "OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "6adc9f4fa3166e8a"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "change...ture",
+      "confidence": "medium",
+      "repo": "openai/codex-security",
+      "file_path": "github-action/tests/runtime.test.ts",
+      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts",
+      "line_number": 286,
+      "line_content": "source.OPENROUTER_API_KEY = source.FIREWORKS_API_KEY = 'changed-after-capture';",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "89facc94c5afaeab"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "openai/codex-security",
+      "file_path": "plugins/codex-security/mcp-app/tests/test_deep_scan_executor.ts",
+      "file_url": "https://github.com/openai/codex-security/blob/main/plugins/codex-security/mcp-app/tests/test_deep_scan_executor.ts",
+      "line_number": 2436,
+      "line_content": "process.env.CODEX_API_KEY = \"synthetic-worker-api-key\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "6716221b1b48f2d8"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "key-wr...nfig",
+      "confidence": "medium",
+      "repo": "diegosouzapw/OmniRoute",
+      "file_path": "@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "file_url": "https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.52/@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "line_number": 47,
+      "line_content": "options: { baseURL, providerId: \"warmid\", apiKey: \"key-written-in-the-config\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "8d7498519cc97dc8"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "route-...cess",
+      "confidence": "medium",
+      "repo": "tbphp/gpt-load",
+      "file_path": "internal/control/discover_group_test.go",
+      "file_url": "https://github.com/tbphp/gpt-load/blob/main/internal/control/discover_group_test.go",
+      "line_number": 566,
+      "line_content": "credential.AccessToken = \"route-refreshed-access\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "2807f03ecaf4857b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "integr...oken",
+      "confidence": "medium",
+      "repo": "YosefHayim/ebay-mcp",
+      "file_path": "tests/integration/authTokenPersistence.test.ts",
+      "file_url": "https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts",
+      "line_number": 45,
+      "line_content": "access_token: 'integration_access_token',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "41e74a1a337474e9"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "integr...oken",
+      "confidence": "medium",
+      "repo": "YosefHayim/ebay-mcp",
+      "file_path": "tests/integration/authTokenPersistence.test.ts",
+      "file_url": "https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts",
+      "line_number": 55,
+      "line_content": "access_token: 'integration_app_token',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "b1b0858bfd1fdc7d"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "integr...oken",
+      "confidence": "medium",
+      "repo": "YosefHayim/ebay-mcp",
+      "file_path": "tests/integration/authTokenPersistence.test.ts",
+      "file_url": "https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts",
+      "line_number": 64,
+      "line_content": "EBAY_USER_ACCESS_TOKEN: 'integration_access_token',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "e53f401069cea683"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "integr...oken",
+      "confidence": "medium",
+      "repo": "YosefHayim/ebay-mcp",
+      "file_path": "tests/integration/authTokenPersistence.test.ts",
+      "file_url": "https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts",
+      "line_number": 66,
+      "line_content": "EBAY_APP_ACCESS_TOKEN: 'integration_app_token',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "254354830734f1d6"
+    }
+  ]
+}
