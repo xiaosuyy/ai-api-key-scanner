@@ -3,41 +3,42 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-18 07:16:15 UTC |
-| 扫描仓库数 | 48 |
-| 扫描文件数 | 5561 |
+| 生成时间 | 2026-10-19 07:13:58 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 3623 |
 | 发现数量 | 2 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 2 |
+| HIGH | 1 |
+| MEDIUM | 1 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`jimoto-no-llm/rustdsh`
-- **文件**：`docker/searxng/settings.yml`（第 19 行）
-- **密钥（已脱敏）**：`rdsh-l...-key`
-- **链接**：https://github.com/jimoto-no-llm/rustdsh/blob/main/docker/searxng/settings.yml
+- **仓库**：`langchain4j/langchain4j`
+- **文件**：`docs/docs/integrations/embedding-stores/elasticsearch.md`（第 36 行）
+- **密钥（已脱敏）**：`VnVhQ2...U...`
+- **链接**：https://github.com/langchain4j/langchain4j/blob/main/docs/docs/integrations/embedding-stores/elasticsearch.md
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-secret_key: "rdsh-local-searxng-change-this-secret-key"
+String apiKey = "VnVhQ2ZHY0JDZGJrU...";
 ```
 
-### 2. [MEDIUM] Generic API key assignment
+### 2. [HIGH] Anthropic API Key
 
-- **仓库**：`YeshayaYaoz/hair_salon_whatsapp_bot`
-- **文件**：`backend/scripts/preview-emails.ts`（第 44 行）
-- **密钥（已脱敏）**：`previe...-key`
-- **链接**：https://github.com/YeshayaYaoz/hair_salon_whatsapp_bot/blob/claude/upload-v5aw7a/backend/scripts/preview-emails.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
+- **仓库**：`Sinity/polylogue`
+- **文件**：`crates/render/src/tests.rs`（第 34 行）
+- **密钥（已脱敏）**：`sk-ant...AAAA`
+- **链接**：https://github.com/Sinity/polylogue/blob/master/crates/render/src/tests.rs
+- **说明**：Anthropic Claude API 密钥。
 
 ```text
-process.env.RESEND_API_KEY = "preview-only-not-a-real-key";
+text: "run the tests; token sk-ant-api03-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-AAAAAAAA".into(),
 ```
 
 ## 处置建议

@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "generated_at": "2026-10-19 07:13:58 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3623,
+    "total_findings": 2,
+    "by_confidence": {
+      "medium": 1,
+      "high": 1
+    },
+    "by_pattern": {
+      "Generic API key assignment": 1,
+      "Anthropic API Key": 1
+    },
+    "by_repo": {
+      "langchain4j/langchain4j": 1,
+      "Sinity/polylogue": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "VnVhQ2...U...",
+      "confidence": "medium",
+      "repo": "langchain4j/langchain4j",
+      "file_path": "docs/docs/integrations/embedding-stores/elasticsearch.md",
+      "file_url": "https://github.com/langchain4j/langchain4j/blob/main/docs/docs/integrations/embedding-stores/elasticsearch.md",
+      "line_number": 36,
+      "line_content": "String apiKey = \"VnVhQ2ZHY0JDZGJrU...\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "23d555f263ed3dec"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...AAAA",
+      "confidence": "high",
+      "repo": "Sinity/polylogue",
+      "file_path": "crates/render/src/tests.rs",
+      "file_url": "https://github.com/Sinity/polylogue/blob/master/crates/render/src/tests.rs",
+      "line_number": 34,
+      "line_content": "text: \"run the tests; token sk-ant-api03-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-AAAAAAAA\".into(),",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "881b5b1995c8c6b1"
+    }
+  ]
+}
