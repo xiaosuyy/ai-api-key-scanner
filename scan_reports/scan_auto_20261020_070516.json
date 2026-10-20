@@ -1,0 +1,57 @@
+{
+  "summary": {
+    "generated_at": "2026-10-20 07:05:16 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 4129,
+    "total_findings": 3,
+    "by_confidence": {
+      "medium": 3
+    },
+    "by_pattern": {
+      "Generic API key assignment": 3
+    },
+    "by_repo": {
+      "reefbarman/agentlink": 2,
+      "computer-mcp/computer-mcp": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ghu_re...6789",
+      "confidence": "medium",
+      "repo": "reefbarman/agentlink",
+      "file_path": "apps/server/src/publisher.test.ts",
+      "file_url": "https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts",
+      "line_number": 141,
+      "line_content": "accessToken: \"ghu_refreshedtoken0123456789\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "899867fcc04abde0"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ghu_re...6789",
+      "confidence": "medium",
+      "repo": "reefbarman/agentlink",
+      "file_path": "apps/server/src/publisher.test.ts",
+      "file_url": "https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts",
+      "line_number": 522,
+      "line_content": "accessToken: \"ghu_refreshedtoken0123456789\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3533554e9930409b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "genera...oken",
+      "confidence": "medium",
+      "repo": "computer-mcp/computer-mcp",
+      "file_path": "Sources/ComputerMCP/CloudflareTunnel.swift",
+      "file_url": "https://github.com/computer-mcp/computer-mcp/blob/master/Sources/ComputerMCP/CloudflareTunnel.swift",
+      "line_number": 168,
+      "line_content": "case generatedAccessToken = \"generated_access_token\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "90eed783708bb7f0"
+    }
+  ]
+}

@@ -3,137 +3,53 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-19 07:49:14 UTC |
-| 扫描仓库数 | 49 |
-| 扫描文件数 | 10797 |
-| 发现数量 | 10 |
+| 生成时间 | 2026-10-20 07:05:16 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 4129 |
+| 发现数量 | 3 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 10 |
+| MEDIUM | 3 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`openai/codex-security`
-- **文件**：`github-action/tests/main.test.ts`（第 270 行）
-- **密钥（已脱敏）**：`synthe...uter`
-- **链接**：https://github.com/openai/codex-security/blob/main/github-action/tests/main.test.ts
+- **仓库**：`reefbarman/agentlink`
+- **文件**：`apps/server/src/publisher.test.ts`（第 141 行）
+- **密钥（已脱敏）**：`ghu_re...6789`
+- **链接**：https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-Object.assign(process.env, {OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',
+accessToken: "ghu_refreshedtoken0123456789",
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`openai/codex-security`
-- **文件**：`github-action/tests/runtime.test.ts`（第 282 行）
-- **密钥（已脱敏）**：`synthe...uter`
-- **链接**：https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts
+- **仓库**：`reefbarman/agentlink`
+- **文件**：`apps/server/src/publisher.test.ts`（第 522 行）
+- **密钥（已脱敏）**：`ghu_re...6789`
+- **链接**：https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',
+accessToken: "ghu_refreshedtoken0123456789",
 ```
 
 ### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`openai/codex-security`
-- **文件**：`github-action/tests/runtime.test.ts`（第 286 行）
-- **密钥（已脱敏）**：`change...ture`
-- **链接**：https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts
+- **仓库**：`computer-mcp/computer-mcp`
+- **文件**：`Sources/ComputerMCP/CloudflareTunnel.swift`（第 168 行）
+- **密钥（已脱敏）**：`genera...oken`
+- **链接**：https://github.com/computer-mcp/computer-mcp/blob/master/Sources/ComputerMCP/CloudflareTunnel.swift
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-source.OPENROUTER_API_KEY = source.FIREWORKS_API_KEY = 'changed-after-capture';
-```
-
-### 4. [MEDIUM] Generic API key assignment
-
-- **仓库**：`openai/codex-security`
-- **文件**：`plugins/codex-security/mcp-app/tests/test_deep_scan_executor.ts`（第 2436 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/openai/codex-security/blob/main/plugins/codex-security/mcp-app/tests/test_deep_scan_executor.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-process.env.CODEX_API_KEY = "synthetic-worker-api-key";
-```
-
-### 5. [MEDIUM] Generic API key assignment
-
-- **仓库**：`diegosouzapw/OmniRoute`
-- **文件**：`@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts`（第 47 行）
-- **密钥（已脱敏）**：`key-wr...nfig`
-- **链接**：https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.52/@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-options: { baseURL, providerId: "warmid", apiKey: "key-written-in-the-config" },
-```
-
-### 6. [MEDIUM] Generic API key assignment
-
-- **仓库**：`tbphp/gpt-load`
-- **文件**：`internal/control/discover_group_test.go`（第 566 行）
-- **密钥（已脱敏）**：`route-...cess`
-- **链接**：https://github.com/tbphp/gpt-load/blob/main/internal/control/discover_group_test.go
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-credential.AccessToken = "route-refreshed-access"
-```
-
-### 7. [MEDIUM] Generic API key assignment
-
-- **仓库**：`YosefHayim/ebay-mcp`
-- **文件**：`tests/integration/authTokenPersistence.test.ts`（第 45 行）
-- **密钥（已脱敏）**：`integr...oken`
-- **链接**：https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-access_token: 'integration_access_token',
-```
-
-### 8. [MEDIUM] Generic API key assignment
-
-- **仓库**：`YosefHayim/ebay-mcp`
-- **文件**：`tests/integration/authTokenPersistence.test.ts`（第 55 行）
-- **密钥（已脱敏）**：`integr...oken`
-- **链接**：https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-access_token: 'integration_app_token',
-```
-
-### 9. [MEDIUM] Generic API key assignment
-
-- **仓库**：`YosefHayim/ebay-mcp`
-- **文件**：`tests/integration/authTokenPersistence.test.ts`（第 64 行）
-- **密钥（已脱敏）**：`integr...oken`
-- **链接**：https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-EBAY_USER_ACCESS_TOKEN: 'integration_access_token',
-```
-
-### 10. [MEDIUM] Generic API key assignment
-
-- **仓库**：`YosefHayim/ebay-mcp`
-- **文件**：`tests/integration/authTokenPersistence.test.ts`（第 66 行）
-- **密钥（已脱敏）**：`integr...oken`
-- **链接**：https://github.com/YosefHayim/ebay-mcp/blob/main/tests/integration/authTokenPersistence.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-EBAY_APP_ACCESS_TOKEN: 'integration_app_token',
+case generatedAccessToken = "generated_access_token"
 ```
 
 ## 处置建议
