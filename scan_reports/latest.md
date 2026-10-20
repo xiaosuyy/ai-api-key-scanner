@@ -3,53 +3,42 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-20 07:05:16 UTC |
-| 扫描仓库数 | 20 |
-| 扫描文件数 | 4129 |
-| 发现数量 | 3 |
+| 生成时间 | 2026-10-20 07:42:42 UTC |
+| 扫描仓库数 | 50 |
+| 扫描文件数 | 9938 |
+| 发现数量 | 2 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 3 |
+| HIGH | 1 |
+| LOW | 1 |
 
 ## 发现明细
 
-### 1. [MEDIUM] Generic API key assignment
+### 1. [HIGH] Anthropic API Key
 
-- **仓库**：`reefbarman/agentlink`
-- **文件**：`apps/server/src/publisher.test.ts`（第 141 行）
-- **密钥（已脱敏）**：`ghu_re...6789`
-- **链接**：https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
+- **仓库**：`BerriAI/litellm`
+- **文件**：`.github/workflows/e2e_record_replay.yml`（第 146 行）
+- **密钥（已脱敏）**：`sk-ant...ider`
+- **链接**：https://github.com/BerriAI/litellm/blob/main/.github/workflows/e2e_record_replay.yml
+- **说明**：Anthropic Claude API 密钥。
 
 ```text
-accessToken: "ghu_refreshedtoken0123456789",
+ANTHROPIC_API_KEY: sk-ant-replay-must-never-reach-a-provider
 ```
 
-### 2. [MEDIUM] Generic API key assignment
+### 2. [LOW] Generic API key assignment
 
-- **仓库**：`reefbarman/agentlink`
-- **文件**：`apps/server/src/publisher.test.ts`（第 522 行）
-- **密钥（已脱敏）**：`ghu_re...6789`
-- **链接**：https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts
+- **仓库**：`draenger/whisperio`
+- **文件**：`desktop/tests/transcribeKeyStoreConsumer.test.ts`（第 114 行）
+- **密钥（已脱敏）**：`sk-pla...back`
+- **链接**：https://github.com/draenger/whisperio/blob/main/desktop/tests/transcribeKeyStoreConsumer.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-accessToken: "ghu_refreshedtoken0123456789",
-```
-
-### 3. [MEDIUM] Generic API key assignment
-
-- **仓库**：`computer-mcp/computer-mcp`
-- **文件**：`Sources/ComputerMCP/CloudflareTunnel.swift`（第 168 行）
-- **密钥（已脱敏）**：`genera...oken`
-- **链接**：https://github.com/computer-mcp/computer-mcp/blob/master/Sources/ComputerMCP/CloudflareTunnel.swift
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-case generatedAccessToken = "generated_access_token"
+mockLoadSettings.mockReturnValue({ openaiApiKey: 'sk-plaintext-fallback', transcriptionPrompt: '' })
 ```
 
 ## 处置建议

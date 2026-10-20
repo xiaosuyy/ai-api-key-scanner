@@ -1,57 +1,47 @@
 {
   "summary": {
-    "generated_at": "2026-10-20 07:05:16 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 4129,
-    "total_findings": 3,
+    "generated_at": "2026-10-20 07:42:42 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 9938,
+    "total_findings": 2,
     "by_confidence": {
-      "medium": 3
+      "high": 1,
+      "low": 1
     },
     "by_pattern": {
-      "Generic API key assignment": 3
+      "Anthropic API Key": 1,
+      "Generic API key assignment": 1
     },
     "by_repo": {
-      "reefbarman/agentlink": 2,
-      "computer-mcp/computer-mcp": 1
+      "BerriAI/litellm": 1,
+      "draenger/whisperio": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "ghu_re...6789",
-      "confidence": "medium",
-      "repo": "reefbarman/agentlink",
-      "file_path": "apps/server/src/publisher.test.ts",
-      "file_url": "https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts",
-      "line_number": 141,
-      "line_content": "accessToken: \"ghu_refreshedtoken0123456789\",",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "899867fcc04abde0"
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...ider",
+      "confidence": "high",
+      "repo": "BerriAI/litellm",
+      "file_path": ".github/workflows/e2e_record_replay.yml",
+      "file_url": "https://github.com/BerriAI/litellm/blob/main/.github/workflows/e2e_record_replay.yml",
+      "line_number": 146,
+      "line_content": "ANTHROPIC_API_KEY: sk-ant-replay-must-never-reach-a-provider",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "b987f828f9eb6450"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "ghu_re...6789",
-      "confidence": "medium",
-      "repo": "reefbarman/agentlink",
-      "file_path": "apps/server/src/publisher.test.ts",
-      "file_url": "https://github.com/reefbarman/agentlink/blob/main/apps/server/src/publisher.test.ts",
-      "line_number": 522,
-      "line_content": "accessToken: \"ghu_refreshedtoken0123456789\",",
+      "value_masked": "sk-pla...back",
+      "confidence": "low",
+      "repo": "draenger/whisperio",
+      "file_path": "desktop/tests/transcribeKeyStoreConsumer.test.ts",
+      "file_url": "https://github.com/draenger/whisperio/blob/main/desktop/tests/transcribeKeyStoreConsumer.test.ts",
+      "line_number": 114,
+      "line_content": "mockLoadSettings.mockReturnValue({ openaiApiKey: 'sk-plaintext-fallback', transcriptionPrompt: '' })",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "3533554e9930409b"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "genera...oken",
-      "confidence": "medium",
-      "repo": "computer-mcp/computer-mcp",
-      "file_path": "Sources/ComputerMCP/CloudflareTunnel.swift",
-      "file_url": "https://github.com/computer-mcp/computer-mcp/blob/master/Sources/ComputerMCP/CloudflareTunnel.swift",
-      "line_number": 168,
-      "line_content": "case generatedAccessToken = \"generated_access_token\"",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "90eed783708bb7f0"
+      "fingerprint": "dfb921dd9d31d79d"
     }
   ]
 }
