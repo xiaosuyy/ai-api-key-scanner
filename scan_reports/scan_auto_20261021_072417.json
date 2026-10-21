@@ -1,0 +1,135 @@
+{
+  "summary": {
+    "generated_at": "2026-10-21 07:24:17 UTC",
+    "repos_scanned": 49,
+    "files_scanned": 9466,
+    "total_findings": 9,
+    "by_confidence": {
+      "medium": 8,
+      "low": 1
+    },
+    "by_pattern": {
+      "Generic API key assignment": 7,
+      "Google OAuth Client Secret": 2
+    },
+    "by_repo": {
+      "vayungodara/cliproxy-rs": 2,
+      "diegosouzapw/OmniRoute": 1,
+      "s3ntin3l8/runway-ai-usage-tracker": 2,
+      "Qquench/Quorch": 1,
+      "trvny/trvny": 2,
+      "dtssv/CodePilot": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ben...real",
+      "confidence": "medium",
+      "repo": "vayungodara/cliproxy-rs",
+      "file_path": "bench/run.sh",
+      "file_url": "https://github.com/vayungodara/cliproxy-rs/blob/master/bench/run.sh",
+      "line_number": 72,
+      "line_content": "- api-key: \"sk-bench-upstream-not-real\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "a4489b958ea92999"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "vayungodara/cliproxy-rs",
+      "file_path": "crates/cpa-exec/src/antigravity_auth.rs",
+      "file_url": "https://github.com/vayungodara/cliproxy-rs/blob/master/crates/cpa-exec/src/antigravity_auth.rs",
+      "line_number": 30,
+      "line_content": "pub const CLIENT_SECRET: &str = \"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\";",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "4e1cdb09410cbd9f"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "key-wr...nfig",
+      "confidence": "medium",
+      "repo": "diegosouzapw/OmniRoute",
+      "file_path": "@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "file_url": "https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.53/@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "line_number": 47,
+      "line_content": "options: { baseURL, providerId: \"warmid\", apiKey: \"key-written-in-the-config\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "8d7498519cc97dc8"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sideca...cret",
+      "confidence": "medium",
+      "repo": "s3ntin3l8/runway-ai-usage-tracker",
+      "file_path": "app/core/config.py",
+      "file_url": "https://github.com/s3ntin3l8/runway-ai-usage-tracker/blob/main/app/core/config.py",
+      "line_number": 55,
+      "line_content": "DEFAULT_INGEST_API_KEY = \"sidecar-default-secret\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3d5eea2a02dd3d01"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...Fsxl",
+      "confidence": "medium",
+      "repo": "s3ntin3l8/runway-ai-usage-tracker",
+      "file_path": "app/services/token_refresher.py",
+      "file_url": "https://github.com/s3ntin3l8/runway-ai-usage-tracker/blob/main/app/services/token_refresher.py",
+      "line_number": 42,
+      "line_content": "_GEMINI_CLI_CLIENT_SECRET = \"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\"",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "70151f0413572388"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-sup...leak",
+      "confidence": "medium",
+      "repo": "Qquench/Quorch",
+      "file_path": "plugins/quench-dev-tasks/server/tests/test_handoff_protocol.py",
+      "file_url": "https://github.com/Qquench/Quorch/blob/main/plugins/quench-dev-tasks/server/tests/test_handoff_protocol.py",
+      "line_number": 256,
+      "line_content": "secret_key = \"sk-super-secret-key-that-must-never-leak\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3ffa00eceeeb93b6"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "eng_li...cret",
+      "confidence": "medium",
+      "repo": "trvny/trvny",
+      "file_path": "gh-apps/kanarek-companion/test/engram-actions.test.ts",
+      "file_url": "https://github.com/trvny/trvny/blob/main/gh-apps/kanarek-companion/test/engram-actions.test.ts",
+      "line_number": 73,
+      "line_content": "{ ENGRAM_API_KEY: 'eng_live_super_secret' },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "833ae1c170b2af9c"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "eng_li...cret",
+      "confidence": "medium",
+      "repo": "trvny/trvny",
+      "file_path": "gh-apps/kanarek-companion/test/engram-actions.test.ts",
+      "file_url": "https://github.com/trvny/trvny/blob/main/gh-apps/kanarek-companion/test/engram-actions.test.ts",
+      "line_number": 98,
+      "line_content": "const env = { ENGRAM_API_KEY: 'eng_live_super_secret' } satisfies EngramActionEnv;",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7d19f1d10846889e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "access...mock",
+      "confidence": "low",
+      "repo": "dtssv/CodePilot",
+      "file_path": "packages/core/test/mcpOAuthFlow.test.ts",
+      "file_url": "https://github.com/dtssv/CodePilot/blob/main/packages/core/test/mcpOAuthFlow.test.ts",
+      "line_number": 84,
+      "line_content": "access_token: \"access-token-from-mock\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "e8b3b847095745db"
+    }
+  ]
+}
