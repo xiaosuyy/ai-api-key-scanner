@@ -1,47 +1,72 @@
 {
   "summary": {
-    "generated_at": "2026-10-20 07:42:42 UTC",
-    "repos_scanned": 50,
-    "files_scanned": 9938,
-    "total_findings": 2,
+    "generated_at": "2026-10-21 07:00:48 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 4412,
+    "total_findings": 4,
     "by_confidence": {
-      "high": 1,
-      "low": 1
+      "medium": 3,
+      "high": 1
     },
     "by_pattern": {
-      "Anthropic API Key": 1,
-      "Generic API key assignment": 1
+      "Generic API key assignment": 3,
+      "Google Gemini / GCP API Key": 1
     },
     "by_repo": {
-      "BerriAI/litellm": 1,
-      "draenger/whisperio": 1
+      "openai/openai-node": 2,
+      "openai/openai-python": 1,
+      "OneHumanAI/onehuman": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...ider",
-      "confidence": "high",
-      "repo": "BerriAI/litellm",
-      "file_path": ".github/workflows/e2e_record_replay.yml",
-      "file_url": "https://github.com/BerriAI/litellm/blob/main/.github/workflows/e2e_record_replay.yml",
-      "line_number": 146,
-      "line_content": "ANTHROPIC_API_KEY: sk-ant-replay-must-never-reach-a-provider",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "b987f828f9eb6450"
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "openai/openai-node",
+      "file_path": "ecosystem-tests/browser-direct-import/public/index.js",
+      "file_url": "https://github.com/openai/openai-node/blob/main/ecosystem-tests/browser-direct-import/public/index.js",
+      "line_number": 132,
+      "line_content": "browserError = new OpenAI({ apiKey: 'synthetic-browser-api-key' });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "0558f7399e144f26"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-pla...back",
-      "confidence": "low",
-      "repo": "draenger/whisperio",
-      "file_path": "desktop/tests/transcribeKeyStoreConsumer.test.ts",
-      "file_url": "https://github.com/draenger/whisperio/blob/main/desktop/tests/transcribeKeyStoreConsumer.test.ts",
-      "line_number": 114,
-      "line_content": "mockLoadSettings.mockReturnValue({ openaiApiKey: 'sk-plaintext-fallback', transcriptionPrompt: '' })",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "openai/openai-node",
+      "file_path": "ecosystem-tests/browser-direct-import/src/test.ts",
+      "file_url": "https://github.com/openai/openai-node/blob/main/ecosystem-tests/browser-direct-import/src/test.ts",
+      "line_number": 14,
+      "line_content": "const apiKey = live ? process.env.OPENAI_API_KEY : 'synthetic-browser-api-key';",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "dfb921dd9d31d79d"
+      "fingerprint": "f47fe6aa0a2993aa"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...ader",
+      "confidence": "medium",
+      "repo": "openai/openai-python",
+      "file_path": "examples/browser/exercise_read_only.py",
+      "file_url": "https://github.com/openai/openai-python/blob/main/examples/browser/exercise_read_only.py",
+      "line_number": 183,
+      "line_content": "api_key=\"synthetic-local-reader\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "5fa53fab58add748"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...XQo8",
+      "confidence": "high",
+      "repo": "OneHumanAI/onehuman",
+      "file_path": "server/firebase-auth.ts",
+      "file_url": "https://github.com/OneHumanAI/onehuman/blob/main/server/firebase-auth.ts",
+      "line_number": 14,
+      "line_content": "const ONEHUMAN_WEB = { projectId: 'onehuman-ai', apiKey: 'AIzaSyAxjCRgKklxqc0_M6vSKZfpIFb8UMDXQo8', appId: '1:667471175488:web:7ced82d980e90d9e98a4a5', messagingSenderId: '667471175488' };",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "46e4dabfec95723f"
     }
   ]
 }
