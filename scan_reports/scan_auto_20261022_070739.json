@@ -1,0 +1,71 @@
+{
+  "summary": {
+    "generated_at": "2026-10-22 07:07:39 UTC",
+    "repos_scanned": 19,
+    "files_scanned": 2948,
+    "total_findings": 4,
+    "by_confidence": {
+      "medium": 2,
+      "low": 1,
+      "high": 1
+    },
+    "by_pattern": {
+      "Anthropic API Key": 2,
+      "Generic API key assignment": 2
+    },
+    "by_repo": {
+      "isseis/yt2column": 4
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...8ANT",
+      "confidence": "medium",
+      "repo": "isseis/yt2column",
+      "file_path": "cmd/yt2column-server/test_helpers.go",
+      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column-server/test_helpers.go",
+      "line_number": 39,
+      "line_content": "testAnthropicKey  = \"sk-ant-ANTHROPICVALUE-0123456789-TAIL8ANT\" //nolint:gosec // a fake key the redaction checks look for",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "7c5c0752ef43f791"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-uni...8KEY",
+      "confidence": "low",
+      "repo": "isseis/yt2column",
+      "file_path": "cmd/yt2column-server/test_helpers.go",
+      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column-server/test_helpers.go",
+      "line_number": 37,
+      "line_content": "testAPIKey        = \"sk-unit-APIKEYVALUE-0123456789-TAIL8KEY\" //nolint:gosec // a fake key the redaction checks look for",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "bf9dfd5b0d68ae64"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...8ANT",
+      "confidence": "high",
+      "repo": "isseis/yt2column",
+      "file_path": "cmd/yt2column/run_test.go",
+      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column/run_test.go",
+      "line_number": 47,
+      "line_content": "testAnthropicKey = \"sk-ant-APIKEYVALUE-0123456789-TAIL8ANT\"",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "b3d65d6d3be93a88"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-uni...8KEY",
+      "confidence": "medium",
+      "repo": "isseis/yt2column",
+      "file_path": "cmd/yt2column/run_test.go",
+      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column/run_test.go",
+      "line_number": 44,
+      "line_content": "testAPIKey = \"sk-unit-APIKEYVALUE-0123456789-TAIL8KEY\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "fe7dd49370ff678d"
+    }
+  ]
+}
