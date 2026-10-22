@@ -1,71 +1,120 @@
 {
   "summary": {
-    "generated_at": "2026-10-22 07:07:39 UTC",
-    "repos_scanned": 19,
-    "files_scanned": 2948,
-    "total_findings": 4,
+    "generated_at": "2026-10-22 07:24:48 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 8225,
+    "total_findings": 8,
     "by_confidence": {
-      "medium": 2,
-      "low": 1,
+      "medium": 7,
       "high": 1
     },
     "by_pattern": {
-      "Anthropic API Key": 2,
-      "Generic API key assignment": 2
+      "Generic API key assignment": 7,
+      "Google Gemini / GCP API Key": 1
     },
     "by_repo": {
-      "isseis/yt2column": 4
+      "PMZPZM0/codex-harness-desktop": 1,
+      "Remote-Arc/remote-arc": 6,
+      "phillipxnguyen/wikiPhidia": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...8ANT",
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "CLOUD_...OKEN",
       "confidence": "medium",
-      "repo": "isseis/yt2column",
-      "file_path": "cmd/yt2column-server/test_helpers.go",
-      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column-server/test_helpers.go",
-      "line_number": 39,
-      "line_content": "testAnthropicKey  = \"sk-ant-ANTHROPICVALUE-0123456789-TAIL8ANT\" //nolint:gosec // a fake key the redaction checks look for",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "7c5c0752ef43f791"
+      "repo": "PMZPZM0/codex-harness-desktop",
+      "file_path": "electron/features/cloud-memory-ipc.ts",
+      "file_url": "https://github.com/PMZPZM0/codex-harness-desktop/blob/main/electron/features/cloud-memory-ipc.ts",
+      "line_number": 151,
+      "line_content": "secretKey: \"CLOUD_MEMORY_MCP_TOKEN\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "67f695deecaf79e2"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-uni...8KEY",
-      "confidence": "low",
-      "repo": "isseis/yt2column",
-      "file_path": "cmd/yt2column-server/test_helpers.go",
-      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column-server/test_helpers.go",
-      "line_number": 37,
-      "line_content": "testAPIKey        = \"sk-unit-APIKEYVALUE-0123456789-TAIL8KEY\" //nolint:gosec // a fake key the redaction checks look for",
+      "value_masked": "privat...oken",
+      "confidence": "medium",
+      "repo": "Remote-Arc/remote-arc",
+      "file_path": "apps/relay/scripts/arc-app-connections-test.ts",
+      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-app-connections-test.ts",
+      "line_number": 30,
+      "line_content": "if(url==='https://api.notion.com/v1/oauth/token')return Response.json({access_token:'private-notion-token'});",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "bf9dfd5b0d68ae64"
+      "fingerprint": "41e3a28ef669311f"
     },
     {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...8ANT",
-      "confidence": "high",
-      "repo": "isseis/yt2column",
-      "file_path": "cmd/yt2column/run_test.go",
-      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column/run_test.go",
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...oken",
+      "confidence": "medium",
+      "repo": "Remote-Arc/remote-arc",
+      "file_path": "apps/relay/scripts/arc-chat-test.ts",
+      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-chat-test.ts",
+      "line_number": 313,
+      "line_content": "const vercelConnection=crypto.randomUUID();sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,'owner','vercel','fixture-vercel','Vercel','active','[\"read\"]','[]',?,?,?)`).run(vercelConnection,await seal(env,{accessToken:'fixture-vercel-token',scopes:[],expiresAt:null},`app-token:",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "e65a96f8f4d7dd76"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...-key",
+      "confidence": "medium",
+      "repo": "Remote-Arc/remote-arc",
+      "file_path": "apps/relay/scripts/arc-chat-test.ts",
+      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-chat-test.ts",
+      "line_number": 358,
+      "line_content": "sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,'owner','google_calendar','fixture-calendar','Calendar','active','[\"read\"]',?,?,?,?)`).run(calendarConnection,JSON.stringify(['https://www.googleapis.com/auth/calendar.readonly']),await seal(env,{accessToken:'fixture-calendar-key",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "721f4b615fcb583f"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...cret",
+      "confidence": "medium",
+      "repo": "Remote-Arc/remote-arc",
+      "file_path": "apps/relay/scripts/arc-task-eval-fixture-test.ts",
+      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-task-eval-fixture-test.ts",
+      "line_number": 8,
+      "line_content": "process.env.OPENAI_API_KEY='synthetic-eval-fixture-not-a-secret';",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "5409e4b76cf1ac43"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...oken",
+      "confidence": "medium",
+      "repo": "Remote-Arc/remote-arc",
+      "file_path": "apps/relay/scripts/arc-task-live-eval.ts",
+      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-task-live-eval.ts",
+      "line_number": 146,
+      "line_content": "if(item.id.startsWith('attention')){const calendarId=crypto.randomUUID(),scopes=['https://www.googleapis.com/auth/calendar.readonly'];sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,?,'google_calendar','fixture-calendar','Synthetic calendar','active','[\"read\"]',?,?,?,?)`).run(",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "81e3647966363f6f"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "contex...cret",
+      "confidence": "medium",
+      "repo": "Remote-Arc/remote-arc",
+      "file_path": "apps/relay/scripts/arc-working-context-test.ts",
+      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-working-context-test.ts",
       "line_number": 47,
-      "line_content": "testAnthropicKey = \"sk-ant-APIKEYVALUE-0123456789-TAIL8ANT\"",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "b3d65d6d3be93a88"
+      "line_content": "sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,?,?,?,?,'active','[\"read\"]',?,?,?,?)`).run(id,user,provider,id,'Context fixture',JSON.stringify(appScopes(provider as any,['read'])),await seal(env,{accessToken:'context-fixture-not-a-secret'},`app-token:${user}:${provider}:${id}",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "549a4a83df522834"
     },
     {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-uni...8KEY",
-      "confidence": "medium",
-      "repo": "isseis/yt2column",
-      "file_path": "cmd/yt2column/run_test.go",
-      "file_url": "https://github.com/isseis/yt2column/blob/main/cmd/yt2column/run_test.go",
-      "line_number": 44,
-      "line_content": "testAPIKey = \"sk-unit-APIKEYVALUE-0123456789-TAIL8KEY\"",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "fe7dd49370ff678d"
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy..._ZlM",
+      "confidence": "high",
+      "repo": "phillipxnguyen/wikiPhidia",
+      "file_path": "index.html",
+      "file_url": "https://github.com/phillipxnguyen/wikiPhidia/blob/main/index.html",
+      "line_number": 12118,
+      "line_content": "apiKey: \"AIzaSyBcgv5s1xc_4tfN8k3EsyiDKCGOXaz_ZlM\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "f45050a5885b1ad9"
     }
   ]
 }
