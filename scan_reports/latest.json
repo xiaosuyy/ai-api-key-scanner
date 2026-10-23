@@ -1,120 +1,45 @@
 {
   "summary": {
-    "generated_at": "2026-10-22 07:24:48 UTC",
-    "repos_scanned": 50,
-    "files_scanned": 8225,
-    "total_findings": 8,
+    "generated_at": "2026-10-23 06:50:21 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 2996,
+    "total_findings": 2,
     "by_confidence": {
-      "medium": 7,
-      "high": 1
+      "medium": 2
     },
     "by_pattern": {
-      "Generic API key assignment": 7,
-      "Google Gemini / GCP API Key": 1
+      "Generic API key assignment": 2
     },
     "by_repo": {
-      "PMZPZM0/codex-harness-desktop": 1,
-      "Remote-Arc/remote-arc": 6,
-      "phillipxnguyen/wikiPhidia": 1
+      "civarry/wickey": 1,
+      "kalinbogatzevski/captain-memo": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "CLOUD_...OKEN",
+      "value_masked": "sk-ant...3456",
       "confidence": "medium",
-      "repo": "PMZPZM0/codex-harness-desktop",
-      "file_path": "electron/features/cloud-memory-ipc.ts",
-      "file_url": "https://github.com/PMZPZM0/codex-harness-desktop/blob/main/electron/features/cloud-memory-ipc.ts",
-      "line_number": 151,
-      "line_content": "secretKey: \"CLOUD_MEMORY_MCP_TOKEN\",",
+      "repo": "civarry/wickey",
+      "file_path": "test/dotenv.test.ts",
+      "file_url": "https://github.com/civarry/wickey/blob/main/test/dotenv.test.ts",
+      "line_number": 49,
+      "line_content": "const a = one('export ANTHROPIC_API_KEY=\"sk-ant-api03-xyz123456\"');",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "67f695deecaf79e2"
+      "fingerprint": "b72c2810181b719b"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "privat...oken",
+      "value_masked": "CAPTAI..._KEY",
       "confidence": "medium",
-      "repo": "Remote-Arc/remote-arc",
-      "file_path": "apps/relay/scripts/arc-app-connections-test.ts",
-      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-app-connections-test.ts",
-      "line_number": 30,
-      "line_content": "if(url==='https://api.notion.com/v1/oauth/token')return Response.json({access_token:'private-notion-token'});",
+      "repo": "kalinbogatzevski/captain-memo",
+      "file_path": "src/shared/paths.ts",
+      "file_url": "https://github.com/kalinbogatzevski/captain-memo/blob/master/src/shared/paths.ts",
+      "line_number": 136,
+      "line_content": "export const ENV_OPENAI_API_KEY = 'CAPTAIN_MEMO_OPENAI_API_KEY';",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "41e3a28ef669311f"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "fixtur...oken",
-      "confidence": "medium",
-      "repo": "Remote-Arc/remote-arc",
-      "file_path": "apps/relay/scripts/arc-chat-test.ts",
-      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-chat-test.ts",
-      "line_number": 313,
-      "line_content": "const vercelConnection=crypto.randomUUID();sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,'owner','vercel','fixture-vercel','Vercel','active','[\"read\"]','[]',?,?,?)`).run(vercelConnection,await seal(env,{accessToken:'fixture-vercel-token',scopes:[],expiresAt:null},`app-token:",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "e65a96f8f4d7dd76"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "fixtur...-key",
-      "confidence": "medium",
-      "repo": "Remote-Arc/remote-arc",
-      "file_path": "apps/relay/scripts/arc-chat-test.ts",
-      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-chat-test.ts",
-      "line_number": 358,
-      "line_content": "sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,'owner','google_calendar','fixture-calendar','Calendar','active','[\"read\"]',?,?,?,?)`).run(calendarConnection,JSON.stringify(['https://www.googleapis.com/auth/calendar.readonly']),await seal(env,{accessToken:'fixture-calendar-key",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "721f4b615fcb583f"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...cret",
-      "confidence": "medium",
-      "repo": "Remote-Arc/remote-arc",
-      "file_path": "apps/relay/scripts/arc-task-eval-fixture-test.ts",
-      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-task-eval-fixture-test.ts",
-      "line_number": 8,
-      "line_content": "process.env.OPENAI_API_KEY='synthetic-eval-fixture-not-a-secret';",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "5409e4b76cf1ac43"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "fixtur...oken",
-      "confidence": "medium",
-      "repo": "Remote-Arc/remote-arc",
-      "file_path": "apps/relay/scripts/arc-task-live-eval.ts",
-      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-task-live-eval.ts",
-      "line_number": 146,
-      "line_content": "if(item.id.startsWith('attention')){const calendarId=crypto.randomUUID(),scopes=['https://www.googleapis.com/auth/calendar.readonly'];sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,?,'google_calendar','fixture-calendar','Synthetic calendar','active','[\"read\"]',?,?,?,?)`).run(",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "81e3647966363f6f"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "contex...cret",
-      "confidence": "medium",
-      "repo": "Remote-Arc/remote-arc",
-      "file_path": "apps/relay/scripts/arc-working-context-test.ts",
-      "file_url": "https://github.com/Remote-Arc/remote-arc/blob/master/apps/relay/scripts/arc-working-context-test.ts",
-      "line_number": 47,
-      "line_content": "sql.prepare(`INSERT INTO app_connections(id,user_id,provider,account_id,account_label,status,permissions_json,scopes_json,token_ciphertext,created_at,updated_at) VALUES(?,?,?,?,?,'active','[\"read\"]',?,?,?,?)`).run(id,user,provider,id,'Context fixture',JSON.stringify(appScopes(provider as any,['read'])),await seal(env,{accessToken:'context-fixture-not-a-secret'},`app-token:${user}:${provider}:${id}",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "549a4a83df522834"
-    },
-    {
-      "pattern_name": "Google Gemini / GCP API Key",
-      "value_masked": "AIzaSy..._ZlM",
-      "confidence": "high",
-      "repo": "phillipxnguyen/wikiPhidia",
-      "file_path": "index.html",
-      "file_url": "https://github.com/phillipxnguyen/wikiPhidia/blob/main/index.html",
-      "line_number": 12118,
-      "line_content": "apiKey: \"AIzaSyBcgv5s1xc_4tfN8k3EsyiDKCGOXaz_ZlM\",",
-      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
-      "fingerprint": "f45050a5885b1ad9"
+      "fingerprint": "286e612bcc4835a6"
     }
   ]
 }
