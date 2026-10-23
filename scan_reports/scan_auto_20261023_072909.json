@@ -1,0 +1,148 @@
+{
+  "summary": {
+    "generated_at": "2026-10-23 07:29:09 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 8258,
+    "total_findings": 10,
+    "by_confidence": {
+      "medium": 5,
+      "low": 2,
+      "high": 3
+    },
+    "by_pattern": {
+      "AWS Access Key ID": 2,
+      "Generic API key assignment": 4,
+      "Google Gemini / GCP API Key": 3,
+      "Google OAuth Client Secret": 1
+    },
+    "by_repo": {
+      "langwatch/langwatch": 2,
+      "zereight/gitlab-mcp": 4,
+      "punn-pca/firekeeper-core": 3,
+      "starfall-org/generative": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAQY...ZAM2",
+      "confidence": "medium",
+      "repo": "langwatch/langwatch",
+      "file_path": ".github/scripts/__tests__/secrets-scan.test.sh",
+      "file_url": "https://github.com/langwatch/langwatch/blob/main/.github/scripts/__tests__/secrets-scan.test.sh",
+      "line_number": 26,
+      "line_content": "readonly PLANTED_SECRET='AWS_ACCESS_KEY_ID=AKIAQYLPMN5HHHFPZAM2",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "f66e19f803bb2ff7"
+    },
+    {
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAQY...ZAM2",
+      "confidence": "medium",
+      "repo": "langwatch/langwatch",
+      "file_path": ".gitleaks.toml",
+      "file_url": "https://github.com/langwatch/langwatch/blob/main/.gitleaks.toml",
+      "line_number": 122,
+      "line_content": "regexes = ['''AKIAQYLPMN5HHHFPZAM2''', '''A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0''']",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "87ece400725f677f"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "glpat-...oken",
+      "confidence": "low",
+      "repo": "zereight/gitlab-mcp",
+      "file_path": "test/callback-proxy-redirect-policy.test.ts",
+      "file_url": "https://github.com/zereight/gitlab-mcp/blob/main/test/callback-proxy-redirect-policy.test.ts",
+      "line_number": 32,
+      "line_content": "const MOCK_ACCESS_TOKEN = \"glpat-mock-redirect-policy-token\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1537c03ed9beb7ae"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ya29.m...3456",
+      "confidence": "low",
+      "repo": "zereight/gitlab-mcp",
+      "file_path": "test/callback-proxy-tests.ts",
+      "file_url": "https://github.com/zereight/gitlab-mcp/blob/main/test/callback-proxy-tests.ts",
+      "line_number": 23,
+      "line_content": "const MOCK_ACCESS_TOKEN = \"ya29.mock-callback-proxy-token-123456\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "a5d9762c343c8c56"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "mcp-st...oken",
+      "confidence": "medium",
+      "repo": "zereight/gitlab-mcp",
+      "file_path": "test/dynamic-routing-tests.ts",
+      "file_url": "https://github.com/zereight/gitlab-mcp/blob/main/test/dynamic-routing-tests.ts",
+      "line_number": 16,
+      "line_content": "const MCP_AUTH_TOKEN = 'mcp-static-auth-token';",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "06a817eb52879c56"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "oauth-...oken",
+      "confidence": "medium",
+      "repo": "zereight/gitlab-mcp",
+      "file_path": "test/oauth-device-flow-tests.ts",
+      "file_url": "https://github.com/zereight/gitlab-mcp/blob/main/test/oauth-device-flow-tests.ts",
+      "line_number": 19,
+      "line_content": "const ACCESS_TOKEN = \"oauth-device-flow-access-token\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "f6fc27125a6b4d2a"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...H_Vw",
+      "confidence": "high",
+      "repo": "punn-pca/firekeeper-core",
+      "file_path": "firebase-applet-config.json",
+      "file_url": "https://github.com/punn-pca/firekeeper-core/blob/main/firebase-applet-config.json",
+      "line_number": 4,
+      "line_content": "\"apiKey\": \"AIzaSyCjrY8E1uYL95Z-dStlsuBklyYoFlQH_Vw\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "1c7f7da91919630a"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...H_Vw",
+      "confidence": "high",
+      "repo": "punn-pca/firekeeper-core",
+      "file_path": "mobile/src/lib/firebase.ts",
+      "file_url": "https://github.com/punn-pca/firekeeper-core/blob/main/mobile/src/lib/firebase.ts",
+      "line_number": 32,
+      "line_content": "apiKey: 'AIzaSyCjrY8E1uYL95Z-dStlsuBklyYoFlQH_Vw',",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "50ab7908a4cb2318"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...H_Vw",
+      "confidence": "high",
+      "repo": "punn-pca/firekeeper-core",
+      "file_path": "mobile/src/lib/firebaseRestAuth.ts",
+      "file_url": "https://github.com/punn-pca/firekeeper-core/blob/main/mobile/src/lib/firebaseRestAuth.ts",
+      "line_number": 9,
+      "line_content": "const FIREBASE_API_KEY = 'AIzaSyCjrY8E1uYL95Z-dStlsuBklyYoFlQH_Vw';",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "fcaf8cfb97dab661"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "starfall-org/generative",
+      "file_path": "app/src/main/kotlin/org/starfall/generative/integrations/modelapis/antigravity/AntigravityAdapter.kt",
+      "file_url": "https://github.com/starfall-org/generative/blob/main/app/src/main/kotlin/org/starfall/generative/integrations/modelapis/antigravity/AntigravityAdapter.kt",
+      "line_number": 31,
+      "line_content": "51121, \"/oauth-callback\", \"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\",",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "c95a17b74cd1fc77"
+    }
+  ]
+}
