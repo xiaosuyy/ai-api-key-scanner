@@ -272,6 +272,13 @@
       "total_findings": 0,
       "new_findings": 0,
       "repos_scanned": 20
+    },
+    {
+      "timestamp": "2026-10-24 07:07:13 UTC",
+      "scan_type": "auto",
+      "total_findings": 6,
+      "new_findings": 6,
+      "repos_scanned": 45
     }
   ],
   "known_fingerprints": [
@@ -363,6 +370,7 @@
     "5761a948110cc042",
     "581eec6294eedb21",
     "5854e8d716a5754d",
+    "590a575952e3a019",
     "5e91e77c2d47f6ba",
     "5eb05fcdfe94f49a",
     "5f09c77f6d7e9439",
@@ -425,6 +433,8 @@
     "9906a2b759b07090",
     "9a26f59a6a9c414f",
     "9b2224b13434f94d",
+    "9bd8c388d1bd952c",
+    "9d5e8e5a3a4d2421",
     "9d7c95091c89f75c",
     "9e1eeddd2df647a7",
     "9eaf0bf01b0bdab7",
@@ -439,6 +449,7 @@
     "abecbd973d9c57ee",
     "adce3e0a0928ca2f",
     "ae184f4028ba7062",
+    "aeaf6edf90dc2cb7",
     "af2d211b17432a3f",
     "affffe1320e5536e",
     "b19e0a875b9df5c9",
@@ -455,6 +466,7 @@
     "b79c35e18df42419",
     "b8123151d7541937",
     "b90b071d41edad40",
+    "b971004934ac65d3",
     "b987f828f9eb6450",
     "ba007a8e51dd026a",
     "ba5957bab79609fb",
@@ -515,6 +527,7 @@
     "f8faca54c2b3de78",
     "fcaf8cfb97dab661",
     "fe7dd49370ff678d",
-    "ff65c834509ade5d"
+    "ff65c834509ade5d",
+    "ffcbfc9baa607dc1"
   ]
 }

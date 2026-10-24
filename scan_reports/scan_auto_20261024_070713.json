@@ -1,0 +1,97 @@
+{
+  "summary": {
+    "generated_at": "2026-10-24 07:07:13 UTC",
+    "repos_scanned": 45,
+    "files_scanned": 7686,
+    "total_findings": 6,
+    "by_confidence": {
+      "high": 5,
+      "medium": 1
+    },
+    "by_pattern": {
+      "Anthropic API Key": 5,
+      "Generic API key assignment": 1
+    },
+    "by_repo": {
+      "Sannrox/sekai-chisei": 2,
+      "headroomlabs-ai/headroom": 2,
+      "jshiv/cronicle": 1,
+      "richardichogan/knowledge-base": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...cret",
+      "confidence": "high",
+      "repo": "Sannrox/sekai-chisei",
+      "file_path": "crates/chisei-gateway/src/gateway_tests.rs",
+      "file_url": "https://github.com/Sannrox/sekai-chisei/blob/main/crates/chisei-gateway/src/gateway_tests.rs",
+      "line_number": 5068,
+      "line_content": ".bearer_auth(\"sk-ant-oat-client-subscription-secret\")",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "590a575952e3a019"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...cret",
+      "confidence": "high",
+      "repo": "Sannrox/sekai-chisei",
+      "file_path": "crates/chisei-gateway/src/gateway_tests.rs",
+      "file_url": "https://github.com/Sannrox/sekai-chisei/blob/main/crates/chisei-gateway/src/gateway_tests.rs",
+      "line_number": 5090,
+      "line_content": "Some(\"Bearer sk-ant-oat-client-subscription-secret\")",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "9d5e8e5a3a4d2421"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...ture",
+      "confidence": "high",
+      "repo": "headroomlabs-ai/headroom",
+      "file_path": ".gitguardian.yaml",
+      "file_url": "https://github.com/headroomlabs-ai/headroom/blob/main/.gitguardian.yaml",
+      "line_number": 34,
+      "line_content": "match: \"sk-ant-api03-payg-bearer-fixture\"",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "b971004934ac65d3"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...g-me",
+      "confidence": "high",
+      "repo": "headroomlabs-ai/headroom",
+      "file_path": "crates/headroom-proxy/src/cache_stabilization/drift_detector.rs",
+      "file_url": "https://github.com/headroomlabs-ai/headroom/blob/main/crates/headroom-proxy/src/cache_stabilization/drift_detector.rs",
+      "line_number": 761,
+      "line_content": "\"Bearer sk-ant-very-secret-token-do-not-log-me\"",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "ffcbfc9baa607dc1"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...lock",
+      "confidence": "high",
+      "repo": "jshiv/cronicle",
+      "file_path": "internal/cronicle/state/pg_secrets_test.go",
+      "file_url": "https://github.com/jshiv/cronicle/blob/main/internal/cronicle/state/pg_secrets_test.go",
+      "line_number": 33,
+      "line_content": "const secret = \"sk-ant-xchacha-roundtrip-9f3c-AND-some-padding-to-exceed-a-block\"",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "aeaf6edf90dc2cb7"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...oken",
+      "confidence": "medium",
+      "repo": "richardichogan/knowledge-base",
+      "file_path": "knowledge-hub-backend/scripts/mural.test.ts",
+      "file_url": "https://github.com/richardichogan/knowledge-base/blob/main/knowledge-hub-backend/scripts/mural.test.ts",
+      "line_number": 49,
+      "line_content": "access_token: 'fixture-access-token', refresh_token: 'fixture-refresh-token', expires_in: seconds,",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "9bd8c388d1bd952c"
+    }
+  ]
+}
