@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "generated_at": "2026-10-25 07:23:38 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3892,
+    "total_findings": 3,
+    "by_confidence": {
+      "high": 1,
+      "medium": 2
+    },
+    "by_pattern": {
+      "Google Gemini / GCP API Key": 1,
+      "Generic API key assignment": 2
+    },
+    "by_repo": {
+      "721189/Market-Metrics": 1,
+      "arbiterForge/codeArbiter": 2
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...IL2s",
+      "confidence": "high",
+      "repo": "721189/Market-Metrics",
+      "file_path": "firebase-applet-config.json",
+      "file_url": "https://github.com/721189/Market-Metrics/blob/main/firebase-applet-config.json",
+      "line_number": 4,
+      "line_content": "\"apiKey\": \"AIzaSyBf8gwNxlu7HT2iZrnvPIPL87aiiBdIL2s\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "a09cf714b1180720"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-CVl...e123",
+      "confidence": "medium",
+      "repo": "arbiterForge/codeArbiter",
+      "file_path": ".codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package-v2.md",
+      "file_url": "https://github.com/arbiterForge/codeArbiter/blob/main/.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package-v2.md",
+      "line_number": 175,
+      "line_content": "self.assertTrue(self._matches('const FARM_API_KEY = \"sk-CVlQvxKsecretvalue123\";'))",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7f25d98c6079d14b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-CVl...e123",
+      "confidence": "medium",
+      "repo": "arbiterForge/codeArbiter",
+      "file_path": ".codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package.md",
+      "file_url": "https://github.com/arbiterForge/codeArbiter/blob/main/.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package.md",
+      "line_number": 175,
+      "line_content": "self.assertTrue(self._matches('const FARM_API_KEY = \"sk-CVlQvxKsecretvalue123\";'))",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "48ccf307e47ed77f"
+    }
+  ]
+}

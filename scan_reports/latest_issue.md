@@ -1,15 +1,12 @@
 ## 🔐 发现疑似泄露的 AI API 密钥
 
-本次扫描共发现 **6** 条疑似泄露（仓库 45 个，文件 7686 个）。
+本次扫描共发现 **3** 条疑似泄露（仓库 20 个，文件 3892 个）。
 
 | 置信度 | 仓库 | 文件 | 行 | 密钥（脱敏） |
 | --- | --- | --- | --- | --- |
-| HIGH | `Sannrox/sekai-chisei` | `crates/chisei-gateway/src/gateway_tests.rs` | 5068 | `sk-ant...cret` |
-| HIGH | `Sannrox/sekai-chisei` | `crates/chisei-gateway/src/gateway_tests.rs` | 5090 | `sk-ant...cret` |
-| HIGH | `headroomlabs-ai/headroom` | `.gitguardian.yaml` | 34 | `sk-ant...ture` |
-| HIGH | `headroomlabs-ai/headroom` | `crates/headroom-proxy/src/cache_stabilization/drift_detector.rs` | 761 | `sk-ant...g-me` |
-| HIGH | `jshiv/cronicle` | `internal/cronicle/state/pg_secrets_test.go` | 33 | `sk-ant...lock` |
-| MEDIUM | `richardichogan/knowledge-base` | `knowledge-hub-backend/scripts/mural.test.ts` | 49 | `fixtur...oken` |
+| HIGH | `721189/Market-Metrics` | `firebase-applet-config.json` | 4 | `AIzaSy...IL2s` |
+| MEDIUM | `arbiterForge/codeArbiter` | `.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package-v2.md` | 175 | `sk-CVl...e123` |
+| MEDIUM | `arbiterForge/codeArbiter` | `.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package.md` | 175 | `sk-CVl...e123` |
 
 > ⚠️ 请立即轮换泄露的密钥，并检查相关调用记录。
 

@@ -3,90 +3,54 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-24 07:07:13 UTC |
-| 扫描仓库数 | 45 |
-| 扫描文件数 | 7686 |
-| 发现数量 | 6 |
+| 生成时间 | 2026-10-25 07:23:38 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 3892 |
+| 发现数量 | 3 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| HIGH | 5 |
-| MEDIUM | 1 |
+| HIGH | 1 |
+| MEDIUM | 2 |
 
 ## 发现明细
 
-### 1. [HIGH] Anthropic API Key
+### 1. [HIGH] Google Gemini / GCP API Key
 
-- **仓库**：`Sannrox/sekai-chisei`
-- **文件**：`crates/chisei-gateway/src/gateway_tests.rs`（第 5068 行）
-- **密钥（已脱敏）**：`sk-ant...cret`
-- **链接**：https://github.com/Sannrox/sekai-chisei/blob/main/crates/chisei-gateway/src/gateway_tests.rs
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-.bearer_auth("sk-ant-oat-client-subscription-secret")
-```
-
-### 2. [HIGH] Anthropic API Key
-
-- **仓库**：`Sannrox/sekai-chisei`
-- **文件**：`crates/chisei-gateway/src/gateway_tests.rs`（第 5090 行）
-- **密钥（已脱敏）**：`sk-ant...cret`
-- **链接**：https://github.com/Sannrox/sekai-chisei/blob/main/crates/chisei-gateway/src/gateway_tests.rs
-- **说明**：Anthropic Claude API 密钥。
+- **仓库**：`721189/Market-Metrics`
+- **文件**：`firebase-applet-config.json`（第 4 行）
+- **密钥（已脱敏）**：`AIzaSy...IL2s`
+- **链接**：https://github.com/721189/Market-Metrics/blob/main/firebase-applet-config.json
+- **说明**：Google API 密钥（Gemini、Vertex、Maps 等）。
 
 ```text
-Some("Bearer sk-ant-oat-client-subscription-secret")
+"apiKey": "AIzaSyBf8gwNxlu7HT2iZrnvPIPL87aiiBdIL2s",
 ```
 
-### 3. [HIGH] Anthropic API Key
+### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`headroomlabs-ai/headroom`
-- **文件**：`.gitguardian.yaml`（第 34 行）
-- **密钥（已脱敏）**：`sk-ant...ture`
-- **链接**：https://github.com/headroomlabs-ai/headroom/blob/main/.gitguardian.yaml
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-match: "sk-ant-api03-payg-bearer-fixture"
-```
-
-### 4. [HIGH] Anthropic API Key
-
-- **仓库**：`headroomlabs-ai/headroom`
-- **文件**：`crates/headroom-proxy/src/cache_stabilization/drift_detector.rs`（第 761 行）
-- **密钥（已脱敏）**：`sk-ant...g-me`
-- **链接**：https://github.com/headroomlabs-ai/headroom/blob/main/crates/headroom-proxy/src/cache_stabilization/drift_detector.rs
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-"Bearer sk-ant-very-secret-token-do-not-log-me"
-```
-
-### 5. [HIGH] Anthropic API Key
-
-- **仓库**：`jshiv/cronicle`
-- **文件**：`internal/cronicle/state/pg_secrets_test.go`（第 33 行）
-- **密钥（已脱敏）**：`sk-ant...lock`
-- **链接**：https://github.com/jshiv/cronicle/blob/main/internal/cronicle/state/pg_secrets_test.go
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-const secret = "sk-ant-xchacha-roundtrip-9f3c-AND-some-padding-to-exceed-a-block"
-```
-
-### 6. [MEDIUM] Generic API key assignment
-
-- **仓库**：`richardichogan/knowledge-base`
-- **文件**：`knowledge-hub-backend/scripts/mural.test.ts`（第 49 行）
-- **密钥（已脱敏）**：`fixtur...oken`
-- **链接**：https://github.com/richardichogan/knowledge-base/blob/main/knowledge-hub-backend/scripts/mural.test.ts
+- **仓库**：`arbiterForge/codeArbiter`
+- **文件**：`.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package-v2.md`（第 175 行）
+- **密钥（已脱敏）**：`sk-CVl...e123`
+- **链接**：https://github.com/arbiterForge/codeArbiter/blob/main/.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package-v2.md
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-access_token: 'fixture-access-token', refresh_token: 'fixture-refresh-token', expires_in: seconds,
+self.assertTrue(self._matches('const FARM_API_KEY = "sk-CVlQvxKsecretvalue123";'))
+```
+
+### 3. [MEDIUM] Generic API key assignment
+
+- **仓库**：`arbiterForge/codeArbiter`
+- **文件**：`.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package.md`（第 175 行）
+- **密钥（已脱敏）**：`sk-CVl...e123`
+- **链接**：https://github.com/arbiterForge/codeArbiter/blob/main/.codearbiter/reports/2026-07-14-pi-support-handoff/blocker-2-review-package.md
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+self.assertTrue(self._matches('const FARM_API_KEY = "sk-CVlQvxKsecretvalue123";'))
 ```
 
 ## 处置建议
