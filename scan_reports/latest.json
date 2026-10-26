@@ -1,122 +1,64 @@
 {
   "summary": {
-    "generated_at": "2026-10-26 07:26:30 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 4747,
-    "total_findings": 17,
+    "generated_at": "2026-10-26 07:49:11 UTC",
+    "repos_scanned": 44,
+    "files_scanned": 9416,
+    "total_findings": 10,
     "by_confidence": {
-      "medium": 11,
-      "high": 6
+      "medium": 9,
+      "high": 1
     },
     "by_pattern": {
-      "Generic API key assignment": 11,
-      "Anthropic API Key": 6
+      "Generic API key assignment": 9,
+      "Anthropic API Key": 1
     },
     "by_repo": {
-      "BertMarti/modelduel": 2,
-      "BerriAI/litellm": 1,
-      "DrBradStanfield/roadmap": 5,
+      "DeliciousBuding/metapi-go": 3,
       "woodbeary/later-dog": 1,
-      "EXXETA/exxperts": 8
+      "elie222/rakazo": 1,
+      "OmritRenders/elidocortex": 1,
+      "OmritRenders/cortex-agent": 1,
+      "pghmatt/quotadial": 1,
+      "trick77/llmwire": 2
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "PEGA_A...UTER",
+      "value_masked": "change...oken",
       "confidence": "medium",
-      "repo": "BertMarti/modelduel",
-      "file_path": "docs/USO.md",
-      "file_url": "https://github.com/BertMarti/modelduel/blob/main/docs/USO.md",
-      "line_number": 333,
-      "line_content": "$env:OPENAI_API_KEY = \"PEGA_AQUI_TU_CLAVE_DE_OPENROUTER\"",
+      "repo": "DeliciousBuding/metapi-go",
+      "file_path": "config/defaults.go",
+      "file_url": "https://github.com/DeliciousBuding/metapi-go/blob/master/config/defaults.go",
+      "line_number": 7,
+      "line_content": "DefaultAuthToken             = \"change-me-admin-token\"",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "5f48a381ccc8bf2b"
+      "fingerprint": "757a28587bea86c6"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "PEGA_A...UTER",
+      "value_masked": "new-se...-xyz",
       "confidence": "medium",
-      "repo": "BertMarti/modelduel",
-      "file_path": "docs/USO.md",
-      "file_url": "https://github.com/BertMarti/modelduel/blob/main/docs/USO.md",
-      "line_number": 340,
-      "line_content": "export OPENAI_API_KEY=\"PEGA_AQUI_TU_CLAVE_DE_OPENROUTER\"",
+      "repo": "DeliciousBuding/metapi-go",
+      "file_path": "handler/admin/accounts_test.go",
+      "file_url": "https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/accounts_test.go",
+      "line_number": 1314,
+      "line_content": "t.Errorf(\"expected accessToken='new-session-token-xyz', got %q\", accessToken)",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "fabce26c0fe8d329"
-    },
-    {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...ider",
-      "confidence": "high",
-      "repo": "BerriAI/litellm",
-      "file_path": ".github/workflows/e2e_record_replay.yml",
-      "file_url": "https://github.com/BerriAI/litellm/blob/main/.github/workflows/e2e_record_replay.yml",
-      "line_number": 146,
-      "line_content": "ANTHROPIC_API_KEY: sk-ant-replay-must-never-reach-a-provider",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "b987f828f9eb6450"
+      "fingerprint": "d91281aac6578fa9"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...-key",
+      "value_masked": "admin-...oken",
       "confidence": "medium",
-      "repo": "DrBradStanfield/roadmap",
-      "file_path": "app/lib/email-confirmation-unsubscribe.test.ts",
-      "file_url": "https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-confirmation-unsubscribe.test.ts",
-      "line_number": 4,
-      "line_content": "process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';",
+      "repo": "DeliciousBuding/metapi-go",
+      "file_path": "handler/admin/auth_settings_test.go",
+      "file_url": "https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/auth_settings_test.go",
+      "line_number": 27,
+      "line_content": "config.SetRuntime(&config.RuntimeSettings{AuthToken: \"admin-auth-settings-token\"})",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "3a9ae7a941af4cc3"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "dropbo...oken",
-      "confidence": "medium",
-      "repo": "DrBradStanfield/roadmap",
-      "file_path": "app/routes/mcp.hosted-guards.test.ts",
-      "file_url": "https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted-guards.test.ts",
-      "line_number": 59,
-      "line_content": "access_token: 'dropbox-access-token',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "0daa95e5c984df6b"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "dropbo...oken",
-      "confidence": "medium",
-      "repo": "DrBradStanfield/roadmap",
-      "file_path": "app/routes/mcp.hosted.test.ts",
-      "file_url": "https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted.test.ts",
-      "line_number": 56,
-      "line_content": "access_token: 'dropbox-access-token',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "f5bd4d5816b3ff3b"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "dropbo...oken",
-      "confidence": "medium",
-      "repo": "DrBradStanfield/roadmap",
-      "file_path": "app/routes/mcp.knowledge.test.ts",
-      "file_url": "https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.knowledge.test.ts",
-      "line_number": 72,
-      "line_content": "access_token: 'dropbox-access-token',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "612360d738c091ad"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "dropbo...oken",
-      "confidence": "medium",
-      "repo": "DrBradStanfield/roadmap",
-      "file_path": "app/routes/mcp.reviewer.test.ts",
-      "file_url": "https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.reviewer.test.ts",
-      "line_number": 88,
-      "line_content": "return Response.json({ refresh_token: `dropbox-refresh-token-${++connections}`, access_token: 'dropbox-access-token', expires_in: 14400 });",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "410491324ef7dbd7"
+      "fingerprint": "04d8289bdeec2b24"
     },
     {
       "pattern_name": "Generic API key assignment",
@@ -131,100 +73,76 @@
       "fingerprint": "20ac54860e29cfce"
     },
     {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...oken",
-      "confidence": "high",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/anthropic-api-key-provider-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/anthropic-api-key-provider-smoke.ts",
-      "line_number": 219,
-      "line_content": "const token = await api(\"/api/auth/api-key\", { method: \"POST\", body: JSON.stringify({ provider: KEY_PROVIDER, key: \"sk-ant-oat01-synthetic-pasted-token\" }) });",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "01c731f7b8dc404c"
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-or-...alue",
+      "confidence": "medium",
+      "repo": "elie222/rakazo",
+      "file_path": "apps/api/src/security-audit.test.ts",
+      "file_url": "https://github.com/elie222/rakazo/blob/main/apps/api/src/security-audit.test.ts",
+      "line_number": 20,
+      "line_content": "{ provider: \"openrouter\", apiKey: \"sk-or-v1-secretvalue\", label: \"Work key\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "9be569a4427235e1"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...-key",
+      "value_masked": "elido....ings",
       "confidence": "medium",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/anthropic-api-key-provider-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/anthropic-api-key-provider-smoke.ts",
-      "line_number": 189,
-      "line_content": "env: smokeHomeEnv(tempHome, { PORT: String(port), ...SMOKE_SERVER_AUTH_ENV, EXXETA_HOME: repoRoot, EXXPERTS_CODING_AGENT_DIR: agentDir, EXXETA_PERSISTENT_AGENTS_ROOT: agentsRoot, ANTHROPIC_API_KEY: \"synthetic-environment-key\", ANTHROPIC_OAUTH_TOKEN: \"synthetic-environment-token\" }) as NodeJS.ProcessEnv,",
+      "repo": "OmritRenders/elidocortex",
+      "file_path": "Cortex Agent/settings/browser/elidoSettings.ts",
+      "file_url": "https://github.com/OmritRenders/elidocortex/blob/main/Cortex Agent/settings/browser/elidoSettings.ts",
+      "line_number": 12,
+      "line_content": "export const ELIDO_SETTINGS_COMMAND_OPEN_API_KEY = 'elido.cortex.openApiKeySettings';",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "67bd9331b8c587b8"
+      "fingerprint": "e49b9ebc000535b6"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...oken",
+      "value_masked": "elido....ings",
       "confidence": "medium",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/anthropic-api-key-provider-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/anthropic-api-key-provider-smoke.ts",
-      "line_number": 189,
-      "line_content": "env: smokeHomeEnv(tempHome, { PORT: String(port), ...SMOKE_SERVER_AUTH_ENV, EXXETA_HOME: repoRoot, EXXPERTS_CODING_AGENT_DIR: agentDir, EXXETA_PERSISTENT_AGENTS_ROOT: agentsRoot, ANTHROPIC_API_KEY: \"synthetic-environment-key\", ANTHROPIC_OAUTH_TOKEN: \"synthetic-environment-token\" }) as NodeJS.ProcessEnv,",
+      "repo": "OmritRenders/cortex-agent",
+      "file_path": "settings/browser/elidoSettings.ts",
+      "file_url": "https://github.com/OmritRenders/cortex-agent/blob/main/settings/browser/elidoSettings.ts",
+      "line_number": 12,
+      "line_content": "export const ELIDO_SETTINGS_COMMAND_OPEN_API_KEY = 'elido.cortex.openApiKeySettings';",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "f2b9e5ceb14798d5"
+      "fingerprint": "c0516a97f99e3152"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...4321",
+      "confidence": "high",
+      "repo": "pghmatt/quotadial",
+      "file_path": "crates/providers/claude/src/provider_tests.rs",
+      "file_url": "https://github.com/pghmatt/quotadial/blob/main/crates/providers/claude/src/provider_tests.rs",
+      "line_number": 1028,
+      "line_content": "shell(\"sk-ant-oat01-QUOTADIAL-OTHER-TOKEN-987654321\"),",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "0c9a243c27adb44e"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...-key",
+      "value_masked": "fixtur...-key",
       "confidence": "medium",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/gateway-bare-403-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/gateway-bare-403-smoke.ts",
-      "line_number": 99,
-      "line_content": "const answer = await complete(model as never, { messages: [{ role: \"user\", content: \"Hello\", timestamp: Date.now() }] }, { apiKey: \"synthetic-gateway-key\" });",
+      "repo": "trick77/llmwire",
+      "file_path": "messages_test.go",
+      "file_url": "https://github.com/trick77/llmwire/blob/master/messages_test.go",
+      "line_number": 444,
+      "line_content": "c := clientOn(t, srv.URL, Config{APIKey: \"fixture-anthropic-key\", APIKeyHeader: \"x-api-key\",",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "16f3e0e34ec70de2"
+      "fingerprint": "472901c46838ec24"
     },
     {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...rint",
-      "confidence": "high",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/native-provider-search-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts",
-      "line_number": 62,
-      "line_content": "else if (type === \"oauth\") existing.anthropic = { type: \"oauth\", access: \"sk-ant-oat-synthetic-do-not-print\", refresh: \"synthetic-refresh\", expires: Date.now() + 600_000 };",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "c7e8db0b1818f798"
-    },
-    {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...rint",
-      "confidence": "high",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/native-provider-search-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts",
-      "line_number": 63,
-      "line_content": "else existing.anthropic = { type: \"api_key\", key: \"sk-ant-api-synthetic-do-not-print\" };",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "36734a1102155cc4"
-    },
-    {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...rint",
-      "confidence": "high",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/native-provider-search-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts",
-      "line_number": 168,
-      "line_content": "anthropic: { type: \"oauth\", access: \"sk-ant-oat-synthetic-do-not-print\", refresh: \"synthetic-refresh\", expires: Date.now() + 600_000 },",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "275c7c02b8ed89a2"
-    },
-    {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...rint",
-      "confidence": "high",
-      "repo": "EXXETA/exxperts",
-      "file_path": "apps/web-server/scripts/native-provider-search-smoke.ts",
-      "file_url": "https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts",
-      "line_number": 529,
-      "line_content": "parsedAuth.anthropic = { type: \"api_key\", key: \"sk-ant-api-synthetic-do-not-print\" };",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "c7a8e7b4c246cd98"
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "team-k...hape",
+      "confidence": "medium",
+      "repo": "trick77/llmwire",
+      "file_path": "models_test.go",
+      "file_url": "https://github.com/trick77/llmwire/blob/master/models_test.go",
+      "line_number": 18,
+      "line_content": "c := New(Config{BaseURL: srv.URL, APIKey: \"team-key-of-no-known-shape\"})",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "69043f2f52003820"
     }
   ]
 }

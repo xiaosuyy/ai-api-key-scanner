@@ -3,117 +3,57 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-26 07:26:30 UTC |
-| 扫描仓库数 | 20 |
-| 扫描文件数 | 4747 |
-| 发现数量 | 17 |
+| 生成时间 | 2026-10-26 07:49:11 UTC |
+| 扫描仓库数 | 44 |
+| 扫描文件数 | 9416 |
+| 发现数量 | 10 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| HIGH | 6 |
-| MEDIUM | 11 |
+| HIGH | 1 |
+| MEDIUM | 9 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`BertMarti/modelduel`
-- **文件**：`docs/USO.md`（第 333 行）
-- **密钥（已脱敏）**：`PEGA_A...UTER`
-- **链接**：https://github.com/BertMarti/modelduel/blob/main/docs/USO.md
+- **仓库**：`DeliciousBuding/metapi-go`
+- **文件**：`config/defaults.go`（第 7 行）
+- **密钥（已脱敏）**：`change...oken`
+- **链接**：https://github.com/DeliciousBuding/metapi-go/blob/master/config/defaults.go
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-$env:OPENAI_API_KEY = "PEGA_AQUI_TU_CLAVE_DE_OPENROUTER"
+DefaultAuthToken             = "change-me-admin-token"
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`BertMarti/modelduel`
-- **文件**：`docs/USO.md`（第 340 行）
-- **密钥（已脱敏）**：`PEGA_A...UTER`
-- **链接**：https://github.com/BertMarti/modelduel/blob/main/docs/USO.md
+- **仓库**：`DeliciousBuding/metapi-go`
+- **文件**：`handler/admin/accounts_test.go`（第 1314 行）
+- **密钥（已脱敏）**：`new-se...-xyz`
+- **链接**：https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/accounts_test.go
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-export OPENAI_API_KEY="PEGA_AQUI_TU_CLAVE_DE_OPENROUTER"
+t.Errorf("expected accessToken='new-session-token-xyz', got %q", accessToken)
 ```
 
-### 3. [HIGH] Anthropic API Key
+### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`BerriAI/litellm`
-- **文件**：`.github/workflows/e2e_record_replay.yml`（第 146 行）
-- **密钥（已脱敏）**：`sk-ant...ider`
-- **链接**：https://github.com/BerriAI/litellm/blob/main/.github/workflows/e2e_record_replay.yml
-- **说明**：Anthropic Claude API 密钥。
+- **仓库**：`DeliciousBuding/metapi-go`
+- **文件**：`handler/admin/auth_settings_test.go`（第 27 行）
+- **密钥（已脱敏）**：`admin-...oken`
+- **链接**：https://github.com/DeliciousBuding/metapi-go/blob/master/handler/admin/auth_settings_test.go
+- **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-ANTHROPIC_API_KEY: sk-ant-replay-must-never-reach-a-provider
+config.SetRuntime(&config.RuntimeSettings{AuthToken: "admin-auth-settings-token"})
 ```
 
 ### 4. [MEDIUM] Generic API key assignment
-
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/lib/email-confirmation-unsubscribe.test.ts`（第 4 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-confirmation-unsubscribe.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';
-```
-
-### 5. [MEDIUM] Generic API key assignment
-
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.hosted-guards.test.ts`（第 59 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted-guards.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-access_token: 'dropbox-access-token',
-```
-
-### 6. [MEDIUM] Generic API key assignment
-
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.hosted.test.ts`（第 56 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-access_token: 'dropbox-access-token',
-```
-
-### 7. [MEDIUM] Generic API key assignment
-
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.knowledge.test.ts`（第 72 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.knowledge.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-access_token: 'dropbox-access-token',
-```
-
-### 8. [MEDIUM] Generic API key assignment
-
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.reviewer.test.ts`（第 88 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.reviewer.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-return Response.json({ refresh_token: `dropbox-refresh-token-${++connections}`, access_token: 'dropbox-access-token', expires_in: 14400 });
-```
-
-### 9. [MEDIUM] Generic API key assignment
 
 - **仓库**：`woodbeary/later-dog`
 - **文件**：`cloudflare/control-plane/test/sign-up-guards.test.ts`（第 213 行）
@@ -125,100 +65,76 @@ return Response.json({ refresh_token: `dropbox-refresh-token-${++connections}`, 
 const vars = { TURNSTILE_SECRET_KEY: "0x4AAAAAAAproductionlookingsecret" };
 ```
 
-### 10. [HIGH] Anthropic API Key
+### 5. [MEDIUM] Generic API key assignment
 
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/anthropic-api-key-provider-smoke.ts`（第 219 行）
-- **密钥（已脱敏）**：`sk-ant...oken`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/anthropic-api-key-provider-smoke.ts
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-const token = await api("/api/auth/api-key", { method: "POST", body: JSON.stringify({ provider: KEY_PROVIDER, key: "sk-ant-oat01-synthetic-pasted-token" }) });
-```
-
-### 11. [MEDIUM] Generic API key assignment
-
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/anthropic-api-key-provider-smoke.ts`（第 189 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/anthropic-api-key-provider-smoke.ts
+- **仓库**：`elie222/rakazo`
+- **文件**：`apps/api/src/security-audit.test.ts`（第 20 行）
+- **密钥（已脱敏）**：`sk-or-...alue`
+- **链接**：https://github.com/elie222/rakazo/blob/main/apps/api/src/security-audit.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-env: smokeHomeEnv(tempHome, { PORT: String(port), ...SMOKE_SERVER_AUTH_ENV, EXXETA_HOME: repoRoot, EXXPERTS_CODING_AGENT_DIR: agentDir, EXXETA_PERSISTENT_AGENTS_ROOT: agentsRoot, ANTHROPIC_API_KEY: "synthetic-environment-key", ANTHROPIC_OAUTH_TOKEN: "synthetic-environment-token" }) as NodeJS.ProcessEnv,
+{ provider: "openrouter", apiKey: "sk-or-v1-secretvalue", label: "Work key" },
 ```
 
-### 12. [MEDIUM] Generic API key assignment
+### 6. [MEDIUM] Generic API key assignment
 
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/anthropic-api-key-provider-smoke.ts`（第 189 行）
-- **密钥（已脱敏）**：`synthe...oken`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/anthropic-api-key-provider-smoke.ts
+- **仓库**：`OmritRenders/elidocortex`
+- **文件**：`Cortex Agent/settings/browser/elidoSettings.ts`（第 12 行）
+- **密钥（已脱敏）**：`elido....ings`
+- **链接**：https://github.com/OmritRenders/elidocortex/blob/main/Cortex Agent/settings/browser/elidoSettings.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-env: smokeHomeEnv(tempHome, { PORT: String(port), ...SMOKE_SERVER_AUTH_ENV, EXXETA_HOME: repoRoot, EXXPERTS_CODING_AGENT_DIR: agentDir, EXXETA_PERSISTENT_AGENTS_ROOT: agentsRoot, ANTHROPIC_API_KEY: "synthetic-environment-key", ANTHROPIC_OAUTH_TOKEN: "synthetic-environment-token" }) as NodeJS.ProcessEnv,
+export const ELIDO_SETTINGS_COMMAND_OPEN_API_KEY = 'elido.cortex.openApiKeySettings';
 ```
 
-### 13. [MEDIUM] Generic API key assignment
+### 7. [MEDIUM] Generic API key assignment
 
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/gateway-bare-403-smoke.ts`（第 99 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/gateway-bare-403-smoke.ts
+- **仓库**：`OmritRenders/cortex-agent`
+- **文件**：`settings/browser/elidoSettings.ts`（第 12 行）
+- **密钥（已脱敏）**：`elido....ings`
+- **链接**：https://github.com/OmritRenders/cortex-agent/blob/main/settings/browser/elidoSettings.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-const answer = await complete(model as never, { messages: [{ role: "user", content: "Hello", timestamp: Date.now() }] }, { apiKey: "synthetic-gateway-key" });
+export const ELIDO_SETTINGS_COMMAND_OPEN_API_KEY = 'elido.cortex.openApiKeySettings';
 ```
 
-### 14. [HIGH] Anthropic API Key
+### 8. [HIGH] Anthropic API Key
 
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/native-provider-search-smoke.ts`（第 62 行）
-- **密钥（已脱敏）**：`sk-ant...rint`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts
+- **仓库**：`pghmatt/quotadial`
+- **文件**：`crates/providers/claude/src/provider_tests.rs`（第 1028 行）
+- **密钥（已脱敏）**：`sk-ant...4321`
+- **链接**：https://github.com/pghmatt/quotadial/blob/main/crates/providers/claude/src/provider_tests.rs
 - **说明**：Anthropic Claude API 密钥。
 
 ```text
-else if (type === "oauth") existing.anthropic = { type: "oauth", access: "sk-ant-oat-synthetic-do-not-print", refresh: "synthetic-refresh", expires: Date.now() + 600_000 };
+shell("sk-ant-oat01-QUOTADIAL-OTHER-TOKEN-987654321"),
 ```
 
-### 15. [HIGH] Anthropic API Key
+### 9. [MEDIUM] Generic API key assignment
 
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/native-provider-search-smoke.ts`（第 63 行）
-- **密钥（已脱敏）**：`sk-ant...rint`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts
-- **说明**：Anthropic Claude API 密钥。
+- **仓库**：`trick77/llmwire`
+- **文件**：`messages_test.go`（第 444 行）
+- **密钥（已脱敏）**：`fixtur...-key`
+- **链接**：https://github.com/trick77/llmwire/blob/master/messages_test.go
+- **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-else existing.anthropic = { type: "api_key", key: "sk-ant-api-synthetic-do-not-print" };
+c := clientOn(t, srv.URL, Config{APIKey: "fixture-anthropic-key", APIKeyHeader: "x-api-key",
 ```
 
-### 16. [HIGH] Anthropic API Key
+### 10. [MEDIUM] Generic API key assignment
 
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/native-provider-search-smoke.ts`（第 168 行）
-- **密钥（已脱敏）**：`sk-ant...rint`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-anthropic: { type: "oauth", access: "sk-ant-oat-synthetic-do-not-print", refresh: "synthetic-refresh", expires: Date.now() + 600_000 },
-```
-
-### 17. [HIGH] Anthropic API Key
-
-- **仓库**：`EXXETA/exxperts`
-- **文件**：`apps/web-server/scripts/native-provider-search-smoke.ts`（第 529 行）
-- **密钥（已脱敏）**：`sk-ant...rint`
-- **链接**：https://github.com/EXXETA/exxperts/blob/main/apps/web-server/scripts/native-provider-search-smoke.ts
-- **说明**：Anthropic Claude API 密钥。
+- **仓库**：`trick77/llmwire`
+- **文件**：`models_test.go`（第 18 行）
+- **密钥（已脱敏）**：`team-k...hape`
+- **链接**：https://github.com/trick77/llmwire/blob/master/models_test.go
+- **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-parsedAuth.anthropic = { type: "api_key", key: "sk-ant-api-synthetic-do-not-print" };
+c := New(Config{BaseURL: srv.URL, APIKey: "team-key-of-no-known-shape"})
 ```
 
 ## 处置建议
