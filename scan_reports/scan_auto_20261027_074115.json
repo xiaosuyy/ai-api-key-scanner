@@ -1,0 +1,93 @@
+{
+  "summary": {
+    "generated_at": "2026-10-27 07:41:15 UTC",
+    "repos_scanned": 47,
+    "files_scanned": 7240,
+    "total_findings": 6,
+    "by_confidence": {
+      "medium": 6
+    },
+    "by_pattern": {
+      "Generic API key assignment": 6
+    },
+    "by_repo": {
+      "CollieAi/llm-firewall": 1,
+      "Team-Commonly/commonly": 5
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "clai_A...1234",
+      "confidence": "medium",
+      "repo": "CollieAi/llm-firewall",
+      "file_path": "docs/getting-started/api-keys.md",
+      "file_url": "https://github.com/CollieAi/llm-firewall/blob/main/docs/getting-started/api-keys.md",
+      "line_number": 47,
+      "line_content": "api_key=\"clai_AbCSSs2IjKlMnOpQrStUvWxYz01328901234\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "08207f12899b0926"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "groupm...oken",
+      "confidence": "medium",
+      "repo": "Team-Commonly/commonly",
+      "file_path": "backend/__tests__/service/integrations-e2e.test.js",
+      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/service/integrations-e2e.test.js",
+      "line_number": 1453,
+      "line_content": "accessToken: 'groupme-access-token',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "6b16787e6c8285f0"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "groupm...vate",
+      "confidence": "medium",
+      "repo": "Team-Commonly/commonly",
+      "file_path": "backend/__tests__/service/integrations-e2e.test.js",
+      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/service/integrations-e2e.test.js",
+      "line_number": 1509,
+      "line_content": "accessToken: 'groupme-token-heartbeat-private',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ca069c65fd92ff0f"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "SENTIN...OKEN",
+      "confidence": "medium",
+      "repo": "Team-Commonly/commonly",
+      "file_path": "backend/__tests__/unit/models/integrationPublicConfig.test.js",
+      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/unit/models/integrationPublicConfig.test.js",
+      "line_number": 89,
+      "line_content": "accessToken: 'SENTINEL_ACCESS_TOKEN',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "4db0b1083e31798c"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "feed-a...inel",
+      "confidence": "medium",
+      "repo": "Team-Commonly/commonly",
+      "file_path": "backend/__tests__/unit/models/integrationPublicConfig.test.js",
+      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/unit/models/integrationPublicConfig.test.js",
+      "line_number": 170,
+      "line_content": "accessToken: 'feed-access-token-sentinel',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ab21bc11edcee478"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "litera...avel",
+      "confidence": "medium",
+      "repo": "Team-Commonly/commonly",
+      "file_path": "backend/__tests__/unit/routes/agentBinding.phase2.test.js",
+      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/unit/routes/agentBinding.phase2.test.js",
+      "line_number": 83,
+      "line_content": "PRIVATE_API_KEY: 'literal-secret-must-not-travel',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3b6931ba6b4a351d"
+    }
+  ]
+}
