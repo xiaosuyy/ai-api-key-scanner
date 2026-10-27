@@ -300,6 +300,13 @@
       "total_findings": 10,
       "new_findings": 7,
       "repos_scanned": 44
+    },
+    {
+      "timestamp": "2026-10-27 07:12:19 UTC",
+      "scan_type": "auto",
+      "total_findings": 0,
+      "new_findings": 0,
+      "repos_scanned": 20
     }
   ],
   "known_fingerprints": [
