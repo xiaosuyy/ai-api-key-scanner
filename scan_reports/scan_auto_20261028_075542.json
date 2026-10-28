@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "generated_at": "2026-10-28 07:55:42 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 4295,
+    "total_findings": 2,
+    "by_confidence": {
+      "medium": 2
+    },
+    "by_pattern": {
+      "Generic API key assignment": 2
+    },
+    "by_repo": {
+      "xiaoqi8553/codex-token-dashboard": 1,
+      "CorbanuCore/CorbanuTerminal": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "SECRET...DATA",
+      "confidence": "medium",
+      "repo": "xiaoqi8553/codex-token-dashboard",
+      "file_path": "tests/dashboard-ui.test.js",
+      "file_url": "https://github.com/xiaoqi8553/codex-token-dashboard/blob/main/tests/dashboard-ui.test.js",
+      "line_number": 367,
+      "line_content": "fs.writeFileSync(path.join(codexHome, \"auth.json\"), JSON.stringify({ tokens: { account_id: \"test-account\", access_token: \"SECRET_SHOULD_NOT_BE_IN_METADATA\" } }));",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "06f76d928de956c8"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "corban...moke",
+      "confidence": "medium",
+      "repo": "CorbanuCore/CorbanuTerminal",
+      "file_path": ".github/workflows/corbanu-terminal-release.yml",
+      "file_url": "https://github.com/CorbanuCore/CorbanuTerminal/blob/main/.github/workflows/corbanu-terminal-release.yml",
+      "line_number": 567,
+      "line_content": "$env:CLAUDE_CODE_OAUTH_TOKEN = \"corbanu-release-smoke\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "733967c22b61196a"
+    }
+  ]
+}
