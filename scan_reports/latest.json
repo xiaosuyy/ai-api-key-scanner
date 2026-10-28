@@ -1,45 +1,221 @@
 {
   "summary": {
-    "generated_at": "2026-10-28 07:55:42 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 4295,
-    "total_findings": 2,
+    "generated_at": "2026-10-28 08:20:28 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 9688,
+    "total_findings": 16,
     "by_confidence": {
-      "medium": 2
+      "medium": 11,
+      "high": 5
     },
     "by_pattern": {
-      "Generic API key assignment": 2
+      "Generic API key assignment": 11,
+      "GitHub Personal Access Token": 1,
+      "Anthropic API Key": 1,
+      "Google Gemini / GCP API Key": 3
     },
     "by_repo": {
-      "xiaoqi8553/codex-token-dashboard": 1,
-      "CorbanuCore/CorbanuTerminal": 1
+      "e2b-dev/E2B": 2,
+      "johan-becker/hushgate": 8,
+      "pymc-labs/daimon": 1,
+      "punn-pca/firekeeper-core": 3,
+      "langchain4j/langchain4j": 1,
+      "theolundqvist/pr-cockpit": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "SECRET...DATA",
+      "value_masked": "projec...cret",
       "confidence": "medium",
-      "repo": "xiaoqi8553/codex-token-dashboard",
-      "file_path": "tests/dashboard-ui.test.js",
-      "file_url": "https://github.com/xiaoqi8553/codex-token-dashboard/blob/main/tests/dashboard-ui.test.js",
-      "line_number": 367,
-      "line_content": "fs.writeFileSync(path.join(codexHome, \"auth.json\"), JSON.stringify({ tokens: { account_id: \"test-account\", access_token: \"SECRET_SHOULD_NOT_BE_IN_METADATA\" } }));",
+      "repo": "e2b-dev/E2B",
+      "file_path": "packages/cli/tests/user_config_migration.test.ts",
+      "file_url": "https://github.com/e2b-dev/E2B/blob/main/packages/cli/tests/user_config_migration.test.ts",
+      "line_number": 80,
+      "line_content": "projectApiKey: 'project-api-key-secret',",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "06f76d928de956c8"
+      "fingerprint": "94e79e2675edff72"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "corban...moke",
+      "value_masked": "projec...cret",
       "confidence": "medium",
-      "repo": "CorbanuCore/CorbanuTerminal",
-      "file_path": ".github/workflows/corbanu-terminal-release.yml",
-      "file_url": "https://github.com/CorbanuCore/CorbanuTerminal/blob/main/.github/workflows/corbanu-terminal-release.yml",
-      "line_number": 567,
-      "line_content": "$env:CLAUDE_CODE_OAUTH_TOKEN = \"corbanu-release-smoke\"",
+      "repo": "e2b-dev/E2B",
+      "file_path": "packages/cli/tests/user_config_permissions.test.ts",
+      "file_url": "https://github.com/e2b-dev/E2B/blob/main/packages/cli/tests/user_config_permissions.test.ts",
+      "line_number": 38,
+      "line_content": "projectApiKey: 'project-api-key-secret',",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "733967c22b61196a"
+      "fingerprint": "3c532bd167f0f992"
+    },
+    {
+      "pattern_name": "GitHub Personal Access Token",
+      "value_masked": "ghp_A1...Q7r8",
+      "confidence": "high",
+      "repo": "johan-becker/hushgate",
+      "file_path": "README.md",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/README.md",
+      "line_number": 333,
+      "line_content": "-d '{\"model\":\"gpt-4o-mini\",\"messages\":[{\"role\":\"user\",\"content\":\"Deploy with GITHUB_TOKEN=ghp_A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8 please\"}]}'",
+      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
+      "fingerprint": "15c5f4770c2901b4"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-fro...inal",
+      "confidence": "medium",
+      "repo": "johan-becker/hushgate",
+      "file_path": "docs/superpowers/plans/2026-09-09-onboarding-setup.md",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/docs/superpowers/plans/2026-09-09-onboarding-setup.md",
+      "line_number": 1764,
+      "line_content": "apiKey: 'sk-from-the-terminal',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3b233db320cc6a56"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-inj...page",
+      "confidence": "medium",
+      "repo": "johan-becker/hushgate",
+      "file_path": "docs/superpowers/plans/2026-09-09-onboarding-setup.md",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/docs/superpowers/plans/2026-09-09-onboarding-setup.md",
+      "line_number": 1779,
+      "line_content": "apiKey: 'sk-injected-by-a-page',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "bb2073af1baf2f89"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-als...leak",
+      "confidence": "medium",
+      "repo": "johan-becker/hushgate",
+      "file_path": "test/attach.external.test.ts",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/test/attach.external.test.ts",
+      "line_number": 237,
+      "line_content": "process.env.OPENAI_API_KEY = 'sk-also-must-not-leak';",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "39d0ae8d6e292a4b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-fro...inal",
+      "confidence": "medium",
+      "repo": "johan-becker/hushgate",
+      "file_path": "test/playground.send.test.ts",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/test/playground.send.test.ts",
+      "line_number": 47,
+      "line_content": "apiKey: 'sk-from-the-terminal',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c770ee6149ae7501"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-inj...page",
+      "confidence": "medium",
+      "repo": "johan-becker/hushgate",
+      "file_path": "test/playground.send.test.ts",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/test/playground.send.test.ts",
+      "line_number": 136,
+      "line_content": "apiKey: 'sk-injected-by-a-page',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ccff87689d2f3ed4"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...AAAA",
+      "confidence": "high",
+      "repo": "johan-becker/hushgate",
+      "file_path": "test/tenants.test.ts",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/test/tenants.test.ts",
+      "line_number": 432,
+      "line_content": "content: 'key sk-ant-api03-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "695c544b24e7790a"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-rea...-key",
+      "confidence": "medium",
+      "repo": "johan-becker/hushgate",
+      "file_path": "test/tenants.test.ts",
+      "file_url": "https://github.com/johan-becker/hushgate/blob/main/test/tenants.test.ts",
+      "line_number": 262,
+      "line_content": "proxy: { env: { OPENAI_API_KEY: 'sk-real-provider-key' } },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3bae0f2d321d5559"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...cret",
+      "confidence": "medium",
+      "repo": "pymc-labs/daimon",
+      "file_path": "apps/harness/tests/test_isolation.py",
+      "file_url": "https://github.com/pymc-labs/daimon/blob/main/apps/harness/tests/test_isolation.py",
+      "line_number": 51,
+      "line_content": "AZURE_OPENAI_API_KEY=\"synthetic-model-secret\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "62368d0704c4cc06"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...H_Vw",
+      "confidence": "high",
+      "repo": "punn-pca/firekeeper-core",
+      "file_path": "firebase-applet-config.json",
+      "file_url": "https://github.com/punn-pca/firekeeper-core/blob/main/firebase-applet-config.json",
+      "line_number": 4,
+      "line_content": "\"apiKey\": \"AIzaSyCjrY8E1uYL95Z-dStlsuBklyYoFlQH_Vw\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "1c7f7da91919630a"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...H_Vw",
+      "confidence": "high",
+      "repo": "punn-pca/firekeeper-core",
+      "file_path": "mobile/src/lib/firebase.ts",
+      "file_url": "https://github.com/punn-pca/firekeeper-core/blob/main/mobile/src/lib/firebase.ts",
+      "line_number": 32,
+      "line_content": "apiKey: 'AIzaSyCjrY8E1uYL95Z-dStlsuBklyYoFlQH_Vw',",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "50ab7908a4cb2318"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...H_Vw",
+      "confidence": "high",
+      "repo": "punn-pca/firekeeper-core",
+      "file_path": "mobile/src/lib/firebaseRestAuth.ts",
+      "file_url": "https://github.com/punn-pca/firekeeper-core/blob/main/mobile/src/lib/firebaseRestAuth.ts",
+      "line_number": 9,
+      "line_content": "const FIREBASE_API_KEY = 'AIzaSyCjrY8E1uYL95Z-dStlsuBklyYoFlQH_Vw';",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "fcaf8cfb97dab661"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "VnVhQ2...U...",
+      "confidence": "medium",
+      "repo": "langchain4j/langchain4j",
+      "file_path": "docs/docs/integrations/embedding-stores/elasticsearch.md",
+      "file_url": "https://github.com/langchain4j/langchain4j/blob/main/docs/docs/integrations/embedding-stores/elasticsearch.md",
+      "line_number": 36,
+      "line_content": "String apiKey = \"VnVhQ2ZHY0JDZGJrU...\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "23d555f263ed3dec"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ant...cret",
+      "confidence": "medium",
+      "repo": "theolundqvist/pr-cockpit",
+      "file_path": "server/quickGenerate.test.ts",
+      "file_url": "https://github.com/theolundqvist/pr-cockpit/blob/main/server/quickGenerate.test.ts",
+      "line_number": 66,
+      "line_content": "{ ANTHROPIC_API_KEY: \"sk-ant-process-secret\", HOME: \"/elsewhere\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "85c9c05d2b5093a2"
     }
   ]
 }
