@@ -1,0 +1,69 @@
+{
+  "summary": {
+    "generated_at": "2026-10-29 07:56:46 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 2868,
+    "total_findings": 4,
+    "by_confidence": {
+      "medium": 4
+    },
+    "by_pattern": {
+      "Generic API key assignment": 4
+    },
+    "by_repo": {
+      "cheaper-inference/OmniRoute": 1,
+      "aurorax-neo/chatgptx": 3
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "key-wr...nfig",
+      "confidence": "medium",
+      "repo": "cheaper-inference/OmniRoute",
+      "file_path": "@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "file_url": "https://github.com/cheaper-inference/OmniRoute/blob/release/v3.8.53/@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "line_number": 47,
+      "line_content": "options: { baseURL, providerId: \"warmid\", apiKey: \"key-written-in-the-config\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "69d63d7ccb86f7bd"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...-key",
+      "confidence": "medium",
+      "repo": "aurorax-neo/chatgptx",
+      "file_path": "apps/chatgptx-manager/src/pure-api-auth.test.ts",
+      "file_url": "https://github.com/aurorax-neo/chatgptx/blob/main/apps/chatgptx-manager/src/pure-api-auth.test.ts",
+      "line_number": 51,
+      "line_content": "apiKey: \"fixture-provider-key\", officialMixApiKey: false, modelRoutes: [],",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "d04f3a90ddd348b1"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "fixtur...-key",
+      "confidence": "medium",
+      "repo": "aurorax-neo/chatgptx",
+      "file_path": "apps/chatgptx-manager/src/pure-api-auth.test.ts",
+      "file_url": "https://github.com/aurorax-neo/chatgptx/blob/main/apps/chatgptx-manager/src/pure-api-auth.test.ts",
+      "line_number": 53,
+      "line_content": "authContents: JSON.stringify({ OPENAI_API_KEY: \"fixture-provider-key\", vendor: \"stored\" }),",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "6061a98125dc325e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "__code...anel",
+      "confidence": "medium",
+      "repo": "aurorax-neo/chatgptx",
+      "file_path": "assets/inject/floating-panel/runtime/state.js",
+      "file_url": "https://github.com/aurorax-neo/chatgptx/blob/main/assets/inject/floating-panel/runtime/state.js",
+      "line_number": 25,
+      "line_content": "const API_KEY = \"__codexStepwisePanel\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "18f6bb2fe6f61c9d"
+    }
+  ]
+}
