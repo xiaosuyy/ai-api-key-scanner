@@ -1,69 +1,98 @@
 {
   "summary": {
-    "generated_at": "2026-10-29 07:56:46 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 2868,
-    "total_findings": 4,
+    "generated_at": "2026-10-29 08:26:40 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 8185,
+    "total_findings": 6,
     "by_confidence": {
-      "medium": 4
+      "medium": 6
     },
     "by_pattern": {
-      "Generic API key assignment": 4
+      "Generic API key assignment": 3,
+      "AWS Access Key ID": 2,
+      "Anthropic API Key": 1
     },
     "by_repo": {
-      "cheaper-inference/OmniRoute": 1,
-      "aurorax-neo/chatgptx": 3
+      "PMZPZM0/codex-harness-desktop": 1,
+      "langwatch/langwatch": 2,
+      "Baldri/mingly": 1,
+      "ostrium-labs/loams": 1,
+      "Fooftilly/local-search-mcp": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "key-wr...nfig",
+      "value_masked": "CLOUD_...OKEN",
       "confidence": "medium",
-      "repo": "cheaper-inference/OmniRoute",
-      "file_path": "@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
-      "file_url": "https://github.com/cheaper-inference/OmniRoute/blob/release/v3.8.53/@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
-      "line_number": 47,
-      "line_content": "options: { baseURL, providerId: \"warmid\", apiKey: \"key-written-in-the-config\" },",
+      "repo": "PMZPZM0/codex-harness-desktop",
+      "file_path": "electron/features/cloud-memory-ipc.ts",
+      "file_url": "https://github.com/PMZPZM0/codex-harness-desktop/blob/main/electron/features/cloud-memory-ipc.ts",
+      "line_number": 151,
+      "line_content": "secretKey: \"CLOUD_MEMORY_MCP_TOKEN\",",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "69d63d7ccb86f7bd"
+      "fingerprint": "67f695deecaf79e2"
+    },
+    {
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAQY...ZAM2",
+      "confidence": "medium",
+      "repo": "langwatch/langwatch",
+      "file_path": ".github/scripts/__tests__/secrets-scan.test.sh",
+      "file_url": "https://github.com/langwatch/langwatch/blob/main/.github/scripts/__tests__/secrets-scan.test.sh",
+      "line_number": 26,
+      "line_content": "readonly PLANTED_SECRET='AWS_ACCESS_KEY_ID=AKIAQYLPMN5HHHFPZAM2",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "f66e19f803bb2ff7"
+    },
+    {
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAQY...ZAM2",
+      "confidence": "medium",
+      "repo": "langwatch/langwatch",
+      "file_path": ".gitleaks.toml",
+      "file_url": "https://github.com/langwatch/langwatch/blob/main/.gitleaks.toml",
+      "line_number": 122,
+      "line_content": "regexes = ['''AKIAQYLPMN5HHHFPZAM2''', '''A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0''']",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "87ece400725f677f"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...here",
+      "confidence": "medium",
+      "repo": "Baldri/mingly",
+      "file_path": "tests/e2e/app.spec.ts",
+      "file_url": "https://github.com/Baldri/mingly/blob/main/tests/e2e/app.spec.ts",
+      "line_number": 456,
+      "line_content": "const testData = 'My email is user@example.com and key sk-ant-api03-very-long-key-here'",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "acdd498a22d98818"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "fixtur...-key",
+      "value_masked": "sk-ant...6789",
       "confidence": "medium",
-      "repo": "aurorax-neo/chatgptx",
-      "file_path": "apps/chatgptx-manager/src/pure-api-auth.test.ts",
-      "file_url": "https://github.com/aurorax-neo/chatgptx/blob/main/apps/chatgptx-manager/src/pure-api-auth.test.ts",
-      "line_number": 51,
-      "line_content": "apiKey: \"fixture-provider-key\", officialMixApiKey: false, modelRoutes: [],",
+      "repo": "ostrium-labs/loams",
+      "file_path": "apps/desktop-electron/test/agent-loop.test.ts",
+      "file_url": "https://github.com/ostrium-labs/loams/blob/main/apps/desktop-electron/test/agent-loop.test.ts",
+      "line_number": 841,
+      "line_content": "apiKey: \"sk-ant-other-0123456789\",",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "d04f3a90ddd348b1"
+      "fingerprint": "7dbf8d5892f930fa"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "fixtur...-key",
+      "value_masked": "__GENE...EY__",
       "confidence": "medium",
-      "repo": "aurorax-neo/chatgptx",
-      "file_path": "apps/chatgptx-manager/src/pure-api-auth.test.ts",
-      "file_url": "https://github.com/aurorax-neo/chatgptx/blob/main/apps/chatgptx-manager/src/pure-api-auth.test.ts",
-      "line_number": 53,
-      "line_content": "authContents: JSON.stringify({ OPENAI_API_KEY: \"fixture-provider-key\", vendor: \"stored\" }),",
+      "repo": "Fooftilly/local-search-mcp",
+      "file_path": "config/crawler/searxng-settings.yml",
+      "file_url": "https://github.com/Fooftilly/local-search-mcp/blob/master/config/crawler/searxng-settings.yml",
+      "line_number": 6,
+      "line_content": "secret_key: '__GENERATE_PRIVATE_SEARXNG_KEY__'",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "6061a98125dc325e"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "__code...anel",
-      "confidence": "medium",
-      "repo": "aurorax-neo/chatgptx",
-      "file_path": "assets/inject/floating-panel/runtime/state.js",
-      "file_url": "https://github.com/aurorax-neo/chatgptx/blob/main/assets/inject/floating-panel/runtime/state.js",
-      "line_number": 25,
-      "line_content": "const API_KEY = \"__codexStepwisePanel\";",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "18f6bb2fe6f61c9d"
+      "fingerprint": "a58695ad090f2104"
     }
   ]
 }
