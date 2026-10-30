@@ -1,98 +1,45 @@
 {
   "summary": {
-    "generated_at": "2026-10-29 08:26:40 UTC",
-    "repos_scanned": 50,
-    "files_scanned": 8185,
-    "total_findings": 6,
+    "generated_at": "2026-10-30 08:03:22 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 4209,
+    "total_findings": 2,
     "by_confidence": {
-      "medium": 6
+      "medium": 2
     },
     "by_pattern": {
-      "Generic API key assignment": 3,
-      "AWS Access Key ID": 2,
-      "Anthropic API Key": 1
+      "Generic API key assignment": 2
     },
     "by_repo": {
-      "PMZPZM0/codex-harness-desktop": 1,
-      "langwatch/langwatch": 2,
-      "Baldri/mingly": 1,
-      "ostrium-labs/loams": 1,
-      "Fooftilly/local-search-mcp": 1
+      "Aswellle/TokenOwl": 1,
+      "ihabkhaled/ClawAI": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "CLOUD_...OKEN",
+      "value_masked": "sk-syn...-key",
       "confidence": "medium",
-      "repo": "PMZPZM0/codex-harness-desktop",
-      "file_path": "electron/features/cloud-memory-ipc.ts",
-      "file_url": "https://github.com/PMZPZM0/codex-harness-desktop/blob/main/electron/features/cloud-memory-ipc.ts",
-      "line_number": 151,
-      "line_content": "secretKey: \"CLOUD_MEMORY_MCP_TOKEN\",",
+      "repo": "Aswellle/TokenOwl",
+      "file_path": "apps/desktop/src-tauri/src/commands/mod.rs",
+      "file_url": "https://github.com/Aswellle/TokenOwl/blob/main/apps/desktop/src-tauri/src/commands/mod.rs",
+      "line_number": 2528,
+      "line_content": "api_key: \"sk-synthetic-format-key\".to_owned(),",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "67f695deecaf79e2"
-    },
-    {
-      "pattern_name": "AWS Access Key ID",
-      "value_masked": "AKIAQY...ZAM2",
-      "confidence": "medium",
-      "repo": "langwatch/langwatch",
-      "file_path": ".github/scripts/__tests__/secrets-scan.test.sh",
-      "file_url": "https://github.com/langwatch/langwatch/blob/main/.github/scripts/__tests__/secrets-scan.test.sh",
-      "line_number": 26,
-      "line_content": "readonly PLANTED_SECRET='AWS_ACCESS_KEY_ID=AKIAQYLPMN5HHHFPZAM2",
-      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
-      "fingerprint": "f66e19f803bb2ff7"
-    },
-    {
-      "pattern_name": "AWS Access Key ID",
-      "value_masked": "AKIAQY...ZAM2",
-      "confidence": "medium",
-      "repo": "langwatch/langwatch",
-      "file_path": ".gitleaks.toml",
-      "file_url": "https://github.com/langwatch/langwatch/blob/main/.gitleaks.toml",
-      "line_number": 122,
-      "line_content": "regexes = ['''AKIAQYLPMN5HHHFPZAM2''', '''A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0''']",
-      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
-      "fingerprint": "87ece400725f677f"
-    },
-    {
-      "pattern_name": "Anthropic API Key",
-      "value_masked": "sk-ant...here",
-      "confidence": "medium",
-      "repo": "Baldri/mingly",
-      "file_path": "tests/e2e/app.spec.ts",
-      "file_url": "https://github.com/Baldri/mingly/blob/main/tests/e2e/app.spec.ts",
-      "line_number": 456,
-      "line_content": "const testData = 'My email is user@example.com and key sk-ant-api03-very-long-key-here'",
-      "description": "Anthropic Claude API 密钥。",
-      "fingerprint": "acdd498a22d98818"
+      "fingerprint": "0fa3b1fac8a52f4d"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-ant...6789",
+      "value_masked": "inter-...n-12",
       "confidence": "medium",
-      "repo": "ostrium-labs/loams",
-      "file_path": "apps/desktop-electron/test/agent-loop.test.ts",
-      "file_url": "https://github.com/ostrium-labs/loams/blob/main/apps/desktop-electron/test/agent-loop.test.ts",
-      "line_number": 841,
-      "line_content": "apiKey: \"sk-ant-other-0123456789\",",
+      "repo": "ihabkhaled/ClawAI",
+      "file_path": "apps/claw-agent-service/src/common/testing/agent-test-env.ts",
+      "file_url": "https://github.com/ihabkhaled/ClawAI/blob/main/apps/claw-agent-service/src/common/testing/agent-test-env.ts",
+      "line_number": 13,
+      "line_content": "INTER_SERVICE_AUTH_TOKEN: 'inter-service-token-inter-service-token-12',",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "7dbf8d5892f930fa"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "__GENE...EY__",
-      "confidence": "medium",
-      "repo": "Fooftilly/local-search-mcp",
-      "file_path": "config/crawler/searxng-settings.yml",
-      "file_url": "https://github.com/Fooftilly/local-search-mcp/blob/master/config/crawler/searxng-settings.yml",
-      "line_number": 6,
-      "line_content": "secret_key: '__GENERATE_PRIVATE_SEARXNG_KEY__'",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "a58695ad090f2104"
+      "fingerprint": "3a15a102ba96d3ef"
     }
   ]
 }
