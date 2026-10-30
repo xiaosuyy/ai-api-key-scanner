@@ -1,0 +1,118 @@
+{
+  "summary": {
+    "generated_at": "2026-10-30 08:26:19 UTC",
+    "repos_scanned": 45,
+    "files_scanned": 6793,
+    "total_findings": 8,
+    "by_confidence": {
+      "medium": 7,
+      "low": 1
+    },
+    "by_pattern": {
+      "Google OAuth Client Secret": 2,
+      "Generic API key assignment": 6
+    },
+    "by_repo": {
+      "poweruserz/OpenTokenUsage": 8
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "docs/providers/antigravity.md",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/docs/providers/antigravity.md",
+      "line_number": 202,
+      "line_content": "&client_secret=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",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "0fc04f2b394e00d6"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "plugins/antigravity/plugin.js",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/plugins/antigravity/plugin.js",
+      "line_number": 21,
+      "line_content": "var GOOGLE_CLIENT_SECRET = \"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\"",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "243b98c058346205"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ya29.r...oken",
+      "confidence": "medium",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "plugins/antigravity/plugin.test.js",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/plugins/antigravity/plugin.test.js",
+      "line_number": 1040,
+      "line_content": "return { status: 200, bodyText: JSON.stringify({ access_token: \"ya29.refreshed-token\" }) }",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "12994282fd37ee35"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ya29.c...-bad",
+      "confidence": "medium",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "plugins/antigravity/plugin.test.js",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/plugins/antigravity/plugin.test.js",
+      "line_number": 1120,
+      "line_content": "writeCachedToken(ctx, { accessToken: \"ya29.cached-also-bad\", expiresAtMs: Date.now() + 3600000, refreshToken: \"1//refresh\" })",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "f8428fe1a9a2c891"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ya29.o...ache",
+      "confidence": "medium",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "plugins/antigravity/plugin.test.js",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/plugins/antigravity/plugin.test.js",
+      "line_number": 1242,
+      "line_content": "writeCachedToken(ctx, { accessToken: \"ya29.old-account-cache\", expiresAtMs: Date.now() + 3600000, refreshToken: \"1//old-account\" })",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "470f5ae709139f30"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ya29.e...oken",
+      "confidence": "low",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "plugins/antigravity/plugin.test.js",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/plugins/antigravity/plugin.test.js",
+      "line_number": 1331,
+      "line_content": "setupSqliteMock(ctx, makeOAuthSentinelB64(ctx, { accessToken: \"ya29.expired-proto-token\", refreshToken: \"1//refresh\", expirySeconds: pastExpiry }))",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "2d9ae169fbe48dbd"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "refres...oken",
+      "confidence": "medium",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "plugins/codex/plugin.test.js",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/plugins/codex/plugin.test.js",
+      "line_number": 1364,
+      "line_content": "bodyText: JSON.stringify({ access_token: \"refreshed-file-token\" }),",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "4d25a7eb2d9cb2c5"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "refres...oken",
+      "confidence": "medium",
+      "repo": "poweruserz/OpenTokenUsage",
+      "file_path": "plugins/kiro/plugin.test.js",
+      "file_url": "https://github.com/poweruserz/OpenTokenUsage/blob/main/plugins/kiro/plugin.test.js",
+      "line_number": 209,
+      "line_content": "accessToken: \"refreshed-access-token\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "42fd06a08b7f12bc"
+    }
+  ]
+}
