@@ -3,53 +3,113 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-10-31 07:53:28 UTC |
-| 扫描仓库数 | 20 |
-| 扫描文件数 | 3449 |
-| 发现数量 | 3 |
+| 生成时间 | 2026-10-31 08:22:35 UTC |
+| 扫描仓库数 | 50 |
+| 扫描文件数 | 9033 |
+| 发现数量 | 8 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 3 |
+| MEDIUM | 8 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`ypollak2/llm-router`
-- **文件**：`audit/11_SECURITY_AUDIT.md`（第 114 行）
-- **密钥（已脱敏）**：`sk-CAN...2345`
-- **链接**：https://github.com/ypollak2/llm-router/blob/main/audit/11_SECURITY_AUDIT.md
+- **仓库**：`ashlrai/ashlr-stack`
+- **文件**：`packages/core/src/__tests__/credential-staging.test.ts`（第 567 行）
+- **密钥（已脱敏）**：`synthe...oken`
+- **链接**：https://github.com/ashlrai/ashlr-stack/blob/main/packages/core/src/__tests__/credential-staging.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-export SYNTHETIC_CANARY_API_KEY="sk-CANARY-DO-NOT-LEAK-12345"
+access_token: "synthetic-oauth-token",
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`MiManchiALL/WhyCode`
-- **文件**：`apps/desktop/src/main/config.test.ts`（第 504 行）
-- **密钥（已脱敏）**：`remove...cret`
-- **链接**：https://github.com/MiManchiALL/WhyCode/blob/main/apps/desktop/src/main/config.test.ts
+- **仓库**：`ashlrai/ashlr-stack`
+- **文件**：`packages/core/src/__tests__/supabase-provider.test.ts`（第 18 行）
+- **密钥（已脱敏）**：`sbp_ca...oken`
+- **链接**：https://github.com/ashlrai/ashlr-stack/blob/main/packages/core/src/__tests__/supabase-provider.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-apiKey: 'removed-custom-secret',
+{ STACK_SUPABASE_ACCESS_TOKEN: "sbp_cached_valid_token" },
 ```
 
 ### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`MiManchiALL/WhyCode`
-- **文件**：`apps/desktop/src/main/web-search-settings.test.ts`（第 16 行）
-- **密钥（已脱敏）**：`privat...-key`
-- **链接**：https://github.com/MiManchiALL/WhyCode/blob/main/apps/desktop/src/main/web-search-settings.test.ts
+- **仓库**：`ashlrai/ashlr-stack`
+- **文件**：`packages/core/src/providers/aws.ts`（第 24 行）
+- **密钥（已脱敏）**：`AWS_SE..._KEY`
+- **链接**：https://github.com/ashlrai/ashlr-stack/blob/main/packages/core/src/providers/aws.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-perplexity: { apiKey: 'private-perplexity-key' },
+const SECRET_SECRET_KEY = "AWS_SECRET_ACCESS_KEY";
+```
+
+### 4. [MEDIUM] Generic API key assignment
+
+- **仓库**：`mojoaar/mimir`
+- **文件**：`docs/superpowers/plans/2026-10-25-mimir-v0.2.0-learning.md`（第 279 行）
+- **密钥（已脱敏）**：`sk-liv...alue`
+- **链接**：https://github.com/mojoaar/mimir/blob/main/docs/superpowers/plans/2026-10-25-mimir-v0.2.0-learning.md
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+label: 'work', model: 'deepseek-chat', apiKey: 'sk-live-secret-value',
+```
+
+### 5. [MEDIUM] Generic API key assignment
+
+- **仓库**：`mojoaar/mimir`
+- **文件**：`lib/backup/artifacts.int.test.ts`（第 22 行）
+- **密钥（已脱敏）**：`sk-liv...-key`
+- **链接**：https://github.com/mojoaar/mimir/blob/main/lib/backup/artifacts.int.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+apiKey: 'sk-live-this-is-the-real-key',
+```
+
+### 6. [MEDIUM] Generic API key assignment
+
+- **仓库**：`nranjan2code/vakyartha`
+- **文件**：`scripts/desktop-probe.js`（第 30 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/nranjan2code/vakyartha/blob/main/scripts/desktop-probe.js
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+const secretUpdate=await request('/api/settings','PUT',{values:{OPENAI_API_KEY:'synthetic-refused-worker-key'}});
+```
+
+### 7. [MEDIUM] Generic API key assignment
+
+- **仓库**：`edgar4/yada`
+- **文件**：`tests/starter-integration.test.ts`（第 45 行）
+- **密钥（已脱敏）**：`never-...ible`
+- **链接**：https://github.com/edgar4/yada/blob/main/tests/starter-integration.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+YADA_LLM_API_KEY: "never-browser-visible",
+```
+
+### 8. [MEDIUM] Generic API key assignment
+
+- **仓库**：`edgar4/yada`
+- **文件**：`tests/starter-provider.test.ts`（第 59 行）
+- **密钥（已脱敏）**：`server...cret`
+- **链接**：https://github.com/edgar4/yada/blob/main/tests/starter-provider.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+YADA_LLM_API_KEY: "server-only-provider-secret",
 ```
 
 ## 处置建议

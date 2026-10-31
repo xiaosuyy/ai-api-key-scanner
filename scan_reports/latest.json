@@ -1,57 +1,119 @@
 {
   "summary": {
-    "generated_at": "2026-10-31 07:53:28 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 3449,
-    "total_findings": 3,
+    "generated_at": "2026-10-31 08:22:35 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 9033,
+    "total_findings": 8,
     "by_confidence": {
-      "medium": 3
+      "medium": 8
     },
     "by_pattern": {
-      "Generic API key assignment": 3
+      "Generic API key assignment": 8
     },
     "by_repo": {
-      "ypollak2/llm-router": 1,
-      "MiManchiALL/WhyCode": 2
+      "ashlrai/ashlr-stack": 3,
+      "mojoaar/mimir": 2,
+      "nranjan2code/vakyartha": 1,
+      "edgar4/yada": 2
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-CAN...2345",
+      "value_masked": "synthe...oken",
       "confidence": "medium",
-      "repo": "ypollak2/llm-router",
-      "file_path": "audit/11_SECURITY_AUDIT.md",
-      "file_url": "https://github.com/ypollak2/llm-router/blob/main/audit/11_SECURITY_AUDIT.md",
-      "line_number": 114,
-      "line_content": "export SYNTHETIC_CANARY_API_KEY=\"sk-CANARY-DO-NOT-LEAK-12345\"",
+      "repo": "ashlrai/ashlr-stack",
+      "file_path": "packages/core/src/__tests__/credential-staging.test.ts",
+      "file_url": "https://github.com/ashlrai/ashlr-stack/blob/main/packages/core/src/__tests__/credential-staging.test.ts",
+      "line_number": 567,
+      "line_content": "access_token: \"synthetic-oauth-token\",",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "adc8b843ac58f32b"
+      "fingerprint": "5385139039450f32"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "remove...cret",
+      "value_masked": "sbp_ca...oken",
       "confidence": "medium",
-      "repo": "MiManchiALL/WhyCode",
-      "file_path": "apps/desktop/src/main/config.test.ts",
-      "file_url": "https://github.com/MiManchiALL/WhyCode/blob/main/apps/desktop/src/main/config.test.ts",
-      "line_number": 504,
-      "line_content": "apiKey: 'removed-custom-secret',",
+      "repo": "ashlrai/ashlr-stack",
+      "file_path": "packages/core/src/__tests__/supabase-provider.test.ts",
+      "file_url": "https://github.com/ashlrai/ashlr-stack/blob/main/packages/core/src/__tests__/supabase-provider.test.ts",
+      "line_number": 18,
+      "line_content": "{ STACK_SUPABASE_ACCESS_TOKEN: \"sbp_cached_valid_token\" },",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "2a18be247a22da44"
+      "fingerprint": "ac34fe8ff5175092"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "privat...-key",
+      "value_masked": "AWS_SE..._KEY",
       "confidence": "medium",
-      "repo": "MiManchiALL/WhyCode",
-      "file_path": "apps/desktop/src/main/web-search-settings.test.ts",
-      "file_url": "https://github.com/MiManchiALL/WhyCode/blob/main/apps/desktop/src/main/web-search-settings.test.ts",
-      "line_number": 16,
-      "line_content": "perplexity: { apiKey: 'private-perplexity-key' },",
+      "repo": "ashlrai/ashlr-stack",
+      "file_path": "packages/core/src/providers/aws.ts",
+      "file_url": "https://github.com/ashlrai/ashlr-stack/blob/main/packages/core/src/providers/aws.ts",
+      "line_number": 24,
+      "line_content": "const SECRET_SECRET_KEY = \"AWS_SECRET_ACCESS_KEY\";",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "ecb1345cc5cd4542"
+      "fingerprint": "a78a8d34f6837bfa"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-liv...alue",
+      "confidence": "medium",
+      "repo": "mojoaar/mimir",
+      "file_path": "docs/superpowers/plans/2026-10-25-mimir-v0.2.0-learning.md",
+      "file_url": "https://github.com/mojoaar/mimir/blob/main/docs/superpowers/plans/2026-10-25-mimir-v0.2.0-learning.md",
+      "line_number": 279,
+      "line_content": "label: 'work', model: 'deepseek-chat', apiKey: 'sk-live-secret-value',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "78b999a0207e61be"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-liv...-key",
+      "confidence": "medium",
+      "repo": "mojoaar/mimir",
+      "file_path": "lib/backup/artifacts.int.test.ts",
+      "file_url": "https://github.com/mojoaar/mimir/blob/main/lib/backup/artifacts.int.test.ts",
+      "line_number": 22,
+      "line_content": "apiKey: 'sk-live-this-is-the-real-key',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "87cd9cac876b2a53"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "nranjan2code/vakyartha",
+      "file_path": "scripts/desktop-probe.js",
+      "file_url": "https://github.com/nranjan2code/vakyartha/blob/main/scripts/desktop-probe.js",
+      "line_number": 30,
+      "line_content": "const secretUpdate=await request('/api/settings','PUT',{values:{OPENAI_API_KEY:'synthetic-refused-worker-key'}});",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "98f3518e051ec6f7"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "never-...ible",
+      "confidence": "medium",
+      "repo": "edgar4/yada",
+      "file_path": "tests/starter-integration.test.ts",
+      "file_url": "https://github.com/edgar4/yada/blob/main/tests/starter-integration.test.ts",
+      "line_number": 45,
+      "line_content": "YADA_LLM_API_KEY: \"never-browser-visible\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ad9ba03b30d9b5d6"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "server...cret",
+      "confidence": "medium",
+      "repo": "edgar4/yada",
+      "file_path": "tests/starter-provider.test.ts",
+      "file_url": "https://github.com/edgar4/yada/blob/main/tests/starter-provider.test.ts",
+      "line_number": 59,
+      "line_content": "YADA_LLM_API_KEY: \"server-only-provider-secret\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "9fffc5e0ccb63695"
     }
   ]
 }
