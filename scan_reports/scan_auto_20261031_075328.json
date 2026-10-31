@@ -1,0 +1,57 @@
+{
+  "summary": {
+    "generated_at": "2026-10-31 07:53:28 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3449,
+    "total_findings": 3,
+    "by_confidence": {
+      "medium": 3
+    },
+    "by_pattern": {
+      "Generic API key assignment": 3
+    },
+    "by_repo": {
+      "ypollak2/llm-router": 1,
+      "MiManchiALL/WhyCode": 2
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-CAN...2345",
+      "confidence": "medium",
+      "repo": "ypollak2/llm-router",
+      "file_path": "audit/11_SECURITY_AUDIT.md",
+      "file_url": "https://github.com/ypollak2/llm-router/blob/main/audit/11_SECURITY_AUDIT.md",
+      "line_number": 114,
+      "line_content": "export SYNTHETIC_CANARY_API_KEY=\"sk-CANARY-DO-NOT-LEAK-12345\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "adc8b843ac58f32b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "remove...cret",
+      "confidence": "medium",
+      "repo": "MiManchiALL/WhyCode",
+      "file_path": "apps/desktop/src/main/config.test.ts",
+      "file_url": "https://github.com/MiManchiALL/WhyCode/blob/main/apps/desktop/src/main/config.test.ts",
+      "line_number": 504,
+      "line_content": "apiKey: 'removed-custom-secret',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "2a18be247a22da44"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "privat...-key",
+      "confidence": "medium",
+      "repo": "MiManchiALL/WhyCode",
+      "file_path": "apps/desktop/src/main/web-search-settings.test.ts",
+      "file_url": "https://github.com/MiManchiALL/WhyCode/blob/main/apps/desktop/src/main/web-search-settings.test.ts",
+      "line_number": 16,
+      "line_content": "perplexity: { apiKey: 'private-perplexity-key' },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ecb1345cc5cd4542"
+    }
+  ]
+}
