@@ -1,117 +1,13 @@
 {
   "summary": {
-    "generated_at": "2026-11-01 08:58:46 UTC",
-    "repos_scanned": 45,
-    "files_scanned": 4585,
-    "total_findings": 8,
-    "by_confidence": {
-      "medium": 8
-    },
-    "by_pattern": {
-      "Generic API key assignment": 8
-    },
-    "by_repo": {
-      "Team-Commonly/commonly": 5,
-      "OpenHands/OpenHands": 3
-    },
+    "generated_at": "2026-11-02 08:56:35 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3331,
+    "total_findings": 0,
+    "by_confidence": {},
+    "by_pattern": {},
+    "by_repo": {},
     "scan_type": "auto"
   },
-  "findings": [
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "groupm...oken",
-      "confidence": "medium",
-      "repo": "Team-Commonly/commonly",
-      "file_path": "backend/__tests__/service/integrations-e2e.test.js",
-      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/service/integrations-e2e.test.js",
-      "line_number": 1454,
-      "line_content": "accessToken: 'groupme-access-token',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "7765f5388254363b"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "groupm...vate",
-      "confidence": "medium",
-      "repo": "Team-Commonly/commonly",
-      "file_path": "backend/__tests__/service/integrations-e2e.test.js",
-      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/service/integrations-e2e.test.js",
-      "line_number": 1510,
-      "line_content": "accessToken: 'groupme-token-heartbeat-private',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "4e3253fab89dc206"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...oken",
-      "confidence": "medium",
-      "repo": "Team-Commonly/commonly",
-      "file_path": "backend/__tests__/service/oauthBrowserBinding.test.js",
-      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/service/oauthBrowserBinding.test.js",
-      "line_number": 38,
-      "line_content": "return { data: { access_token: 'synthetic-provider-token' } };",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "9cf75c32ff37eb63"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "SENTIN...OKEN",
-      "confidence": "medium",
-      "repo": "Team-Commonly/commonly",
-      "file_path": "backend/__tests__/unit/models/integrationPublicConfig.test.js",
-      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/unit/models/integrationPublicConfig.test.js",
-      "line_number": 89,
-      "line_content": "accessToken: 'SENTINEL_ACCESS_TOKEN',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "4db0b1083e31798c"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "feed-a...inel",
-      "confidence": "medium",
-      "repo": "Team-Commonly/commonly",
-      "file_path": "backend/__tests__/unit/models/integrationPublicConfig.test.js",
-      "file_url": "https://github.com/Team-Commonly/commonly/blob/main/backend/__tests__/unit/models/integrationPublicConfig.test.js",
-      "line_number": 170,
-      "line_content": "accessToken: 'feed-access-token-sentinel',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "ab21bc11edcee478"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "runtim...-key",
-      "confidence": "medium",
-      "repo": "OpenHands/OpenHands",
-      "file_path": "__tests__/api/automation-service.test.ts",
-      "file_url": "https://github.com/OpenHands/OpenHands/blob/main/__tests__/api/automation-service.test.ts",
-      "line_number": 607,
-      "line_content": "apiKey: \"runtime-injected-key\",",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "6a8b62459a4a6f99"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "qa-typ...-key",
-      "confidence": "medium",
-      "repo": "OpenHands/OpenHands",
-      "file_path": "__tests__/api/mars-web-bridge.test.ts",
-      "file_url": "https://github.com/OpenHands/OpenHands/blob/main/__tests__/api/mars-web-bridge.test.ts",
-      "line_number": 127,
-      "line_content": "apiKey: \"qa-typed-session-key\",",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "b9a58279bf41a857"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "old-st...sion",
-      "confidence": "medium",
-      "repo": "OpenHands/OpenHands",
-      "file_path": "__tests__/components/backends/api-key-entry-screen.test.tsx",
-      "file_url": "https://github.com/OpenHands/OpenHands/blob/main/__tests__/components/backends/api-key-entry-screen.test.tsx",
-      "line_number": 136,
-      "line_content": "apiKey: \"old-stale-key-from-previous-session\",",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "3a58f69ebf73a080"
-    }
-  ]
+  "findings": []
 }
