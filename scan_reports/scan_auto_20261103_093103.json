@@ -1,0 +1,96 @@
+{
+  "summary": {
+    "generated_at": "2026-11-03 09:31:03 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 10035,
+    "total_findings": 6,
+    "by_confidence": {
+      "medium": 4,
+      "high": 2
+    },
+    "by_pattern": {
+      "Generic API key assignment": 3,
+      "Anthropic API Key": 3
+    },
+    "by_repo": {
+      "apoorvdarshan/scowld": 1,
+      "mkupermann/throughline": 4,
+      "gitstore-dev/GitStore": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "appl_y...mcLy",
+      "confidence": "medium",
+      "repo": "apoorvdarshan/scowld",
+      "file_path": "ios/Scowld/Core/TipJar.swift",
+      "file_url": "https://github.com/apoorvdarshan/scowld/blob/main/ios/Scowld/Core/TipJar.swift",
+      "line_number": 11,
+      "line_content": "static let publicAPIKey = \"appl_yFwHjxnttQhHaATjcIuehZBmcLy\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1df9db9135ddc589"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-dem...0000",
+      "confidence": "medium",
+      "repo": "mkupermann/throughline",
+      "file_path": "docs/demo/rust/assistants/home/.codex/config.toml",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/docs/demo/rust/assistants/home/.codex/config.toml",
+      "line_number": 2,
+      "line_content": "api_key = \"sk-demo-0000000000000000000000\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c9e87003cf3eea51"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...x234",
+      "confidence": "high",
+      "repo": "mkupermann/throughline",
+      "file_path": "rust/crates/throughline/src/pii.rs",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/rust/crates/throughline/src/pii.rs",
+      "line_number": 148,
+      "line_content": "redact(\"key sk-ant-abc123def456ghi789jkl012mno345pqr678stu901vwx234 and me@company.io\");",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "ff6107df41d02854"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...BBBB",
+      "confidence": "high",
+      "repo": "mkupermann/throughline",
+      "file_path": "tests/test_export_markdown.py",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/tests/test_export_markdown.py",
+      "line_number": 352,
+      "line_content": "\"content\": \"Key sk-ant-api03-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "55d3f56629760f83"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...AAAA",
+      "confidence": "medium",
+      "repo": "mkupermann/throughline",
+      "file_path": "tests/test_export_markdown.py",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/tests/test_export_markdown.py",
+      "line_number": 314,
+      "line_content": "_msg(\"user\", content=\"Mein Key ist sk-ant-api03-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA und mail@example.com\", minute=0),",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "21b8d614312f7389"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "access...nted",
+      "confidence": "medium",
+      "repo": "gitstore-dev/GitStore",
+      "file_path": "gitstore-api/cmd/gitctl/enroll_serviceaccount_test.go",
+      "file_url": "https://github.com/gitstore-dev/GitStore/blob/main/gitstore-api/cmd/gitctl/enroll_serviceaccount_test.go",
+      "line_number": 196,
+      "line_content": "accessToken   = \"access-token-must-not-be-printed\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3204a20526bc6619"
+    }
+  ]
+}

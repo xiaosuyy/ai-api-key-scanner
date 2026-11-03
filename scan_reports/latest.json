@@ -1,95 +1,96 @@
 {
   "summary": {
-    "generated_at": "2026-11-03 08:59:06 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 3938,
+    "generated_at": "2026-11-03 09:31:03 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 10035,
     "total_findings": 6,
     "by_confidence": {
-      "high": 2,
-      "medium": 4
+      "medium": 4,
+      "high": 2
     },
     "by_pattern": {
-      "GitHub Personal Access Token": 3,
-      "Generic API key assignment": 3
+      "Generic API key assignment": 3,
+      "Anthropic API Key": 3
     },
     "by_repo": {
-      "avivsinai/telclaude": 3,
-      "yyjeqhc/webcodex": 3
+      "apoorvdarshan/scowld": 1,
+      "mkupermann/throughline": 4,
+      "gitstore-dev/GitStore": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
-      "pattern_name": "GitHub Personal Access Token",
-      "value_masked": "ghp_ab...r678",
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "appl_y...mcLy",
+      "confidence": "medium",
+      "repo": "apoorvdarshan/scowld",
+      "file_path": "ios/Scowld/Core/TipJar.swift",
+      "file_url": "https://github.com/apoorvdarshan/scowld/blob/main/ios/Scowld/Core/TipJar.swift",
+      "line_number": 11,
+      "line_content": "static let publicAPIKey = \"appl_yFwHjxnttQhHaATjcIuehZBmcLy\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1df9db9135ddc589"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-dem...0000",
+      "confidence": "medium",
+      "repo": "mkupermann/throughline",
+      "file_path": "docs/demo/rust/assistants/home/.codex/config.toml",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/docs/demo/rust/assistants/home/.codex/config.toml",
+      "line_number": 2,
+      "line_content": "api_key = \"sk-demo-0000000000000000000000\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c9e87003cf3eea51"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...x234",
       "confidence": "high",
-      "repo": "avivsinai/telclaude",
-      "file_path": ".gitleaks.toml",
-      "file_url": "https://github.com/avivsinai/telclaude/blob/main/.gitleaks.toml",
-      "line_number": 36,
-      "line_content": "'''ghp_abc123def456ghi789jkl012mno345pqr678''',",
-      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
-      "fingerprint": "acb99e3615527b52"
+      "repo": "mkupermann/throughline",
+      "file_path": "rust/crates/throughline/src/pii.rs",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/rust/crates/throughline/src/pii.rs",
+      "line_number": 148,
+      "line_content": "redact(\"key sk-ant-abc123def456ghi789jkl012mno345pqr678stu901vwx234 and me@company.io\");",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "ff6107df41d02854"
     },
     {
-      "pattern_name": "GitHub Personal Access Token",
-      "value_masked": "ghp_ab...r678",
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...BBBB",
       "confidence": "high",
-      "repo": "avivsinai/telclaude",
-      "file_path": "src/commands/doctor.ts",
-      "file_url": "https://github.com/avivsinai/telclaude/blob/main/src/commands/doctor.ts",
-      "line_number": 45,
-      "line_content": "input: \"key: ghp_abc123def456ghi789jkl012mno345pqr678\",",
-      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
-      "fingerprint": "1eec9b3124ad8573"
+      "repo": "mkupermann/throughline",
+      "file_path": "tests/test_export_markdown.py",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/tests/test_export_markdown.py",
+      "line_number": 352,
+      "line_content": "\"content\": \"Key sk-ant-api03-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "55d3f56629760f83"
     },
     {
-      "pattern_name": "GitHub Personal Access Token",
-      "value_masked": "ghp_ab...r678",
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...AAAA",
       "confidence": "medium",
-      "repo": "avivsinai/telclaude",
-      "file_path": "src/commands/doctor.ts",
-      "file_url": "https://github.com/avivsinai/telclaude/blob/main/src/commands/doctor.ts",
-      "line_number": 292,
-      "line_content": "const exampleInput = \"API key: ghp_abc123def456ghi789jkl012mno345pqr678\";",
-      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
-      "fingerprint": "b7fd3e3263a26508"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "write-...-key",
-      "confidence": "medium",
-      "repo": "yyjeqhc/webcodex",
-      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
-      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
-      "line_number": 147,
-      "line_content": "api_key: \"write-only-server-key\",",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "697277b1e8f49889"
+      "repo": "mkupermann/throughline",
+      "file_path": "tests/test_export_markdown.py",
+      "file_url": "https://github.com/mkupermann/throughline/blob/main/tests/test_export_markdown.py",
+      "line_number": 314,
+      "line_content": "_msg(\"user\", content=\"Mein Key ist sk-ant-api03-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA und mail@example.com\", minute=0),",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "21b8d614312f7389"
     },
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "write-...cret",
+      "value_masked": "access...nted",
       "confidence": "medium",
-      "repo": "yyjeqhc/webcodex",
-      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
-      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
-      "line_number": 548,
-      "line_content": "expect(captured[0]).toMatchObject({ id: \"personal\", expected_revision: 1, name: \"Personal renamed\", host_mode: \"standalone\", api_key: \"write-only-fixture-secret\" });",
+      "repo": "gitstore-dev/GitStore",
+      "file_path": "gitstore-api/cmd/gitctl/enroll_serviceaccount_test.go",
+      "file_url": "https://github.com/gitstore-dev/GitStore/blob/main/gitstore-api/cmd/gitctl/enroll_serviceaccount_test.go",
+      "line_number": 196,
+      "line_content": "accessToken   = \"access-token-must-not-be-printed\"",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "27513637299dc10c"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "mcp-ui...ture",
-      "confidence": "medium",
-      "repo": "yyjeqhc/webcodex",
-      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
-      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
-      "line_number": 569,
-      "line_content": "expect(captured[0]).toMatchObject({ id: null, expected_revision: 0, command: \"npx\", args: [\"-y\", \"@playwright/mcp\"], env: { API_KEY: \"mcp-ui-private-fixture\" } });",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "51b7b31d59cf3273"
+      "fingerprint": "3204a20526bc6619"
     }
   ]
 }
