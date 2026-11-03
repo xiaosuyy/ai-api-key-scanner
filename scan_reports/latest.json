@@ -1,13 +1,95 @@
 {
   "summary": {
-    "generated_at": "2026-11-02 08:56:35 UTC",
+    "generated_at": "2026-11-03 08:59:06 UTC",
     "repos_scanned": 20,
-    "files_scanned": 3331,
-    "total_findings": 0,
-    "by_confidence": {},
-    "by_pattern": {},
-    "by_repo": {},
+    "files_scanned": 3938,
+    "total_findings": 6,
+    "by_confidence": {
+      "high": 2,
+      "medium": 4
+    },
+    "by_pattern": {
+      "GitHub Personal Access Token": 3,
+      "Generic API key assignment": 3
+    },
+    "by_repo": {
+      "avivsinai/telclaude": 3,
+      "yyjeqhc/webcodex": 3
+    },
     "scan_type": "auto"
   },
-  "findings": []
+  "findings": [
+    {
+      "pattern_name": "GitHub Personal Access Token",
+      "value_masked": "ghp_ab...r678",
+      "confidence": "high",
+      "repo": "avivsinai/telclaude",
+      "file_path": ".gitleaks.toml",
+      "file_url": "https://github.com/avivsinai/telclaude/blob/main/.gitleaks.toml",
+      "line_number": 36,
+      "line_content": "'''ghp_abc123def456ghi789jkl012mno345pqr678''',",
+      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
+      "fingerprint": "acb99e3615527b52"
+    },
+    {
+      "pattern_name": "GitHub Personal Access Token",
+      "value_masked": "ghp_ab...r678",
+      "confidence": "high",
+      "repo": "avivsinai/telclaude",
+      "file_path": "src/commands/doctor.ts",
+      "file_url": "https://github.com/avivsinai/telclaude/blob/main/src/commands/doctor.ts",
+      "line_number": 45,
+      "line_content": "input: \"key: ghp_abc123def456ghi789jkl012mno345pqr678\",",
+      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
+      "fingerprint": "1eec9b3124ad8573"
+    },
+    {
+      "pattern_name": "GitHub Personal Access Token",
+      "value_masked": "ghp_ab...r678",
+      "confidence": "medium",
+      "repo": "avivsinai/telclaude",
+      "file_path": "src/commands/doctor.ts",
+      "file_url": "https://github.com/avivsinai/telclaude/blob/main/src/commands/doctor.ts",
+      "line_number": 292,
+      "line_content": "const exampleInput = \"API key: ghp_abc123def456ghi789jkl012mno345pqr678\";",
+      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
+      "fingerprint": "b7fd3e3263a26508"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "write-...-key",
+      "confidence": "medium",
+      "repo": "yyjeqhc/webcodex",
+      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "line_number": 147,
+      "line_content": "api_key: \"write-only-server-key\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "697277b1e8f49889"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "write-...cret",
+      "confidence": "medium",
+      "repo": "yyjeqhc/webcodex",
+      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "line_number": 548,
+      "line_content": "expect(captured[0]).toMatchObject({ id: \"personal\", expected_revision: 1, name: \"Personal renamed\", host_mode: \"standalone\", api_key: \"write-only-fixture-secret\" });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "27513637299dc10c"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "mcp-ui...ture",
+      "confidence": "medium",
+      "repo": "yyjeqhc/webcodex",
+      "file_path": "apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "file_url": "https://github.com/yyjeqhc/webcodex/blob/main/apps/desktop/src/features/ConnectionsTools.test.tsx",
+      "line_number": 569,
+      "line_content": "expect(captured[0]).toMatchObject({ id: null, expected_revision: 0, command: \"npx\", args: [\"-y\", \"@playwright/mcp\"], env: { API_KEY: \"mcp-ui-private-fixture\" } });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "51b7b31d59cf3273"
+    }
+  ]
 }
