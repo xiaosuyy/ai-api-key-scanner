@@ -1,0 +1,97 @@
+{
+  "summary": {
+    "generated_at": "2026-11-04 08:32:55 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 4683,
+    "total_findings": 6,
+    "by_confidence": {
+      "high": 1,
+      "medium": 5
+    },
+    "by_pattern": {
+      "GitHub Personal Access Token": 1,
+      "AWS Access Key ID": 1,
+      "Generic API key assignment": 4
+    },
+    "by_repo": {
+      "jacknegri89/LogLens": 2,
+      "hivecommons/hive": 3,
+      "baily90/ai-agent-learning": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "GitHub Personal Access Token",
+      "value_masked": "ghp_16...8B4a",
+      "confidence": "high",
+      "repo": "jacknegri89/LogLens",
+      "file_path": "client/src/lib/anonymize.test.ts",
+      "file_url": "https://github.com/jacknegri89/LogLens/blob/main/client/src/lib/anonymize.test.ts",
+      "line_number": 132,
+      "line_content": "['a GitHub personal token', 'clone with ghp_16C7e42F292c6912E7710c838347Ae178B4a'],",
+      "description": "GitHub PAT（Copilot / GitHub Models 等场景常用）。",
+      "fingerprint": "820b35e757c897e0"
+    },
+    {
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAJ3...QRST",
+      "confidence": "medium",
+      "repo": "jacknegri89/LogLens",
+      "file_path": "client/src/lib/anonymize.test.ts",
+      "file_url": "https://github.com/jacknegri89/LogLens/blob/main/client/src/lib/anonymize.test.ts",
+      "line_number": 154,
+      "line_content": "expect(anonymized(`${key} then ${key} and AKIAJ3XAMPLEKEY7QRST`)).toBe(",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "1c977193c7592f56"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "hivecommons/hive",
+      "file_path": "bin/contributor-agent.test.sh",
+      "file_url": "https://github.com/hivecommons/hive/blob/v5/bin/contributor-agent.test.sh",
+      "line_number": 468,
+      "line_content": "OPENAI_API_KEY=\"synthetic-invalid-pi-key\" \\",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ac77489e3a8d6782"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "unrela...-key",
+      "confidence": "medium",
+      "repo": "hivecommons/hive",
+      "file_path": "bin/contributor-relay.test.js",
+      "file_url": "https://github.com/hivecommons/hive/blob/v5/bin/contributor-relay.test.js",
+      "line_number": 1753,
+      "line_content": "fs.writeFileSync(path.join(agentDir, 'models.json'), JSON.stringify({ providers: { openai: { apiKey: 'selected-custom-key' }, anthropic: { apiKey: 'unrelated-custom-key' } }, defaults: {} }));",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "f6999e7cc8f16249"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "medium",
+      "repo": "hivecommons/hive",
+      "file_path": "bin/contributor-relay.test.js",
+      "file_url": "https://github.com/hivecommons/hive/blob/v5/bin/contributor-relay.test.js",
+      "line_number": 2329,
+      "line_content": "const relay = loadRelay({ backend: 'pi', backendPerm: '', mode: 'headless', model: 'openai/gpt-5', cliVersion: 'pi 0.73.1', env: { OPENAI_API_KEY: 'synthetic-invalid-key' } });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "fa01ece9cb5c6899"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-lit...-key",
+      "confidence": "medium",
+      "repo": "baily90/ai-agent-learning",
+      "file_path": "06-技术篇/30-LiteLLM与模型网关.md",
+      "file_url": "https://github.com/baily90/ai-agent-learning/blob/main/06-技术篇/30-LiteLLM与模型网关.md",
+      "line_number": 134,
+      "line_content": "apiKey: 'sk-litellm-master-key',        // 网关的 key，不是模型厂商的 key",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "80ccc0edd73530e4"
+    }
+  ]
+}

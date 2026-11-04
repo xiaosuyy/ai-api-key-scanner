@@ -3,90 +3,90 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-11-03 09:31:03 UTC |
-| 扫描仓库数 | 50 |
-| 扫描文件数 | 10035 |
+| 生成时间 | 2026-11-04 08:32:55 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 4683 |
 | 发现数量 | 6 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| HIGH | 2 |
-| MEDIUM | 4 |
+| HIGH | 1 |
+| MEDIUM | 5 |
 
 ## 发现明细
 
-### 1. [MEDIUM] Generic API key assignment
+### 1. [HIGH] GitHub Personal Access Token
 
-- **仓库**：`apoorvdarshan/scowld`
-- **文件**：`ios/Scowld/Core/TipJar.swift`（第 11 行）
-- **密钥（已脱敏）**：`appl_y...mcLy`
-- **链接**：https://github.com/apoorvdarshan/scowld/blob/main/ios/Scowld/Core/TipJar.swift
+- **仓库**：`jacknegri89/LogLens`
+- **文件**：`client/src/lib/anonymize.test.ts`（第 132 行）
+- **密钥（已脱敏）**：`ghp_16...8B4a`
+- **链接**：https://github.com/jacknegri89/LogLens/blob/main/client/src/lib/anonymize.test.ts
+- **说明**：GitHub PAT（Copilot / GitHub Models 等场景常用）。
+
+```text
+['a GitHub personal token', 'clone with ghp_16C7e42F292c6912E7710c838347Ae178B4a'],
+```
+
+### 2. [MEDIUM] AWS Access Key ID
+
+- **仓库**：`jacknegri89/LogLens`
+- **文件**：`client/src/lib/anonymize.test.ts`（第 154 行）
+- **密钥（已脱敏）**：`AKIAJ3...QRST`
+- **链接**：https://github.com/jacknegri89/LogLens/blob/main/client/src/lib/anonymize.test.ts
+- **说明**：AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。
+
+```text
+expect(anonymized(`${key} then ${key} and AKIAJ3XAMPLEKEY7QRST`)).toBe(
+```
+
+### 3. [MEDIUM] Generic API key assignment
+
+- **仓库**：`hivecommons/hive`
+- **文件**：`bin/contributor-agent.test.sh`（第 468 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/hivecommons/hive/blob/v5/bin/contributor-agent.test.sh
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-static let publicAPIKey = "appl_yFwHjxnttQhHaATjcIuehZBmcLy"
+OPENAI_API_KEY="synthetic-invalid-pi-key" \
 ```
 
-### 2. [MEDIUM] Generic API key assignment
+### 4. [MEDIUM] Generic API key assignment
 
-- **仓库**：`mkupermann/throughline`
-- **文件**：`docs/demo/rust/assistants/home/.codex/config.toml`（第 2 行）
-- **密钥（已脱敏）**：`sk-dem...0000`
-- **链接**：https://github.com/mkupermann/throughline/blob/main/docs/demo/rust/assistants/home/.codex/config.toml
+- **仓库**：`hivecommons/hive`
+- **文件**：`bin/contributor-relay.test.js`（第 1753 行）
+- **密钥（已脱敏）**：`unrela...-key`
+- **链接**：https://github.com/hivecommons/hive/blob/v5/bin/contributor-relay.test.js
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-api_key = "sk-demo-0000000000000000000000"
+fs.writeFileSync(path.join(agentDir, 'models.json'), JSON.stringify({ providers: { openai: { apiKey: 'selected-custom-key' }, anthropic: { apiKey: 'unrelated-custom-key' } }, defaults: {} }));
 ```
 
-### 3. [HIGH] Anthropic API Key
+### 5. [MEDIUM] Generic API key assignment
 
-- **仓库**：`mkupermann/throughline`
-- **文件**：`rust/crates/throughline/src/pii.rs`（第 148 行）
-- **密钥（已脱敏）**：`sk-ant...x234`
-- **链接**：https://github.com/mkupermann/throughline/blob/main/rust/crates/throughline/src/pii.rs
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-redact("key sk-ant-abc123def456ghi789jkl012mno345pqr678stu901vwx234 and me@company.io");
-```
-
-### 4. [HIGH] Anthropic API Key
-
-- **仓库**：`mkupermann/throughline`
-- **文件**：`tests/test_export_markdown.py`（第 352 行）
-- **密钥（已脱敏）**：`sk-ant...BBBB`
-- **链接**：https://github.com/mkupermann/throughline/blob/main/tests/test_export_markdown.py
-- **说明**：Anthropic Claude API 密钥。
+- **仓库**：`hivecommons/hive`
+- **文件**：`bin/contributor-relay.test.js`（第 2329 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/hivecommons/hive/blob/v5/bin/contributor-relay.test.js
+- **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-"content": "Key sk-ant-api03-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-```
-
-### 5. [MEDIUM] Anthropic API Key
-
-- **仓库**：`mkupermann/throughline`
-- **文件**：`tests/test_export_markdown.py`（第 314 行）
-- **密钥（已脱敏）**：`sk-ant...AAAA`
-- **链接**：https://github.com/mkupermann/throughline/blob/main/tests/test_export_markdown.py
-- **说明**：Anthropic Claude API 密钥。
-
-```text
-_msg("user", content="Mein Key ist sk-ant-api03-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA und mail@example.com", minute=0),
+const relay = loadRelay({ backend: 'pi', backendPerm: '', mode: 'headless', model: 'openai/gpt-5', cliVersion: 'pi 0.73.1', env: { OPENAI_API_KEY: 'synthetic-invalid-key' } });
 ```
 
 ### 6. [MEDIUM] Generic API key assignment
 
-- **仓库**：`gitstore-dev/GitStore`
-- **文件**：`gitstore-api/cmd/gitctl/enroll_serviceaccount_test.go`（第 196 行）
-- **密钥（已脱敏）**：`access...nted`
-- **链接**：https://github.com/gitstore-dev/GitStore/blob/main/gitstore-api/cmd/gitctl/enroll_serviceaccount_test.go
+- **仓库**：`baily90/ai-agent-learning`
+- **文件**：`06-技术篇/30-LiteLLM与模型网关.md`（第 134 行）
+- **密钥（已脱敏）**：`sk-lit...-key`
+- **链接**：https://github.com/baily90/ai-agent-learning/blob/main/06-技术篇/30-LiteLLM与模型网关.md
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-accessToken   = "access-token-must-not-be-printed"
+apiKey: 'sk-litellm-master-key',        // 网关的 key，不是模型厂商的 key
 ```
 
 ## 处置建议
