@@ -1,0 +1,70 @@
+{
+  "summary": {
+    "generated_at": "2026-11-05 08:55:00 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 3805,
+    "total_findings": 4,
+    "by_confidence": {
+      "medium": 4
+    },
+    "by_pattern": {
+      "Generic API key assignment": 4
+    },
+    "by_repo": {
+      "mouse0329/nezumi-ai": 1,
+      "nasser1941/lcode": 2,
+      "KaushalKumar-100/CineBook": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "brave_..._key",
+      "confidence": "medium",
+      "repo": "mouse0329/nezumi-ai",
+      "file_path": "app/src/main/java/com/nezumi_ai/utils/PreferencesHelper.kt",
+      "file_url": "https://github.com/mouse0329/nezumi-ai/blob/main/app/src/main/java/com/nezumi_ai/utils/PreferencesHelper.kt",
+      "line_number": 27,
+      "line_content": "private const val KEY_BRAVE_SEARCH_API_KEY = \"brave_search_api_key\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ac901b9d78d308a0"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "change...ndom",
+      "confidence": "medium",
+      "repo": "nasser1941/lcode",
+      "file_path": "docs/usage.md",
+      "file_url": "https://github.com/nasser1941/lcode/blob/main/docs/usage.md",
+      "line_number": 713,
+      "line_content": "secret_key: \"change-me-to-something-random\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "a646d34e423f7396"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "change...ndom",
+      "confidence": "medium",
+      "repo": "nasser1941/lcode",
+      "file_path": "tests/test_secretscan.py",
+      "file_url": "https://github.com/nasser1941/lcode/blob/main/tests/test_secretscan.py",
+      "line_number": 45,
+      "line_content": "'secret_key: \"change-me-to-something-random\"',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "dc1597e5997403f9"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "develo...cret",
+      "confidence": "medium",
+      "repo": "KaushalKumar-100/CineBook",
+      "file_path": "backend/tests/test_config.py",
+      "file_url": "https://github.com/KaushalKumar-100/CineBook/blob/main/backend/tests/test_config.py",
+      "line_number": 16,
+      "line_content": "secret_key=\"development-only-change-this-secret\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "ec6e85c6334d477f"
+    }
+  ]
+}
