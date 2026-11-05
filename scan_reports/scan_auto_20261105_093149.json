@@ -1,0 +1,120 @@
+{
+  "summary": {
+    "generated_at": "2026-11-05 09:31:49 UTC",
+    "repos_scanned": 50,
+    "files_scanned": 9618,
+    "total_findings": 8,
+    "by_confidence": {
+      "medium": 8
+    },
+    "by_pattern": {
+      "Generic API key assignment": 8
+    },
+    "by_repo": {
+      "wink-run/tokenbank": 1,
+      "amaranthic/harnex": 1,
+      "crmne/ruby_llm": 2,
+      "OpenHands/OpenHands": 3,
+      "elie222/rakazo": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "eyJhbG...rtxx",
+      "confidence": "medium",
+      "repo": "wink-run/tokenbank",
+      "file_path": "client/electron/__tests__/cursor-ide-auth.test.js",
+      "file_url": "https://github.com/wink-run/tokenbank/blob/main/client/electron/__tests__/cursor-ide-auth.test.js",
+      "line_number": 39,
+      "line_content": "accessToken: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIn0.signaturepartxx',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "b57f89ddc6ddba23"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "custom...cret",
+      "confidence": "medium",
+      "repo": "amaranthic/harnex",
+      "file_path": "tests/providers.test.ts",
+      "file_url": "https://github.com/amaranthic/harnex/blob/main/tests/providers.test.ts",
+      "line_number": 168,
+      "line_content": "apiKey: \"custom-bearer-secret\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "5e716e055972f411"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-cus...-key",
+      "confidence": "medium",
+      "repo": "crmne/ruby_llm",
+      "file_path": "docs/_advanced/rails-advanced-config.md",
+      "file_url": "https://github.com/crmne/ruby_llm/blob/main/docs/_advanced/rails-advanced-config.md",
+      "line_number": 95,
+      "line_content": "config.openai_api_key = 'sk-customer-specific-key'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "02c5e92e6b0b5d6c"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-cus...-key",
+      "confidence": "medium",
+      "repo": "crmne/ruby_llm",
+      "file_path": "lib/ruby_llm.rb",
+      "file_url": "https://github.com/crmne/ruby_llm/blob/main/lib/ruby_llm.rb",
+      "line_number": 251,
+      "line_content": "#     config.openai_api_key = 'sk-customer-specific-key'",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c750563a325d21b5"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "runtim...-key",
+      "confidence": "medium",
+      "repo": "OpenHands/OpenHands",
+      "file_path": "__tests__/api/automation-service.test.ts",
+      "file_url": "https://github.com/OpenHands/OpenHands/blob/main/__tests__/api/automation-service.test.ts",
+      "line_number": 606,
+      "line_content": "apiKey: \"runtime-injected-key\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "076ae2bb284672ea"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "qa-typ...-key",
+      "confidence": "medium",
+      "repo": "OpenHands/OpenHands",
+      "file_path": "__tests__/api/mars-web-bridge.test.ts",
+      "file_url": "https://github.com/OpenHands/OpenHands/blob/main/__tests__/api/mars-web-bridge.test.ts",
+      "line_number": 127,
+      "line_content": "apiKey: \"qa-typed-session-key\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "b9a58279bf41a857"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "old-st...sion",
+      "confidence": "medium",
+      "repo": "OpenHands/OpenHands",
+      "file_path": "__tests__/components/backends/api-key-entry-screen.test.tsx",
+      "file_url": "https://github.com/OpenHands/OpenHands/blob/main/__tests__/components/backends/api-key-entry-screen.test.tsx",
+      "line_number": 136,
+      "line_content": "apiKey: \"old-stale-key-from-previous-session\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3a58f69ebf73a080"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-or-...alue",
+      "confidence": "medium",
+      "repo": "elie222/rakazo",
+      "file_path": "apps/api/src/security-audit.test.ts",
+      "file_url": "https://github.com/elie222/rakazo/blob/main/apps/api/src/security-audit.test.ts",
+      "line_number": 20,
+      "line_content": "{ provider: \"openrouter\", apiKey: \"sk-or-v1-secretvalue\", label: \"Work key\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "9be569a4427235e1"
+    }
+  ]
+}
