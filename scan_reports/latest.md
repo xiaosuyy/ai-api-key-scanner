@@ -3,104 +3,21 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-11-05 09:31:49 UTC |
-| 扫描仓库数 | 50 |
-| 扫描文件数 | 9618 |
-| 发现数量 | 8 |
+| 生成时间 | 2026-11-06 08:54:49 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 3881 |
+| 发现数量 | 4 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 8 |
+| MEDIUM | 3 |
+| LOW | 1 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
-
-- **仓库**：`wink-run/tokenbank`
-- **文件**：`client/electron/__tests__/cursor-ide-auth.test.js`（第 39 行）
-- **密钥（已脱敏）**：`eyJhbG...rtxx`
-- **链接**：https://github.com/wink-run/tokenbank/blob/main/client/electron/__tests__/cursor-ide-auth.test.js
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-accessToken: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIn0.signaturepartxx',
-```
-
-### 2. [MEDIUM] Generic API key assignment
-
-- **仓库**：`amaranthic/harnex`
-- **文件**：`tests/providers.test.ts`（第 168 行）
-- **密钥（已脱敏）**：`custom...cret`
-- **链接**：https://github.com/amaranthic/harnex/blob/main/tests/providers.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-apiKey: "custom-bearer-secret",
-```
-
-### 3. [MEDIUM] Generic API key assignment
-
-- **仓库**：`crmne/ruby_llm`
-- **文件**：`docs/_advanced/rails-advanced-config.md`（第 95 行）
-- **密钥（已脱敏）**：`sk-cus...-key`
-- **链接**：https://github.com/crmne/ruby_llm/blob/main/docs/_advanced/rails-advanced-config.md
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-config.openai_api_key = 'sk-customer-specific-key'
-```
-
-### 4. [MEDIUM] Generic API key assignment
-
-- **仓库**：`crmne/ruby_llm`
-- **文件**：`lib/ruby_llm.rb`（第 251 行）
-- **密钥（已脱敏）**：`sk-cus...-key`
-- **链接**：https://github.com/crmne/ruby_llm/blob/main/lib/ruby_llm.rb
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-#     config.openai_api_key = 'sk-customer-specific-key'
-```
-
-### 5. [MEDIUM] Generic API key assignment
-
-- **仓库**：`OpenHands/OpenHands`
-- **文件**：`__tests__/api/automation-service.test.ts`（第 606 行）
-- **密钥（已脱敏）**：`runtim...-key`
-- **链接**：https://github.com/OpenHands/OpenHands/blob/main/__tests__/api/automation-service.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-apiKey: "runtime-injected-key",
-```
-
-### 6. [MEDIUM] Generic API key assignment
-
-- **仓库**：`OpenHands/OpenHands`
-- **文件**：`__tests__/api/mars-web-bridge.test.ts`（第 127 行）
-- **密钥（已脱敏）**：`qa-typ...-key`
-- **链接**：https://github.com/OpenHands/OpenHands/blob/main/__tests__/api/mars-web-bridge.test.ts
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-apiKey: "qa-typed-session-key",
-```
-
-### 7. [MEDIUM] Generic API key assignment
-
-- **仓库**：`OpenHands/OpenHands`
-- **文件**：`__tests__/components/backends/api-key-entry-screen.test.tsx`（第 136 行）
-- **密钥（已脱敏）**：`old-st...sion`
-- **链接**：https://github.com/OpenHands/OpenHands/blob/main/__tests__/components/backends/api-key-entry-screen.test.tsx
-- **说明**：赋值给 API key 变量的疑似密钥。
-
-```text
-apiKey: "old-stale-key-from-previous-session",
-```
-
-### 8. [MEDIUM] Generic API key assignment
 
 - **仓库**：`elie222/rakazo`
 - **文件**：`apps/api/src/security-audit.test.ts`（第 20 行）
@@ -110,6 +27,42 @@ apiKey: "old-stale-key-from-previous-session",
 
 ```text
 { provider: "openrouter", apiKey: "sk-or-v1-secretvalue", label: "Work key" },
+```
+
+### 2. [MEDIUM] Generic API key assignment
+
+- **仓库**：`piazzatron/anki-smart-notes`
+- **文件**：`tests/test_local_server.py`（第 329 行）
+- **密钥（已脱敏）**：`jwt-fr...nfig`
+- **链接**：https://github.com/piazzatron/anki-smart-notes/blob/main/tests/test_local_server.py
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+auth_token="jwt-from-plugin-config",
+```
+
+### 3. [MEDIUM] Generic API key assignment
+
+- **仓库**：`piazzatron/anki-smart-notes`
+- **文件**：`tests/test_local_server.py`（第 596 行）
+- **密钥（已脱敏）**：`synthe...oken`
+- **链接**：https://github.com/piazzatron/anki-smart-notes/blob/main/tests/test_local_server.py
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+config.auth_token = "synthetic-auth-token"
+```
+
+### 4. [LOW] Generic API key assignment
+
+- **仓库**：`piazzatron/anki-smart-notes`
+- **文件**：`tests/test_local_server.py`（第 305 行）
+- **密钥（已脱敏）**：`jwt-fr...nfig`
+- **链接**：https://github.com/piazzatron/anki-smart-notes/blob/main/tests/test_local_server.py
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+MagicMock(auth_token="jwt-from-plugin-config", times_used=3),
 ```
 
 ## 处置建议

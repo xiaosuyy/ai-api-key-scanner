@@ -433,6 +433,13 @@
       "total_findings": 8,
       "new_findings": 5,
       "repos_scanned": 50
+    },
+    {
+      "timestamp": "2026-11-06 08:54:49 UTC",
+      "scan_type": "auto",
+      "total_findings": 4,
+      "new_findings": 3,
+      "repos_scanned": 20
     }
   ],
   "known_fingerprints": [
@@ -495,6 +502,7 @@
     "23ebae1c16873ba4",
     "243b98c058346205",
     "2497da76f8f944bd",
+    "24d4539f76a849fd",
     "254354830734f1d6",
     "256f82c7c05537eb",
     "26b98f88b477d335",
@@ -621,6 +629,7 @@
     "733967c22b61196a",
     "73566e1714fc0097",
     "743b0f3c516b146b",
+    "752a929caedf71e3",
     "757a28587bea86c6",
     "76368a800e03e9b1",
     "7688aa27ed9ca26d",
@@ -782,6 +791,7 @@
     "dc68535e593299c9",
     "dd70f328f0b5bb62",
     "dfb921dd9d31d79d",
+    "e0abeca33086602a",
     "e110aa6d219e5705",
     "e29049b5c8c19408",
     "e2efa0c01bf270e6",
