@@ -3,30 +3,30 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-11-06 08:54:49 UTC |
-| 扫描仓库数 | 20 |
-| 扫描文件数 | 3881 |
-| 发现数量 | 4 |
+| 生成时间 | 2026-11-06 09:18:08 UTC |
+| 扫描仓库数 | 48 |
+| 扫描文件数 | 9404 |
+| 发现数量 | 5 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 3 |
+| MEDIUM | 4 |
 | LOW | 1 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`elie222/rakazo`
-- **文件**：`apps/api/src/security-audit.test.ts`（第 20 行）
-- **密钥（已脱敏）**：`sk-or-...alue`
-- **链接**：https://github.com/elie222/rakazo/blob/main/apps/api/src/security-audit.test.ts
+- **仓库**：`Sociaro-Research/open-media-gateway`
+- **文件**：`internal/api/provider_resources_test.go`（第 274 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/Sociaro-Research/open-media-gateway/blob/main/internal/api/provider_resources_test.go
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-{ provider: "openrouter", apiKey: "sk-or-v1-secretvalue", label: "Work key" },
+native, e := kling.Definition().Factory(providerkit.Credentials{APIKey: "synthetic-resource-key", Extra: prices}, nil, &http.Client{Transport: resourceAPITransport{t}})
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
@@ -63,6 +63,18 @@ config.auth_token = "synthetic-auth-token"
 
 ```text
 MagicMock(auth_token="jwt-from-plugin-config", times_used=3),
+```
+
+### 5. [MEDIUM] Generic API key assignment
+
+- **仓库**：`milind-soni/OpenMausBot`
+- **文件**：`cloudflare/control-plane/test/highlevel.test.ts`（第 21 行）
+- **密钥（已脱敏）**：`eyJhbG....sig`
+- **链接**：https://github.com/milind-soni/OpenMausBot/blob/main/cloudflare/control-plane/test/highlevel.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+const ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiJ9.access-token-for-location.sig";
 ```
 
 ## 处置建议

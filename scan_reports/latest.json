@@ -1,34 +1,35 @@
 {
   "summary": {
-    "generated_at": "2026-11-06 08:54:49 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 3881,
-    "total_findings": 4,
+    "generated_at": "2026-11-06 09:18:08 UTC",
+    "repos_scanned": 48,
+    "files_scanned": 9404,
+    "total_findings": 5,
     "by_confidence": {
-      "medium": 3,
+      "medium": 4,
       "low": 1
     },
     "by_pattern": {
-      "Generic API key assignment": 4
+      "Generic API key assignment": 5
     },
     "by_repo": {
-      "elie222/rakazo": 1,
-      "piazzatron/anki-smart-notes": 3
+      "Sociaro-Research/open-media-gateway": 1,
+      "piazzatron/anki-smart-notes": 3,
+      "milind-soni/OpenMausBot": 1
     },
     "scan_type": "auto"
   },
   "findings": [
     {
       "pattern_name": "Generic API key assignment",
-      "value_masked": "sk-or-...alue",
+      "value_masked": "synthe...-key",
       "confidence": "medium",
-      "repo": "elie222/rakazo",
-      "file_path": "apps/api/src/security-audit.test.ts",
-      "file_url": "https://github.com/elie222/rakazo/blob/main/apps/api/src/security-audit.test.ts",
-      "line_number": 20,
-      "line_content": "{ provider: \"openrouter\", apiKey: \"sk-or-v1-secretvalue\", label: \"Work key\" },",
+      "repo": "Sociaro-Research/open-media-gateway",
+      "file_path": "internal/api/provider_resources_test.go",
+      "file_url": "https://github.com/Sociaro-Research/open-media-gateway/blob/main/internal/api/provider_resources_test.go",
+      "line_number": 274,
+      "line_content": "native, e := kling.Definition().Factory(providerkit.Credentials{APIKey: \"synthetic-resource-key\", Extra: prices}, nil, &http.Client{Transport: resourceAPITransport{t}})",
       "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "9be569a4427235e1"
+      "fingerprint": "04ad51153e312ac9"
     },
     {
       "pattern_name": "Generic API key assignment",
@@ -65,6 +66,18 @@
       "line_content": "MagicMock(auth_token=\"jwt-from-plugin-config\", times_used=3),",
       "description": "赋值给 API key 变量的疑似密钥。",
       "fingerprint": "24d4539f76a849fd"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "eyJhbG....sig",
+      "confidence": "medium",
+      "repo": "milind-soni/OpenMausBot",
+      "file_path": "cloudflare/control-plane/test/highlevel.test.ts",
+      "file_url": "https://github.com/milind-soni/OpenMausBot/blob/main/cloudflare/control-plane/test/highlevel.test.ts",
+      "line_number": 21,
+      "line_content": "const ACCESS_TOKEN = \"eyJhbGciOiJIUzI1NiJ9.access-token-for-location.sig\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "151328b3bd42e522"
     }
   ]
 }
