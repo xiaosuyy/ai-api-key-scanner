@@ -1,13 +1,72 @@
 {
   "summary": {
-    "generated_at": "2026-11-07 08:09:04 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 3722,
-    "total_findings": 0,
-    "by_confidence": {},
-    "by_pattern": {},
-    "by_repo": {},
+    "generated_at": "2026-11-07 08:48:04 UTC",
+    "repos_scanned": 46,
+    "files_scanned": 8567,
+    "total_findings": 4,
+    "by_confidence": {
+      "medium": 4
+    },
+    "by_pattern": {
+      "AWS Access Key ID": 1,
+      "Generic API key assignment": 3
+    },
+    "by_repo": {
+      "vostride/agent-qa": 1,
+      "cheaper-inference/OmniRoute": 1,
+      "starfall-org/generative": 1,
+      "HaitoDann/atom": 1
+    },
     "scan_type": "auto"
   },
-  "findings": []
+  "findings": [
+    {
+      "pattern_name": "AWS Access Key ID",
+      "value_masked": "AKIAQW...DFGH",
+      "confidence": "medium",
+      "repo": "vostride/agent-qa",
+      "file_path": "packages/agent/src/config-mutation/__tests__/config-ops.test.ts",
+      "file_url": "https://github.com/vostride/agent-qa/blob/main/packages/agent/src/config-mutation/__tests__/config-ops.test.ts",
+      "line_number": 1002,
+      "line_content": "pluginPackage: 'AKIAQWERTYUIOPASDFGH',",
+      "description": "AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。",
+      "fingerprint": "07ab30a2e86d8ea3"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "key-wr...nfig",
+      "confidence": "medium",
+      "repo": "cheaper-inference/OmniRoute",
+      "file_path": "@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "file_url": "https://github.com/cheaper-inference/OmniRoute/blob/release/v3.8.54/@omniroute/opencode-plugin-v2/tests/warm-snapshot-identity.test.ts",
+      "line_number": 47,
+      "line_content": "options: { baseURL, providerId: \"warmid\", apiKey: \"key-written-in-the-config\" },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "69d63d7ccb86f7bd"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "secret...tore",
+      "confidence": "medium",
+      "repo": "starfall-org/generative",
+      "file_path": "app/src/androidTest/java/org/starfall/generative/RoomOAuthDeviceTest.kt",
+      "file_url": "https://github.com/starfall-org/generative/blob/main/app/src/androidTest/java/org/starfall/generative/RoomOAuthDeviceTest.kt",
+      "line_number": 42,
+      "line_content": "accessToken = \"secret-access-data-store\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "1fe7d118591b0f7a"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "rempla...CRET",
+      "confidence": "medium",
+      "repo": "HaitoDann/atom",
+      "file_path": "searxng/settings.yml",
+      "file_url": "https://github.com/HaitoDann/atom/blob/claude/new-session-q4ozge/searxng/settings.yml",
+      "line_number": 8,
+      "line_content": "secret_key: \"remplace-par-SEARXNG_SECRET\"   # écrasé par la variable SEARXNG_SECRET",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "f3f97529ca033072"
+    }
+  ]
 }
