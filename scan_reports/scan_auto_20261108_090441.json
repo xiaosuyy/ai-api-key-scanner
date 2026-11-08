@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "generated_at": "2026-11-08 09:04:41 UTC",
+    "repos_scanned": 47,
+    "files_scanned": 9698,
+    "total_findings": 5,
+    "by_confidence": {
+      "medium": 4,
+      "high": 1
+    },
+    "by_pattern": {
+      "Generic API key assignment": 4,
+      "Anthropic API Key": 1
+    },
+    "by_repo": {
+      "Blumlaut/saale": 1,
+      "manki-review/manki": 1,
+      "zhulongqihan/codex-pulse": 2,
+      "agentmuxai/agentmux": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "change...tion",
+      "confidence": "medium",
+      "repo": "Blumlaut/saale",
+      "file_path": ".env.example",
+      "file_url": "https://github.com/Blumlaut/saale/blob/main/.env.example",
+      "line_number": 103,
+      "line_content": "SANDBOX_API_KEY=\"change-me-in-production\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c74a4c29389ee4c0"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "refres...-run",
+      "confidence": "medium",
+      "repo": "manki-review/manki",
+      "file_path": "src/providers/cli-utils.test.ts",
+      "file_url": "https://github.com/manki-review/manki/blob/main/src/providers/cli-utils.test.ts",
+      "line_number": 535,
+      "line_content": "writeFileSync(target, JSON.stringify({ tokens: { access_token: 'refreshed-during-run' } }));",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3d9f8817fb4de839"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "never-...ss-a",
+      "confidence": "medium",
+      "repo": "zhulongqihan/codex-pulse",
+      "file_path": "src-tauri/src/pulse_pace.rs",
+      "file_url": "https://github.com/zhulongqihan/codex-pulse/blob/main/src-tauri/src/pulse_pace.rs",
+      "line_number": 975,
+      "line_content": "access_token: \"never-persist-access-a\".into(),",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "755e8bbd2cb4af40"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "never-...ss-b",
+      "confidence": "medium",
+      "repo": "zhulongqihan/codex-pulse",
+      "file_path": "src-tauri/src/pulse_pace.rs",
+      "file_url": "https://github.com/zhulongqihan/codex-pulse/blob/main/src-tauri/src/pulse_pace.rs",
+      "line_number": 986,
+      "line_content": "changed.access_token = \"never-persist-access-b\".into();",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "dcf3e7af6766fd7e"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...CRET",
+      "confidence": "high",
+      "repo": "agentmuxai/agentmux",
+      "file_path": "crates/cef/src/commands/cli_login.rs",
+      "file_url": "https://github.com/agentmuxai/agentmux/blob/main/crates/cef/src/commands/cli_login.rs",
+      "line_number": 1271,
+      "line_content": "let red = redact_secrets(\"  token: sk-ant-api03-SECRETSECRETSECRET done\");",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "419fc10ad655d226"
+    }
+  ]
+}
