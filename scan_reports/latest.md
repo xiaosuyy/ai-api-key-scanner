@@ -3,78 +3,89 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-11-08 09:04:41 UTC |
-| 扫描仓库数 | 47 |
-| 扫描文件数 | 9698 |
-| 发现数量 | 5 |
+| 生成时间 | 2026-11-09 09:03:51 UTC |
+| 扫描仓库数 | 20 |
+| 扫描文件数 | 4157 |
+| 发现数量 | 6 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| HIGH | 1 |
-| MEDIUM | 4 |
+| MEDIUM | 6 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`Blumlaut/saale`
-- **文件**：`.env.example`（第 103 行）
-- **密钥（已脱敏）**：`change...tion`
-- **链接**：https://github.com/Blumlaut/saale/blob/main/.env.example
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/lib/email-confirmation-unsubscribe.test.ts`（第 4 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-confirmation-unsubscribe.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-SANDBOX_API_KEY="change-me-in-production"
+process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`manki-review/manki`
-- **文件**：`src/providers/cli-utils.test.ts`（第 535 行）
-- **密钥（已脱敏）**：`refres...-run`
-- **链接**：https://github.com/manki-review/manki/blob/main/src/providers/cli-utils.test.ts
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/lib/email-resend-missing-id.test.ts`（第 33 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-resend-missing-id.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-writeFileSync(target, JSON.stringify({ tokens: { access_token: 'refreshed-during-run' } }));
+process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';
 ```
 
 ### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`zhulongqihan/codex-pulse`
-- **文件**：`src-tauri/src/pulse_pace.rs`（第 975 行）
-- **密钥（已脱敏）**：`never-...ss-a`
-- **链接**：https://github.com/zhulongqihan/codex-pulse/blob/main/src-tauri/src/pulse_pace.rs
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/routes/mcp.hosted-guards.test.ts`（第 60 行）
+- **密钥（已脱敏）**：`dropbo...oken`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted-guards.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-access_token: "never-persist-access-a".into(),
+access_token: 'dropbox-access-token',
 ```
 
 ### 4. [MEDIUM] Generic API key assignment
 
-- **仓库**：`zhulongqihan/codex-pulse`
-- **文件**：`src-tauri/src/pulse_pace.rs`（第 986 行）
-- **密钥（已脱敏）**：`never-...ss-b`
-- **链接**：https://github.com/zhulongqihan/codex-pulse/blob/main/src-tauri/src/pulse_pace.rs
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/routes/mcp.hosted.test.ts`（第 56 行）
+- **密钥（已脱敏）**：`dropbo...oken`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-changed.access_token = "never-persist-access-b".into();
+access_token: 'dropbox-access-token',
 ```
 
-### 5. [HIGH] Anthropic API Key
+### 5. [MEDIUM] Generic API key assignment
 
-- **仓库**：`agentmuxai/agentmux`
-- **文件**：`crates/cef/src/commands/cli_login.rs`（第 1271 行）
-- **密钥（已脱敏）**：`sk-ant...CRET`
-- **链接**：https://github.com/agentmuxai/agentmux/blob/main/crates/cef/src/commands/cli_login.rs
-- **说明**：Anthropic Claude API 密钥。
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/routes/mcp.knowledge.test.ts`（第 75 行）
+- **密钥（已脱敏）**：`dropbo...oken`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.knowledge.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-let red = redact_secrets("  token: sk-ant-api03-SECRETSECRETSECRET done");
+access_token: 'dropbox-access-token',
+```
+
+### 6. [MEDIUM] Generic API key assignment
+
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/routes/mcp.reviewer.test.ts`（第 87 行）
+- **密钥（已脱敏）**：`dropbo...oken`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.reviewer.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+return Response.json({ refresh_token: `dropbox-refresh-token-${++connections}`, access_token: 'dropbox-access-token', expires_in: 14400 });
 ```
 
 ## 处置建议
