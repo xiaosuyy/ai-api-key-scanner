@@ -3,89 +3,102 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-11-10 09:09:58 UTC |
-| 扫描仓库数 | 20 |
-| 扫描文件数 | 4496 |
-| 发现数量 | 6 |
+| 生成时间 | 2026-11-10 09:35:49 UTC |
+| 扫描仓库数 | 50 |
+| 扫描文件数 | 8465 |
+| 发现数量 | 7 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
 | MEDIUM | 6 |
+| LOW | 1 |
 
 ## 发现明细
 
 ### 1. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/lib/email-confirmation-unsubscribe.test.ts`（第 4 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-confirmation-unsubscribe.test.ts
+- **仓库**：`mgsgde/whisper-shortcut`
+- **文件**：`WhisperShortcut/KeychainCredential.swift`（第 28 行）
+- **密钥（已脱敏）**：`custom...-key`
+- **链接**：https://github.com/mgsgde/whisper-shortcut/blob/main/WhisperShortcut/KeychainCredential.swift
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';
+case customOpenAIChatAPIKey = "custom-openai-chat-api-key"
 ```
 
 ### 2. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/lib/email-resend-missing-id.test.ts`（第 33 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-resend-missing-id.test.ts
+- **仓库**：`openai/codex-security`
+- **文件**：`github-action/tests/main.test.ts`（第 338 行）
+- **密钥（已脱敏）**：`synthe...uter`
+- **链接**：https://github.com/openai/codex-security/blob/main/github-action/tests/main.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';
+Object.assign(process.env, {OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',
 ```
 
 ### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.hosted-guards.test.ts`（第 60 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted-guards.test.ts
+- **仓库**：`openai/codex-security`
+- **文件**：`github-action/tests/runtime.test.ts`（第 384 行）
+- **密钥（已脱敏）**：`synthe...uter`
+- **链接**：https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-access_token: 'dropbox-access-token',
+OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',
 ```
 
 ### 4. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.hosted.test.ts`（第 56 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.hosted.test.ts
+- **仓库**：`openai/codex-security`
+- **文件**：`github-action/tests/runtime.test.ts`（第 388 行）
+- **密钥（已脱敏）**：`change...ture`
+- **链接**：https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-access_token: 'dropbox-access-token',
+source.OPENROUTER_API_KEY = source.FIREWORKS_API_KEY = 'changed-after-capture';
 ```
 
 ### 5. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.knowledge.test.ts`（第 75 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.knowledge.test.ts
+- **仓库**：`lynox-ai/lynox`
+- **文件**：`packages/web-ui/src/lib/components/preset-client-form.svelte.test.ts`（第 57 行）
+- **密钥（已脱敏）**：`SHOPIF...CRET`
+- **链接**：https://github.com/lynox-ai/lynox/blob/main/packages/web-ui/src/lib/components/preset-client-form.svelte.test.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-access_token: 'dropbox-access-token',
+preset: 'shopify', client_id_key: 'SHOPIFY_CLIENT_ID', client_secret_key: 'SHOPIFY_CLIENT_SECRET',
 ```
 
 ### 6. [MEDIUM] Generic API key assignment
 
-- **仓库**：`DrBradStanfield/roadmap`
-- **文件**：`app/routes/mcp.reviewer.test.ts`（第 87 行）
-- **密钥（已脱敏）**：`dropbo...oken`
-- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/routes/mcp.reviewer.test.ts
+- **仓库**：`franzjeger/SuperManager`
+- **文件**：`SuperManagerMac/SuperManagerMac/Models/AppSettings.swift`（第 143 行）
+- **密钥（已脱敏）**：`claude...iKey`
+- **链接**：https://github.com/franzjeger/SuperManager/blob/main/SuperManagerMac/SuperManagerMac/Models/AppSettings.swift
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-return Response.json({ refresh_token: `dropbox-refresh-token-${++connections}`, access_token: 'dropbox-access-token', expires_in: 14400 });
+static let anthropicApiKey           = "claude.anthropicApiKey"
+```
+
+### 7. [LOW] Generic API key assignment
+
+- **仓库**：`Automattic/studio`
+- **文件**：`apps/cli/commands/auth/tests/login.test.ts`（第 71 行）
+- **密钥（已脱敏）**：`mock-a...2345`
+- **链接**：https://github.com/Automattic/studio/blob/trunk/apps/cli/commands/auth/tests/login.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+const mockAccessToken = 'mock-access-token-12345';
 ```
 
 ## 处置建议
