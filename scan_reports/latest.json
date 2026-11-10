@@ -1,8 +1,8 @@
 {
   "summary": {
-    "generated_at": "2026-11-09 09:03:51 UTC",
+    "generated_at": "2026-11-10 09:09:58 UTC",
     "repos_scanned": 20,
-    "files_scanned": 4157,
+    "files_scanned": 4496,
     "total_findings": 6,
     "by_confidence": {
       "medium": 6
