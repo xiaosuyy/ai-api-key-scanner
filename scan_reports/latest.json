@@ -1,13 +1,219 @@
 {
   "summary": {
-    "generated_at": "2026-11-11 08:53:33 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 2908,
-    "total_findings": 0,
-    "by_confidence": {},
-    "by_pattern": {},
-    "by_repo": {},
+    "generated_at": "2026-11-11 09:11:28 UTC",
+    "repos_scanned": 45,
+    "files_scanned": 6429,
+    "total_findings": 16,
+    "by_confidence": {
+      "high": 5,
+      "medium": 11
+    },
+    "by_pattern": {
+      "Google Gemini / GCP API Key": 5,
+      "Google OAuth Client Secret": 2,
+      "Generic API key assignment": 9
+    },
+    "by_repo": {
+      "ZGhey/linglens": 5,
+      "lidge-jun/opencodex": 1,
+      "router-for-me/CLIProxyAPI": 7,
+      "NenoPetkov/paperfrog": 2,
+      "pingmike2/freebuff2api-wokers": 1
+    },
     "scan_type": "auto"
   },
-  "findings": []
+  "findings": [
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaGO...0000",
+      "confidence": "high",
+      "repo": "ZGhey/linglens",
+      "file_path": "e2e/onboarding.spec.ts",
+      "file_url": "https://github.com/ZGhey/linglens/blob/main/e2e/onboarding.spec.ts",
+      "line_number": 32,
+      "line_content": "return key === 'AIzaGOODKEY0000000000000000000000000000'",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "94093ff9ec6e284f"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaGO...0000",
+      "confidence": "high",
+      "repo": "ZGhey/linglens",
+      "file_path": "e2e/onboarding.spec.ts",
+      "file_url": "https://github.com/ZGhey/linglens/blob/main/e2e/onboarding.spec.ts",
+      "line_number": 67,
+      "line_content": "await keyInput.fill('AIzaGOODKEY0000000000000000000000000000')",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "6f3f05d935eb9959"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaGO...0000",
+      "confidence": "high",
+      "repo": "ZGhey/linglens",
+      "file_path": "e2e/onboarding.spec.ts",
+      "file_url": "https://github.com/ZGhey/linglens/blob/main/e2e/onboarding.spec.ts",
+      "line_number": 74,
+      "line_content": "apiKeys: { gemini: 'AIzaGOODKEY0000000000000000000000000000' },",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "75e6bbea099bf724"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaNE...0000",
+      "confidence": "high",
+      "repo": "ZGhey/linglens",
+      "file_path": "e2e/onboarding.spec.ts",
+      "file_url": "https://github.com/ZGhey/linglens/blob/main/e2e/onboarding.spec.ts",
+      "line_number": 230,
+      "line_content": "await page.locator('#apiKey').fill('AIzaNEWKEY000000000000000000000000000000')",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "51b03a0b249cc072"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...0000",
+      "confidence": "high",
+      "repo": "ZGhey/linglens",
+      "file_path": "scripts/demo/record.spec.ts",
+      "file_url": "https://github.com/ZGhey/linglens/blob/main/scripts/demo/record.spec.ts",
+      "line_number": 259,
+      "line_content": "await page.locator('#geminiKey').fill('AIzaSyD3m0-Linglens-demo-key-0000000000')",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "da28192588f57e12"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "lidge-jun/opencodex",
+      "file_path": "devlog/_fin/140_remaining-provider-ports/21_phase2_antigravity-oauth-cca.md",
+      "file_url": "https://github.com/lidge-jun/opencodex/blob/dev/devlog/_fin/140_remaining-provider-ports/21_phase2_antigravity-oauth-cca.md",
+      "line_number": 32,
+      "line_content": "ClientSecret     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",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "5f09c77f6d7e9439"
+    },
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "router-for-me/CLIProxyAPI",
+      "file_path": "internal/api/handlers/management/api_tools.go",
+      "file_url": "https://github.com/router-for-me/CLIProxyAPI/blob/main/internal/api/handlers/management/api_tools.go",
+      "line_number": 28,
+      "line_content": "antigravityOAuthClientSecret = \"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\"",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "964b3c21a38da7f2"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "xai-va...oken",
+      "confidence": "medium",
+      "repo": "router-for-me/CLIProxyAPI",
+      "file_path": "internal/api/handlers/management/api_tools_test.go",
+      "file_url": "https://github.com/router-for-me/CLIProxyAPI/blob/main/internal/api/handlers/management/api_tools_test.go",
+      "line_number": 948,
+      "line_content": "AccessToken:   \"xai-valid-storage-token\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "22d885f8c8d409c6"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "xai-re...oken",
+      "confidence": "medium",
+      "repo": "router-for-me/CLIProxyAPI",
+      "file_path": "internal/api/handlers/management/api_tools_test.go",
+      "file_url": "https://github.com/router-for-me/CLIProxyAPI/blob/main/internal/api/handlers/management/api_tools_test.go",
+      "line_number": 1176,
+      "line_content": "AccessToken:   \"xai-real-access-token\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "0c001e0034d18593"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "xai-st...rent",
+      "confidence": "medium",
+      "repo": "router-for-me/CLIProxyAPI",
+      "file_path": "internal/api/handlers/management/api_tools_test.go",
+      "file_url": "https://github.com/router-for-me/CLIProxyAPI/blob/main/internal/api/handlers/management/api_tools_test.go",
+      "line_number": 1258,
+      "line_content": "AccessToken:   \"xai-stale-concurrent\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "9b06f9a6c2cbe5fc"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "secret...oken",
+      "confidence": "medium",
+      "repo": "router-for-me/CLIProxyAPI",
+      "file_path": "internal/api/handlers/management/auth_files_cooldown_test.go",
+      "file_url": "https://github.com/router-for-me/CLIProxyAPI/blob/main/internal/api/handlers/management/auth_files_cooldown_test.go",
+      "line_number": 1333,
+      "line_content": "RejectedAccessToken:  \"secret-dead-access-token\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "772d41bbd2d75593"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "ag-fre...atch",
+      "confidence": "medium",
+      "repo": "router-for-me/CLIProxyAPI",
+      "file_path": "internal/api/handlers/management/auth_files_targeted_oauth_test.go",
+      "file_url": "https://github.com/router-for-me/CLIProxyAPI/blob/main/internal/api/handlers/management/auth_files_targeted_oauth_test.go",
+      "line_number": 425,
+      "line_content": "agSvc.accessToken = \"ag-fresh-token-match\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "08b0865989c301ac"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "xai-em...resh",
+      "confidence": "medium",
+      "repo": "router-for-me/CLIProxyAPI",
+      "file_path": "internal/api/handlers/management/auth_files_targeted_oauth_test.go",
+      "file_url": "https://github.com/router-for-me/CLIProxyAPI/blob/main/internal/api/handlers/management/auth_files_targeted_oauth_test.go",
+      "line_number": 920,
+      "line_content": "xaiSvc.accessToken = \"xai-email-only-fresh\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "5ef4e1f2f714020a"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "privat...alue",
+      "confidence": "medium",
+      "repo": "NenoPetkov/paperfrog",
+      "file_path": "tests/integration/test_adaptive.py",
+      "file_url": "https://github.com/NenoPetkov/paperfrog/blob/master/tests/integration/test_adaptive.py",
+      "line_number": 314,
+      "line_content": "s = ai_settings(settings, binance_api_secret=\"private-sentinel-value\")",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "500ac8839190cb04"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "dedica...-key",
+      "confidence": "medium",
+      "repo": "NenoPetkov/paperfrog",
+      "file_path": "tests/unit/test_readiness.py",
+      "file_url": "https://github.com/NenoPetkov/paperfrog/blob/master/tests/unit/test_readiness.py",
+      "line_number": 54,
+      "line_content": "binance_api_key=\"dedicated-account-key\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3a6df35fd830c475"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "freebu...-key",
+      "confidence": "medium",
+      "repo": "pingmike2/freebuff2api-wokers",
+      "file_path": "worker.js",
+      "file_url": "https://github.com/pingmike2/freebuff2api-wokers/blob/main/worker.js",
+      "line_number": 3,
+      "line_content": "const DEFAULT_API_KEY = \"freebuff-default-key\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "b76e68cd95b58adb"
+    }
+  ]
 }
