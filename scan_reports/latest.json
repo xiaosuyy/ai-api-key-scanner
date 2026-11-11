@@ -1,109 +1,13 @@
 {
   "summary": {
-    "generated_at": "2026-11-10 09:35:49 UTC",
-    "repos_scanned": 50,
-    "files_scanned": 8465,
-    "total_findings": 7,
-    "by_confidence": {
-      "medium": 6,
-      "low": 1
-    },
-    "by_pattern": {
-      "Generic API key assignment": 7
-    },
-    "by_repo": {
-      "mgsgde/whisper-shortcut": 1,
-      "openai/codex-security": 3,
-      "lynox-ai/lynox": 1,
-      "franzjeger/SuperManager": 1,
-      "Automattic/studio": 1
-    },
+    "generated_at": "2026-11-11 08:53:33 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 2908,
+    "total_findings": 0,
+    "by_confidence": {},
+    "by_pattern": {},
+    "by_repo": {},
     "scan_type": "auto"
   },
-  "findings": [
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "custom...-key",
-      "confidence": "medium",
-      "repo": "mgsgde/whisper-shortcut",
-      "file_path": "WhisperShortcut/KeychainCredential.swift",
-      "file_url": "https://github.com/mgsgde/whisper-shortcut/blob/main/WhisperShortcut/KeychainCredential.swift",
-      "line_number": 28,
-      "line_content": "case customOpenAIChatAPIKey = \"custom-openai-chat-api-key\"",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "8071e31f9c384884"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...uter",
-      "confidence": "medium",
-      "repo": "openai/codex-security",
-      "file_path": "github-action/tests/main.test.ts",
-      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/main.test.ts",
-      "line_number": 338,
-      "line_content": "Object.assign(process.env, {OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "a15407bf602a8244"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "synthe...uter",
-      "confidence": "medium",
-      "repo": "openai/codex-security",
-      "file_path": "github-action/tests/runtime.test.ts",
-      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts",
-      "line_number": 384,
-      "line_content": "OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "7d29df86f4262a50"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "change...ture",
-      "confidence": "medium",
-      "repo": "openai/codex-security",
-      "file_path": "github-action/tests/runtime.test.ts",
-      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts",
-      "line_number": 388,
-      "line_content": "source.OPENROUTER_API_KEY = source.FIREWORKS_API_KEY = 'changed-after-capture';",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "cd2efd6a445a332f"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "SHOPIF...CRET",
-      "confidence": "medium",
-      "repo": "lynox-ai/lynox",
-      "file_path": "packages/web-ui/src/lib/components/preset-client-form.svelte.test.ts",
-      "file_url": "https://github.com/lynox-ai/lynox/blob/main/packages/web-ui/src/lib/components/preset-client-form.svelte.test.ts",
-      "line_number": 57,
-      "line_content": "preset: 'shopify', client_id_key: 'SHOPIFY_CLIENT_ID', client_secret_key: 'SHOPIFY_CLIENT_SECRET',",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "97dee55d24ff9051"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "claude...iKey",
-      "confidence": "medium",
-      "repo": "franzjeger/SuperManager",
-      "file_path": "SuperManagerMac/SuperManagerMac/Models/AppSettings.swift",
-      "file_url": "https://github.com/franzjeger/SuperManager/blob/main/SuperManagerMac/SuperManagerMac/Models/AppSettings.swift",
-      "line_number": 143,
-      "line_content": "static let anthropicApiKey           = \"claude.anthropicApiKey\"",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "dc87daab9a2dad8a"
-    },
-    {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "mock-a...2345",
-      "confidence": "low",
-      "repo": "Automattic/studio",
-      "file_path": "apps/cli/commands/auth/tests/login.test.ts",
-      "file_url": "https://github.com/Automattic/studio/blob/trunk/apps/cli/commands/auth/tests/login.test.ts",
-      "line_number": 71,
-      "line_content": "const mockAccessToken = 'mock-access-token-12345';",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "8062a89f260a21e8"
-    }
-  ]
+  "findings": []
 }
