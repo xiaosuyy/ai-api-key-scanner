@@ -3,90 +3,138 @@
 | 项目 | 值 |
 | --- | --- |
 | 扫描类型 | `auto` |
-| 生成时间 | 2026-11-12 09:06:04 UTC |
-| 扫描仓库数 | 20 |
-| 扫描文件数 | 2633 |
-| 发现数量 | 6 |
+| 生成时间 | 2026-11-12 09:46:48 UTC |
+| 扫描仓库数 | 48 |
+| 扫描文件数 | 8036 |
+| 发现数量 | 10 |
 
 ## 置信度统计
 
 | 置信度 | 数量 |
 | --- | --- |
-| MEDIUM | 4 |
-| LOW | 2 |
+| HIGH | 2 |
+| MEDIUM | 8 |
 
 ## 发现明细
 
-### 1. [LOW] Generic API key assignment
+### 1. [HIGH] Anthropic API Key
 
-- **仓库**：`grebocheck/FormaTranslate`
-- **文件**：`tests/test_ocr.py`（第 122 行）
-- **密钥（已脱敏）**：`synthe...-key`
-- **链接**：https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_ocr.py
-- **说明**：赋值给 API key 变量的疑似密钥。
+- **仓库**：`toul10/agent-authority-pilot`
+- **文件**：`tests/test_settings.py`（第 47 行）
+- **密钥（已脱敏）**：`sk-ant...0000`
+- **链接**：https://github.com/toul10/agent-authority-pilot/blob/main/tests/test_settings.py
+- **说明**：Anthropic Claude API 密钥。
 
 ```text
-result = TranslationEngine(Settings(model="offline-fake", api_key="synthetic-private-key"), provider=FakeProvider()).translate(
+monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-from-the-environment-000000")
 ```
 
-### 2. [LOW] Generic API key assignment
+### 2. [HIGH] Anthropic API Key
 
-- **仓库**：`grebocheck/FormaTranslate`
-- **文件**：`tests/test_provider.py`（第 285 行）
-- **密钥（已脱敏）**：`secret...-key`
-- **链接**：https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_provider.py
-- **说明**：赋值给 API key 变量的疑似密钥。
+- **仓库**：`toul10/agent-authority-pilot`
+- **文件**：`tests/test_settings.py`（第 48 行）
+- **密钥（已脱敏）**：`sk-ant...0000`
+- **链接**：https://github.com/toul10/agent-authority-pilot/blob/main/tests/test_settings.py
+- **说明**：Anthropic Claude API 密钥。
 
 ```text
-settings(api_key="secret-sensitive-key"), transport=httpx.MockTransport(handler)
+assert resolve_key() == ("sk-ant-from-the-environment-000000", "environment")
 ```
 
 ### 3. [MEDIUM] Generic API key assignment
 
-- **仓库**：`grebocheck/FormaTranslate`
-- **文件**：`tests/test_translation_memory.py`（第 117 行）
-- **密钥（已脱敏）**：`never-...-key`
-- **链接**：https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_translation_memory.py
+- **仓库**：`toul10/agent-authority-pilot`
+- **文件**：`tests/test_settings.py`（第 109 行）
+- **密钥（已脱敏）**：`sk-ant...0000`
+- **链接**：https://github.com/toul10/agent-authority-pilot/blob/main/tests/test_settings.py
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-settings = Settings(model="model-A", api_key="never-persist-this-key")
+wrong = anthropic.Anthropic(api_key="sk-ant-wrong-key-000000000000", base_url=api.url, max_retries=0)
 ```
 
-### 4. [MEDIUM] Generic API key assignment
+### 4. [MEDIUM] AWS Access Key ID
 
-- **仓库**：`grebocheck/FormaTranslate`
-- **文件**：`tests/test_ui_usage.py`（第 182 行）
-- **密钥（已脱敏）**：`anothe...ount`
-- **链接**：https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_ui_usage.py
-- **说明**：赋值给 API key 变量的疑似密钥。
+- **仓库**：`langwatch/langwatch`
+- **文件**：`.github/scripts/__tests__/secrets-scan.test.sh`（第 26 行）
+- **密钥（已脱敏）**：`AKIAQY...ZAM2`
+- **链接**：https://github.com/langwatch/langwatch/blob/main/.github/scripts/__tests__/secrets-scan.test.sh
+- **说明**：AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。
 
 ```text
-backend._settings = backend._settings.with_overrides(api_key="another-offline-account")
+readonly PLANTED_SECRET='AWS_ACCESS_KEY_ID=AKIAQYLPMN5HHHFPZAM2
 ```
 
-### 5. [MEDIUM] Generic API key assignment
+### 5. [MEDIUM] AWS Access Key ID
 
-- **仓库**：`grebocheck/FormaTranslate`
-- **文件**：`tests/test_ui_usage.py`（第 347 行）
-- **密钥（已脱敏）**：`second...ount`
-- **链接**：https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_ui_usage.py
-- **说明**：赋值给 API key 变量的疑似密钥。
+- **仓库**：`langwatch/langwatch`
+- **文件**：`.gitleaks.toml`（第 122 行）
+- **密钥（已脱敏）**：`AKIAQY...ZAM2`
+- **链接**：https://github.com/langwatch/langwatch/blob/main/.gitleaks.toml
+- **说明**：AWS 访问密钥 ID（Bedrock / SageMaker 等场景）。
 
 ```text
-backend._settings = original_settings.with_overrides(api_key="second-offline-account")
+regexes = ['''AKIAQYLPMN5HHHFPZAM2''', '''A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0''']
 ```
 
 ### 6. [MEDIUM] Generic API key assignment
 
-- **仓库**：`syuancheng/readflow`
-- **文件**：`tests/unit/config.test.ts`（第 25 行）
-- **密钥（已脱敏）**：`sk-env...9999`
-- **链接**：https://github.com/syuancheng/readflow/blob/main/tests/unit/config.test.ts
+- **仓库**：`orrery-node/orrery`
+- **文件**：`node/devtools/e2e.ts`（第 623 行）
+- **密钥（已脱敏）**：`sk-ant...d-on`
+- **链接**：https://github.com/orrery-node/orrery/blob/main/node/devtools/e2e.ts
 - **说明**：赋值给 API key 变量的疑似密钥。
 
 ```text
-const rows = providerStatuses({}, env({ DEEPSEEK_API_KEY: "sk-env-deepseek-9999" }));
+{ cwd: join(ROOT, 'node'), stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, PATH: `${stubDir}:${process.env.PATH}`, ANTHROPIC_API_KEY: 'sk-ant-not-passed-on', ANTHROPIC_AUTH_TOKEN: 'not-passed-on' } });
+```
+
+### 7. [MEDIUM] Generic API key assignment
+
+- **仓库**：`pipodev06/omni-rag`
+- **文件**：`apps/api/test/settings.test.ts`（第 150 行）
+- **密钥（已脱敏）**：`gsk_se...laro`
+- **链接**：https://github.com/pipodev06/omni-rag/blob/main/apps/api/test/settings.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+await s.applySettings({ GROQ_API_KEY: "gsk_secreto-en-claro" }, "root");
+```
+
+### 8. [MEDIUM] Generic API key assignment
+
+- **仓库**：`deepnote/vscode-deepnote`
+- **文件**：`src/kernels/execution/cellExecution.federatedAuth.unit.test.ts`（第 194 行）
+- **密钥（已脱敏）**：`access...-log`
+- **链接**：https://github.com/deepnote/vscode-deepnote/blob/main/src/kernels/execution/cellExecution.federatedAuth.unit.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+const ACCESS_TOKEN = 'access-token-secret-do-not-log';
+```
+
+### 9. [MEDIUM] Generic API key assignment
+
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/lib/email-confirmation-unsubscribe.test.ts`（第 4 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-confirmation-unsubscribe.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';
+```
+
+### 10. [MEDIUM] Generic API key assignment
+
+- **仓库**：`DrBradStanfield/roadmap`
+- **文件**：`app/lib/email-resend-missing-id.test.ts`（第 45 行）
+- **密钥（已脱敏）**：`synthe...-key`
+- **链接**：https://github.com/DrBradStanfield/roadmap/blob/main/app/lib/email-resend-missing-id.test.ts
+- **说明**：赋值给 API key 变量的疑似密钥。
+
+```text
+process.env.RESEND_API_KEY = 'synthetic-not-a-real-key';
 ```
 
 ## 处置建议
