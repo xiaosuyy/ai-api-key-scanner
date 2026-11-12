@@ -1,0 +1,94 @@
+{
+  "summary": {
+    "generated_at": "2026-11-12 09:06:04 UTC",
+    "repos_scanned": 20,
+    "files_scanned": 2633,
+    "total_findings": 6,
+    "by_confidence": {
+      "low": 2,
+      "medium": 4
+    },
+    "by_pattern": {
+      "Generic API key assignment": 6
+    },
+    "by_repo": {
+      "grebocheck/FormaTranslate": 5,
+      "syuancheng/readflow": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...-key",
+      "confidence": "low",
+      "repo": "grebocheck/FormaTranslate",
+      "file_path": "tests/test_ocr.py",
+      "file_url": "https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_ocr.py",
+      "line_number": 122,
+      "line_content": "result = TranslationEngine(Settings(model=\"offline-fake\", api_key=\"synthetic-private-key\"), provider=FakeProvider()).translate(",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "328bfe0c0f830ae5"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "secret...-key",
+      "confidence": "low",
+      "repo": "grebocheck/FormaTranslate",
+      "file_path": "tests/test_provider.py",
+      "file_url": "https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_provider.py",
+      "line_number": 285,
+      "line_content": "settings(api_key=\"secret-sensitive-key\"), transport=httpx.MockTransport(handler)",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "2d0854df024c987e"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "never-...-key",
+      "confidence": "medium",
+      "repo": "grebocheck/FormaTranslate",
+      "file_path": "tests/test_translation_memory.py",
+      "file_url": "https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_translation_memory.py",
+      "line_number": 117,
+      "line_content": "settings = Settings(model=\"model-A\", api_key=\"never-persist-this-key\")",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "fee2cecf4428ba80"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "anothe...ount",
+      "confidence": "medium",
+      "repo": "grebocheck/FormaTranslate",
+      "file_path": "tests/test_ui_usage.py",
+      "file_url": "https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_ui_usage.py",
+      "line_number": 182,
+      "line_content": "backend._settings = backend._settings.with_overrides(api_key=\"another-offline-account\")",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "57abf99d9fb8f095"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "second...ount",
+      "confidence": "medium",
+      "repo": "grebocheck/FormaTranslate",
+      "file_path": "tests/test_ui_usage.py",
+      "file_url": "https://github.com/grebocheck/FormaTranslate/blob/main/tests/test_ui_usage.py",
+      "line_number": 347,
+      "line_content": "backend._settings = original_settings.with_overrides(api_key=\"second-offline-account\")",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "dbc9cfcfae2e9b25"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-env...9999",
+      "confidence": "medium",
+      "repo": "syuancheng/readflow",
+      "file_path": "tests/unit/config.test.ts",
+      "file_url": "https://github.com/syuancheng/readflow/blob/main/tests/unit/config.test.ts",
+      "line_number": 25,
+      "line_content": "const rows = providerStatuses({}, env({ DEEPSEEK_API_KEY: \"sk-env-deepseek-9999\" }));",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "fc8e1899a4b399c6"
+    }
+  ]
+}
