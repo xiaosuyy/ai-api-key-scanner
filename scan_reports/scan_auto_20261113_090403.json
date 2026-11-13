@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "generated_at": "2026-11-13 09:04:03 UTC",
+    "repos_scanned": 19,
+    "files_scanned": 3095,
+    "total_findings": 2,
+    "by_confidence": {
+      "medium": 2
+    },
+    "by_pattern": {
+      "Google OAuth Client Secret": 1,
+      "Generic API key assignment": 1
+    },
+    "by_repo": {
+      "lidge-jun/opencodex": 1,
+      "XargonWan/Synthetic_Heart": 1
+    },
+    "scan_type": "auto"
+  },
+  "findings": [
+    {
+      "pattern_name": "Google OAuth Client Secret",
+      "value_masked": "GOCSPX...qDAf",
+      "confidence": "medium",
+      "repo": "lidge-jun/opencodex",
+      "file_path": "devlog/_fin/140_remaining-provider-ports/21_phase2_antigravity-oauth-cca.md",
+      "file_url": "https://github.com/lidge-jun/opencodex/blob/dev/devlog/_fin/140_remaining-provider-ports/21_phase2_antigravity-oauth-cca.md",
+      "line_number": 32,
+      "line_content": "ClientSecret     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",
+      "description": "Google OAuth 客户端密钥。",
+      "fingerprint": "5f09c77f6d7e9439"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synth-...e-me",
+      "confidence": "medium",
+      "repo": "XargonWan/Synthetic_Heart",
+      "file_path": "container/searxng/settings.yml",
+      "file_url": "https://github.com/XargonWan/Synthetic_Heart/blob/develop/container/searxng/settings.yml",
+      "line_number": 26,
+      "line_content": "secret_key: \"synth-searxng-local-instance-change-me\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "c42104d6462e32cc"
+    }
+  ]
+}
