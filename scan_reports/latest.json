@@ -1,23 +1,75 @@
 {
   "summary": {
-    "generated_at": "2026-11-13 09:04:03 UTC",
-    "repos_scanned": 19,
-    "files_scanned": 3095,
-    "total_findings": 2,
+    "generated_at": "2026-11-13 09:36:43 UTC",
+    "repos_scanned": 47,
+    "files_scanned": 7460,
+    "total_findings": 20,
     "by_confidence": {
-      "medium": 2
+      "medium": 5,
+      "high": 15
     },
     "by_pattern": {
+      "Generic API key assignment": 4,
       "Google OAuth Client Secret": 1,
-      "Generic API key assignment": 1
+      "Google Gemini / GCP API Key": 15
     },
     "by_repo": {
+      "openai/codex-security": 3,
+      "MHassan-AiExpert/AI-SDR-Autonomous-Sales-Platform": 1,
       "lidge-jun/opencodex": 1,
-      "XargonWan/Synthetic_Heart": 1
+      "FAHTHIZ/Oasis-": 15
     },
     "scan_type": "auto"
   },
   "findings": [
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...uter",
+      "confidence": "medium",
+      "repo": "openai/codex-security",
+      "file_path": "github-action/tests/main.test.ts",
+      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/main.test.ts",
+      "line_number": 338,
+      "line_content": "Object.assign(process.env, {OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "a15407bf602a8244"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...uter",
+      "confidence": "medium",
+      "repo": "openai/codex-security",
+      "file_path": "github-action/tests/runtime.test.ts",
+      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts",
+      "line_number": 384,
+      "line_content": "OPENROUTER_API_KEY:'synthetic-openrouter', FIREWORKS_API_KEY:'synthetic-fireworks',",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "7d29df86f4262a50"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "change...ture",
+      "confidence": "medium",
+      "repo": "openai/codex-security",
+      "file_path": "github-action/tests/runtime.test.ts",
+      "file_url": "https://github.com/openai/codex-security/blob/main/github-action/tests/runtime.test.ts",
+      "line_number": 388,
+      "line_content": "source.OPENROUTER_API_KEY = source.FIREWORKS_API_KEY = 'changed-after-capture';",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "cd2efd6a445a332f"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "SECRET...0000",
+      "confidence": "medium",
+      "repo": "MHassan-AiExpert/AI-SDR-Autonomous-Sales-Platform",
+      "file_path": "web/tests/connection-tests.test.ts",
+      "file_url": "https://github.com/MHassan-AiExpert/AI-SDR-Autonomous-Sales-Platform/blob/main/web/tests/connection-tests.test.ts",
+      "line_number": 13,
+      "line_content": "twilio: { account_sid: 'AC' + '1'.repeat(32), auth_token: 'SECRETtwilioTOKEN000000000000000' },",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "67ca8b6a1b83c389"
+    },
     {
       "pattern_name": "Google OAuth Client Secret",
       "value_masked": "GOCSPX...qDAf",
@@ -31,16 +83,184 @@
       "fingerprint": "5f09c77f6d7e9439"
     },
     {
-      "pattern_name": "Generic API key assignment",
-      "value_masked": "synth-...e-me",
-      "confidence": "medium",
-      "repo": "XargonWan/Synthetic_Heart",
-      "file_path": "container/searxng/settings.yml",
-      "file_url": "https://github.com/XargonWan/Synthetic_Heart/blob/develop/container/searxng/settings.yml",
-      "line_number": 26,
-      "line_content": "secret_key: \"synth-searxng-local-instance-change-me\"",
-      "description": "赋值给 API key 变量的疑似密钥。",
-      "fingerprint": "c42104d6462e32cc"
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...YyIs",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 358,
+      "line_content": "\"AIzaSyAnLA7NfeLquW1tJFpx_eQCxoX-oo6YyIs\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "545bb4e00c143473"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...agEM",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 359,
+      "line_content": "\"AIzaSyCkEhVjf3pduRDt6d1yKOMitrUEke8agEM\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "0dd0c57d1a249a91"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...DrlU",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 360,
+      "line_content": "\"AIzaSyDMAScliyLx7F0NPDEJi1QmyCgHIAODrlU\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "70058bca1fb327a0"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...hrh0",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 361,
+      "line_content": "\"AIzaSyD3asb-2pEZVqMkmL6M9N6nHZRR_znhrh0\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "6aa295ce33e11af7"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzayD...bX4A",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 362,
+      "line_content": "\"AIzayDNSXIbFmlXbIE6mCzDLQAqITYefhixbX4A\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "bdc853d0ae7c727a"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...wX7c",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 363,
+      "line_content": "\"AIzaSyAdOS2zB6NCsk1pCdZ4-P6GBdi_UUPwX7c\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "6a4346f4b438b987"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...mLd4",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 364,
+      "line_content": "\"AIzaSyASWm6HmTMdYWpgMnjRBjxcQ9CKctWmLd4\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "8d2d7d9d44638938"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...DQgY",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 365,
+      "line_content": "\"AIzaSyANUvH9H9BsUccjsu2pCmEkOPjjaXeDQgY\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "620a91663cde271f"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...4wtM",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 366,
+      "line_content": "\"AIzaSyA5_iVawFQ8ABuTZNUdcwERLJv_a_p4wtM\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "57693ec8651872e9"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...P5sQ",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 367,
+      "line_content": "\"AIzaSyA4UrcGxgwQFTfaI3no3t7Lt1sjmdnP5sQ\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "1941f2c33f46dc51"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...cS7g",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 368,
+      "line_content": "\"AIzaSyDSb51JiIcB6OJpwwMicseKRhhrOq1cS7g\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "4cf61c9e5a80831a"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...vvuU",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 369,
+      "line_content": "\"AIzaSyBF2RrAIm4a0mO64EShQfqfd2AFnzAvvuU\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "1221b5c1c3456542"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...NXsw",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 370,
+      "line_content": "\"AIzaSyBcE-OOIbhjyR83gm4r2MFCu4MJmprNXsw\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "2100cdcc05806e15"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...FmqE",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 371,
+      "line_content": "\"AIzaSyB8qGxt4ec15vitgn44duC5ucxaOi4FmqE\",",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "100b482e08de7cf7"
+    },
+    {
+      "pattern_name": "Google Gemini / GCP API Key",
+      "value_masked": "AIzaSy...0nvY",
+      "confidence": "high",
+      "repo": "FAHTHIZ/Oasis-",
+      "file_path": "src/security/data/secret-rules.json",
+      "file_url": "https://github.com/FAHTHIZ/Oasis-/blob/main/src/security/data/secret-rules.json",
+      "line_number": 372,
+      "line_content": "\"AIzaSyA8vmApnrHNFE0bApF4hoZ11srVL_n0nvY\"",
+      "description": "Google API 密钥（Gemini、Vertex、Maps 等）。",
+      "fingerprint": "7fcc2c40e8ed21ad"
     }
   ]
 }
