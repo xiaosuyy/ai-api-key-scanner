@@ -1,13 +1,185 @@
 {
   "summary": {
-    "generated_at": "2026-11-14 08:27:50 UTC",
-    "repos_scanned": 20,
-    "files_scanned": 3403,
-    "total_findings": 0,
-    "by_confidence": {},
-    "by_pattern": {},
-    "by_repo": {},
+    "generated_at": "2026-11-14 08:58:38 UTC",
+    "repos_scanned": 48,
+    "files_scanned": 8377,
+    "total_findings": 13,
+    "by_confidence": {
+      "high": 6,
+      "medium": 5,
+      "low": 2
+    },
+    "by_pattern": {
+      "Anthropic API Key": 5,
+      "Generic API key assignment": 7,
+      "OpenAI API Key": 1
+    },
+    "by_repo": {
+      "ShenSeanChen/waku-agent": 5,
+      "KushalP1/context-doctor": 4,
+      "atliliw/langchainrust": 1,
+      "A220man/atlas-lens-ryan-vo": 1,
+      "krishanraja/AEO-Engine": 1,
+      "KhatKit/Android": 1
+    },
     "scan_type": "auto"
   },
-  "findings": []
+  "findings": [
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...Z-AA",
+      "confidence": "high",
+      "repo": "ShenSeanChen/waku-agent",
+      "file_path": "evals/deterministic/hosted/test_install_sh.py",
+      "file_url": "https://github.com/ShenSeanChen/waku-agent/blob/main/evals/deterministic/hosted/test_install_sh.py",
+      "line_number": 790,
+      "line_content": "key = _key_file(tmp_path, \"sk-ant-api03-AbC_dEf-123456789_XyZ-AA\\n\")",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "475333d795142369"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...AUTH",
+      "confidence": "high",
+      "repo": "ShenSeanChen/waku-agent",
+      "file_path": "evals/deterministic/test_turn_receipt.py",
+      "file_url": "https://github.com/ShenSeanChen/waku-agent/blob/main/evals/deterministic/test_turn_receipt.py",
+      "line_number": 146,
+      "line_content": "SECRETS = (\"Bearer sk-ant-api03-AUTHAUTHAUTHAUTHAUTHAUTHAUTHAUTH\",",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "f2732b23a1a5c1d3"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...IKEY",
+      "confidence": "high",
+      "repo": "ShenSeanChen/waku-agent",
+      "file_path": "evals/deterministic/test_turn_receipt.py",
+      "file_url": "https://github.com/ShenSeanChen/waku-agent/blob/main/evals/deterministic/test_turn_receipt.py",
+      "line_number": 147,
+      "line_content": "\"sk-ant-api03-APIKEYAPIKEYAPIKEYAPIKEYAPIKEY\",",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "8013097036a5cf1c"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...ECHO",
+      "confidence": "high",
+      "repo": "ShenSeanChen/waku-agent",
+      "file_path": "evals/deterministic/test_turn_receipt.py",
+      "file_url": "https://github.com/ShenSeanChen/waku-agent/blob/main/evals/deterministic/test_turn_receipt.py",
+      "line_number": 148,
+      "line_content": "\"sk-ant-api03-ECHOECHOECHOECHOECHOECHOECHOECHO\")",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "38c32b089728c64f"
+    },
+    {
+      "pattern_name": "Anthropic API Key",
+      "value_masked": "sk-ant...ship",
+      "confidence": "high",
+      "repo": "ShenSeanChen/waku-agent",
+      "file_path": "evals/hosted_docker/spawnerlib.py",
+      "file_url": "https://github.com/ShenSeanChen/waku-agent/blob/main/evals/hosted_docker/spawnerlib.py",
+      "line_number": 45,
+      "line_content": "PLANTED_PLATFORM_KEY = \"sk-ant-PLANTED-PLATFORM-KEY-do-not-ship\"",
+      "description": "Anthropic Claude API 密钥。",
+      "fingerprint": "fdbbdf0c2971e64a"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ant...leak",
+      "confidence": "medium",
+      "repo": "KushalP1/context-doctor",
+      "file_path": "src/test/ab.test.ts",
+      "file_url": "https://github.com/KushalP1/context-doctor/blob/main/src/test/ab.test.ts",
+      "line_number": 366,
+      "line_content": "process.env.ANTHROPIC_API_KEY = \"sk-ant-should-not-leak\";",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "3e3e95a4d6fa9585"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ant...king",
+      "confidence": "medium",
+      "repo": "KushalP1/context-doctor",
+      "file_path": "src/test/canary.test.ts",
+      "file_url": "https://github.com/KushalP1/context-doctor/blob/main/src/test/canary.test.ts",
+      "line_number": 40,
+      "line_content": "bad({ ANTHROPIC_API_KEY: \"sk-ant-api03-real-looking\" }, /ANTHROPIC_API_KEY is set/);",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "26bfd4beb49a1b02"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ant...ller",
+      "confidence": "low",
+      "repo": "KushalP1/context-doctor",
+      "file_path": "src/test/canary.test.ts",
+      "file_url": "https://github.com/KushalP1/context-doctor/blob/main/src/test/canary.test.ts",
+      "line_number": 242,
+      "line_content": "const r = run([\"--claude\", fake], { ...process.env, ANTHROPIC_API_KEY: \"sk-ant-api03-from-the-caller\", CLAUDE_CODE_OAUTH_TOKEN: \"sk-ant-oat01-from-the-caller\", ANTHROPIC_BASE_URL: \"https://api.anthropic.com\", GITHUB_ACTIONS: \"\" });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "dfa2c8079b4f7336"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-ant...ller",
+      "confidence": "low",
+      "repo": "KushalP1/context-doctor",
+      "file_path": "src/test/canary.test.ts",
+      "file_url": "https://github.com/KushalP1/context-doctor/blob/main/src/test/canary.test.ts",
+      "line_number": 242,
+      "line_content": "const r = run([\"--claude\", fake], { ...process.env, ANTHROPIC_API_KEY: \"sk-ant-api03-from-the-caller\", CLAUDE_CODE_OAUTH_TOKEN: \"sk-ant-oat01-from-the-caller\", ANTHROPIC_BASE_URL: \"https://api.anthropic.com\", GITHUB_ACTIONS: \"\" });",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "322c002afff62edd"
+    },
+    {
+      "pattern_name": "OpenAI API Key",
+      "value_masked": "sk-6eb...43e7",
+      "confidence": "high",
+      "repo": "atliliw/langchainrust",
+      "file_path": "crates/lc-agents/src/react/agent.rs",
+      "file_url": "https://github.com/atliliw/langchainrust/blob/main/crates/lc-agents/src/react/agent.rs",
+      "line_number": 335,
+      "line_content": "api_key: \"sk-6eb65fcf5d17491ca10b984efe1f43e7\".into(),",
+      "description": "OpenAI 风格 sk- 密钥（也覆盖 DeepSeek、Moonshot 等同类前缀）。",
+      "fingerprint": "49fece92a36c548d"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "some-p...hars",
+      "confidence": "medium",
+      "repo": "A220man/atlas-lens-ryan-vo",
+      "file_path": "backend/tests/test_auth_and_security.py",
+      "file_url": "https://github.com/A220man/atlas-lens-ryan-vo/blob/main/backend/tests/test_auth_and_security.py",
+      "line_number": 46,
+      "line_content": "secret_key=\"some-production-secret-key-at-least-32-chars\",",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "01e8b6fed54e9dac"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "synthe...oken",
+      "confidence": "medium",
+      "repo": "krishanraja/AEO-Engine",
+      "file_path": "tests/claudeCode.test.ts",
+      "file_url": "https://github.com/krishanraja/AEO-Engine/blob/main/tests/claudeCode.test.ts",
+      "line_number": 29,
+      "line_content": "const TOKEN_ENV = { PATH: '/usr/bin:/bin', CLAUDE_CODE_OAUTH_TOKEN: 'synthetic-oauth-token' }",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "140aa1ca0866f13b"
+    },
+    {
+      "pattern_name": "Generic API key assignment",
+      "value_masked": "sk-c1c...feed",
+      "confidence": "medium",
+      "repo": "KhatKit/Android",
+      "file_path": "app/src/androidTest/java/heizige/kk/khatkit/app/feature/chat/C1GroupExportDeviceEvidenceTest.kt",
+      "file_url": "https://github.com/KhatKit/Android/blob/main/app/src/androidTest/java/heizige/kk/khatkit/app/feature/chat/C1GroupExportDeviceEvidenceTest.kt",
+      "line_number": 111,
+      "line_content": "private val canaryApiKey = \"sk-c1canary-7f3d9a2b5c8e4f01feed\"",
+      "description": "赋值给 API key 变量的疑似密钥。",
+      "fingerprint": "cc38f95c05a521b6"
+    }
+  ]
 }
